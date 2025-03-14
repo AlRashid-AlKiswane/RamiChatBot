@@ -3,3 +3,4 @@ pymongo
 pydantic
 python-multipart 
 pypdf
+motor
