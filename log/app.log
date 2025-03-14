@@ -864,3 +864,468 @@
 2025-03-14 18:33:10,329 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/8ywwvvhdj2uq_RAGOverviewandBenefits.pdf, file_id: 8ywwvvhdj2uq_RAGOverviewandBenefits.pdf
 2025-03-14 18:33:10,331 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/8ywwvvhdj2uq_RAGOverviewandBenefits.pdf
 2025-03-14 18:33:10,339 - INFO - Asset 8ywwvvhdj2uq_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:47,084 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:47,085 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:47,085 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:47,085 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:47,085 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:47,086 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:47,090 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:47,112 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:47,122 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/wq3jw6p33ywr_RAGOverviewandBenefits.pdf, file_id: wq3jw6p33ywr_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:47,124 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/wq3jw6p33ywr_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:47,132 - INFO - Asset wq3jw6p33ywr_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:51,224 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:51,224 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:51,224 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:51,224 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,224 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:51,225 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:51,225 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,225 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:51,225 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:14:51,226 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:14:51,226 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:51,226 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:51,233 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:51,241 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:51,252 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/cw7c75jgca2s_RAGOverviewandBenefits.pdf, file_id: cw7c75jgca2s_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,254 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/cw7c75jgca2s_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,263 - INFO - Asset cw7c75jgca2s_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:51,765 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:51,765 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:51,765 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:51,765 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,765 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:51,766 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:51,766 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,766 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:51,766 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:51,766 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:51,766 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:51,772 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:51,779 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:51,791 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ka4t3qq1jq7q_RAGOverviewandBenefits.pdf, file_id: ka4t3qq1jq7q_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,793 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ka4t3qq1jq7q_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,800 - INFO - Asset ka4t3qq1jq7q_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:51,946 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:51,946 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:51,946 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:51,946 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,946 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:51,946 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:51,947 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:51,947 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:51,947 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:14:51,947 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:14:51,947 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:51,947 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:51,951 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:51,958 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:51,967 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/3v2j7hrg2mcg_RAGOverviewandBenefits.pdf, file_id: 3v2j7hrg2mcg_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,969 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/3v2j7hrg2mcg_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:51,974 - INFO - Asset 3v2j7hrg2mcg_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,104 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,104 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,105 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,105 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,105 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,105 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,105 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,105 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,105 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:52,105 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,106 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,110 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,116 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,125 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/lb162i0dv6o3_RAGOverviewandBenefits.pdf, file_id: lb162i0dv6o3_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,126 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/lb162i0dv6o3_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,133 - INFO - Asset lb162i0dv6o3_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,281 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,281 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,281 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,282 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,282 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,282 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,282 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,282 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,282 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:52,282 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,282 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,286 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,293 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,302 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/z8ff5fssm38i_RAGOverviewandBenefits.pdf, file_id: z8ff5fssm38i_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,304 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/z8ff5fssm38i_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,311 - INFO - Asset z8ff5fssm38i_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,445 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,446 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,446 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,446 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:52,446 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,446 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,450 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,457 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,468 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/d9uusdy4qepo_RAGOverviewandBenefits.pdf, file_id: d9uusdy4qepo_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,469 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/d9uusdy4qepo_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,478 - INFO - Asset d9uusdy4qepo_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,626 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,626 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,626 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,626 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,626 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,627 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,627 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,627 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,627 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:14:52,627 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:14:52,627 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,627 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,631 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,638 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,651 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/4v6hki1ckl6b_RAGOverviewandBenefits.pdf, file_id: 4v6hki1ckl6b_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,653 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/4v6hki1ckl6b_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,663 - INFO - Asset 4v6hki1ckl6b_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,810 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,810 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,810 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,810 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,811 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,811 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,811 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,811 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,811 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:14:52,812 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:14:52,812 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,812 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,816 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,821 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,831 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/0csqthalqu2k_RAGOverviewandBenefits.pdf, file_id: 0csqthalqu2k_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,832 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/0csqthalqu2k_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,840 - INFO - Asset 0csqthalqu2k_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:52,977 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:52,977 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:52,977 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:52,977 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:14:52,977 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:52,977 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:52,981 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:52,987 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:52,996 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/jefbydsebyb0_RAGOverviewandBenefits.pdf, file_id: jefbydsebyb0_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:52,998 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/jefbydsebyb0_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:53,006 - INFO - Asset jefbydsebyb0_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:53,139 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:53,139 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:53,139 - DEBUG - Calling on_part_data with data[162:32768]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_part_data with data[0:591]
+2025-03-14 21:14:53,139 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:53,139 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:53,144 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:53,150 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:53,160 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/fyl662fvizx1_RAGOverviewandBenefits.pdf, file_id: fyl662fvizx1_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:53,161 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/fyl662fvizx1_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:53,167 - INFO - Asset fyl662fvizx1_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:14:55,163 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:14:55,163 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:14:55,164 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:14:55,164 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:55,164 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:14:55,164 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:14:55,164 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:14:55,164 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:14:55,164 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:14:55,165 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:14:55,165 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:14:55,165 - DEBUG - Calling on_end with no data
+2025-03-14 21:14:55,169 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:14:55,177 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:14:55,186 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ye554s1r66nq_RAGOverviewandBenefits.pdf, file_id: ye554s1r66nq_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:55,187 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ye554s1r66nq_RAGOverviewandBenefits.pdf
+2025-03-14 21:14:55,194 - INFO - Asset ye554s1r66nq_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:20:32,022 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:20:32,023 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:20:32,023 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:20:32,024 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:20:32,024 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:20:32,024 - DEBUG - Calling on_end with no data
+2025-03-14 21:20:32,037 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:20:32,059 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:20:32,072 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/zwizj2ze7oat_RAGOverviewandBenefits.pdf, file_id: zwizj2ze7oat_RAGOverviewandBenefits.pdf
+2025-03-14 21:20:32,074 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/zwizj2ze7oat_RAGOverviewandBenefits.pdf
+2025-03-14 21:20:32,080 - INFO - Asset zwizj2ze7oat_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:20:35,078 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:20:35,078 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:20:35,078 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:20:35,079 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:20:35,079 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:20:35,079 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:20:35,079 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:20:35,079 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:20:35,079 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:20:35,080 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:20:35,080 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:20:35,080 - DEBUG - Calling on_end with no data
+2025-03-14 21:20:35,085 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:20:35,094 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:20:35,104 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/02kw4sk2dmug_RAGOverviewandBenefits.pdf, file_id: 02kw4sk2dmug_RAGOverviewandBenefits.pdf
+2025-03-14 21:20:35,105 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/02kw4sk2dmug_RAGOverviewandBenefits.pdf
+2025-03-14 21:20:35,111 - INFO - Asset 02kw4sk2dmug_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:20:46,694 - INFO - Processing started for project: 1
+2025-03-14 21:20:46,706 - ERROR - Unexpected error during processing for project 1: ProcessController.__init__() got an unexpected keyword argument 'project_id'
+2025-03-14 21:20:46,711 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-03-14 21:20:47,137 - DEBUG - https://api.telegram.org:443 "POST /bot8046295285:AAHvn6fqP-c_-UJapzlufakJxSiWofbzclM/sendMessage HTTP/1.1" 200 439
+2025-03-14 21:28:53,159 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:28:53,159 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:28:53,159 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:28:53,160 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:53,160 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:28:53,160 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:28:53,160 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:53,160 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:28:53,160 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:28:53,160 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:28:53,160 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:28:53,160 - DEBUG - Calling on_end with no data
+2025-03-14 21:28:53,172 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:28:53,194 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:28:53,204 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/o6mv0sylw0jj_RAGOverviewandBenefits.pdf, file_id: o6mv0sylw0jj_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:53,206 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/o6mv0sylw0jj_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:53,213 - INFO - Asset o6mv0sylw0jj_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:28:58,008 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:28:58,009 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:58,009 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:28:58,010 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:28:58,010 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:28:58,010 - DEBUG - Calling on_end with no data
+2025-03-14 21:28:58,014 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:28:58,021 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:28:58,030 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/0x9nlcwcrgtr_RAGOverviewandBenefits.pdf, file_id: 0x9nlcwcrgtr_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:58,031 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/0x9nlcwcrgtr_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:58,038 - INFO - Asset 0x9nlcwcrgtr_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:28:59,129 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:28:59,129 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:28:59,129 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:28:59,129 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:59,129 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:28:59,130 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:28:59,130 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:59,130 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:28:59,130 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:28:59,130 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:28:59,130 - DEBUG - Calling on_end with no data
+2025-03-14 21:28:59,135 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:28:59,144 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:28:59,154 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/c9eowzungu4h_RAGOverviewandBenefits.pdf, file_id: c9eowzungu4h_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:59,155 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/c9eowzungu4h_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:59,164 - INFO - Asset c9eowzungu4h_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:28:59,868 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:28:59,869 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:28:59,869 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:28:59,869 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:28:59,870 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:28:59,870 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:28:59,870 - DEBUG - Calling on_end with no data
+2025-03-14 21:28:59,876 - INFO - Upload started for project_id: 1, file: RAG Overview and Benefits.pdf
+2025-03-14 21:28:59,882 - INFO - Project retrieved or created: 67d444148b329f30ca7880c0
+2025-03-14 21:28:59,891 - INFO - Generated file path: /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ex9kymyziugz_RAGOverviewandBenefits.pdf, file_id: ex9kymyziugz_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:59,892 - INFO - File RAG Overview and Benefits.pdf successfully saved at /home/alrashid/Desktop/RamiChatBot/src/assets/files/1/ex9kymyziugz_RAGOverviewandBenefits.pdf
+2025-03-14 21:28:59,901 - INFO - Asset ex9kymyziugz_RAGOverviewandBenefits.pdf stored in the database with size 33197
+2025-03-14 21:30:51,670 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:30:51,670 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:30:51,670 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:30:51,671 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:51,671 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:30:51,671 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:30:51,671 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:51,671 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:30:51,671 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:30:51,671 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:30:51,672 - DEBUG - Calling on_end with no data
+2025-03-14 21:30:52,754 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:30:52,755 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:52,755 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:30:52,755 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:30:52,756 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:30:52,756 - DEBUG - Calling on_end with no data
+2025-03-14 21:30:54,720 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:30:54,720 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:30:54,720 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:30:54,720 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:54,720 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:30:54,721 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:30:54,721 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:30:54,721 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:30:54,721 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:30:54,721 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:30:54,721 - DEBUG - Calling on_end with no data
+2025-03-14 21:31:25,499 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:31:25,499 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:31:25,500 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:31:25,500 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:31:25,500 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:31:25,500 - DEBUG - Calling on_end with no data
+2025-03-14 21:31:53,314 - INFO - Processing started for project: 1
+2025-03-14 21:31:53,336 - ERROR - Unexpected error during processing for project 1: name 'ProjectController' is not defined
+2025-03-14 21:31:53,341 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-03-14 21:31:53,645 - DEBUG - https://api.telegram.org:443 "POST /bot8046295285:AAHvn6fqP-c_-UJapzlufakJxSiWofbzclM/sendMessage HTTP/1.1" 200 402
+2025-03-14 21:34:32,437 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:34:32,437 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:34:32,437 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:34:32,437 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:32,437 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:34:32,437 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:34:32,438 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:32,438 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:34:32,438 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:34:32,438 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:34:32,438 - DEBUG - Calling on_end with no data
+2025-03-14 21:34:32,452 - INFO - Starting file upload for project: 1
+2025-03-14 21:34:32,489 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as pt04hyw2ey5k_RAGOverviewandBenefits.pdf
+2025-03-14 21:34:34,522 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:34:34,522 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:34,523 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:34:34,523 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:34:34,523 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:34:34,523 - DEBUG - Calling on_end with no data
+2025-03-14 21:34:34,530 - INFO - Starting file upload for project: 1
+2025-03-14 21:34:34,555 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as xg6ezoa1xrid_RAGOverviewandBenefits.pdf
+2025-03-14 21:34:35,225 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:34:35,225 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:34:35,225 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:34:35,226 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:35,226 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:34:35,226 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:34:35,226 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:35,226 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:34:35,226 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 21:34:35,226 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:34:35,226 - DEBUG - Calling on_end with no data
+2025-03-14 21:34:35,231 - INFO - Starting file upload for project: 1
+2025-03-14 21:34:35,249 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as k7rmlxcuoozn_RAGOverviewandBenefits.pdf
+2025-03-14 21:34:35,946 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:34:35,946 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:34:35,946 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:34:35,946 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:35,946 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:34:35,946 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:34:35,947 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:35,947 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:34:35,947 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:34:35,947 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:34:35,947 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:34:35,947 - DEBUG - Calling on_end with no data
+2025-03-14 21:34:35,951 - INFO - Starting file upload for project: 1
+2025-03-14 21:34:35,973 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as 74c67fa7fvdi_RAGOverviewandBenefits.pdf
+2025-03-14 21:34:36,695 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:34:36,695 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:34:36,695 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:34:36,695 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:34:36,696 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:34:36,696 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:34:36,696 - DEBUG - Calling on_end with no data
+2025-03-14 21:34:36,701 - INFO - Starting file upload for project: 1
+2025-03-14 21:34:36,723 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as 4ck4edculwnb_RAGOverviewandBenefits.pdf
+2025-03-14 21:35:33,541 - INFO - Processing started for project: 1
+2025-03-14 21:35:33,578 - ERROR - Unexpected error during processing for project 1: name 'ProjectController' is not defined
+2025-03-14 21:35:33,583 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-03-14 21:35:33,952 - DEBUG - https://api.telegram.org:443 "POST /bot8046295285:AAHvn6fqP-c_-UJapzlufakJxSiWofbzclM/sendMessage HTTP/1.1" 200 402
+2025-03-14 21:42:03,442 - INFO - Processing started for project: 1
+2025-03-14 21:42:03,474 - ERROR - Unexpected error during processing for project 1: name 'ProjectController' is not defined
+2025-03-14 21:42:03,479 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-03-14 21:42:03,950 - DEBUG - https://api.telegram.org:443 "POST /bot8046295285:AAHvn6fqP-c_-UJapzlufakJxSiWofbzclM/sendMessage HTTP/1.1" 200 402
+2025-03-14 21:47:57,567 - DEBUG - Calling on_part_begin with no data
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 21:47:57,567 - DEBUG - Calling on_header_end with no data
+2025-03-14 21:47:57,567 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 21:47:57,567 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 21:47:57,568 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 21:47:57,568 - DEBUG - Calling on_part_end with no data
+2025-03-14 21:47:57,568 - DEBUG - Calling on_end with no data
+2025-03-14 21:47:57,579 - INFO - Starting file upload for project: 1
+2025-03-14 21:47:57,611 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as 9ferkwjgk72e_RAGOverviewandBenefits.pdf
+2025-03-14 22:06:38,943 - DEBUG - Calling on_part_begin with no data
+2025-03-14 22:06:38,943 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_header_end with no data
+2025-03-14 22:06:38,944 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_header_end with no data
+2025-03-14 22:06:38,944 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 22:06:38,944 - DEBUG - Calling on_part_data with data[162:16384]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_part_data with data[0:16975]
+2025-03-14 22:06:38,944 - DEBUG - Calling on_part_end with no data
+2025-03-14 22:06:38,944 - DEBUG - Calling on_end with no data
+2025-03-14 22:06:38,957 - INFO - Starting file upload for project: 1
+2025-03-14 22:06:38,985 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as wn1zi9jgv7zh_RAGOverviewandBenefits.pdf
+2025-03-14 22:07:51,059 - DEBUG - Calling on_part_begin with no data
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_field with data[42:61]
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_value with data[63:127]
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_end with no data
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_field with data[129:141]
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_value with data[143:158]
+2025-03-14 22:07:51,059 - DEBUG - Calling on_header_end with no data
+2025-03-14 22:07:51,059 - DEBUG - Calling on_headers_finished with no data
+2025-03-14 22:07:51,059 - DEBUG - Calling on_part_data with data[162:33359]
+2025-03-14 22:07:51,060 - DEBUG - Calling on_part_end with no data
+2025-03-14 22:07:51,060 - DEBUG - Calling on_end with no data
+2025-03-14 22:07:51,069 - INFO - Starting file upload for project: 1
+2025-03-14 22:07:51,110 - INFO - File RAG Overview and Benefits.pdf uploaded successfully as hy6grzyybch7_RAGOverviewandBenefits.pdf

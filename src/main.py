@@ -6,8 +6,7 @@ root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(root_dir)
 
 
-from api.v1.hello import hello_router
-from api.v1.upload_documents import upload_router 
+from api import endpoint_router, hello_router, upload_router
 
 from motor.motor_asyncio import AsyncIOMotorClient
 from src.utils.helpers import get_settings 
@@ -32,3 +31,4 @@ async def shutdown_db_client():
 
 app.include_router(hello_router, prefix="/api/v1/hello", tags=["hello"])
 app.include_router(upload_router, prefix="/api/v1/upload_documents", tags=["upload_documetns"])
+app.include_router(endpoint_router, prefix="/api/v1/endpoint_chunks", tags=["process_endpoint"])
