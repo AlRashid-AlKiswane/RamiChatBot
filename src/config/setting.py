@@ -1,23 +1,24 @@
 import os
-from pydantic_settings import BaseSettings
-from typing import List
+import json
+from typing import List, Optional
+from pydantic import BaseSettings
 
+# Define root_dir relative to this file
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 
 class Settings(BaseSettings):
     # ✅ Application Settings
     APP_NAME: str
     APP_VERSION: str
-    OPENAI_API_KEY: str
+    OPENAI_API_KEY: Optional[str] = None
+    HUGGINGFACE_TOKIENS: Optional[str] = None
+
+    DATABASE_URL: str
 
     # ✅ File Processing Settings
-    FILE_ALLOWED_TYPES: List[str]  # Explicitly define list type
+    FILE_ALLOWED_TYPES: List[str]
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
-
-    # ✅ Database Settings
-    MONGODB_URL: str
-    MONGODB_DATABASE: str
 
     # ✅ Logging Settings
     LOG_LEVEL: str
@@ -26,11 +27,10 @@ class Settings(BaseSettings):
     # ✅ Monitoring Settings
     CPU_THRESHOLD: int
     MEMORY_THRESHOLD: int
-    MONITOR_INTERVAL: int  # Interval in seconds
+    MONITOR_INTERVAL: int
     DISK_THRESHOLD: int
 
-    # ✅ Alert Settings (Telgram Bot)
-
+    # ✅ Alert Settings (Telegram Bot)
     TELEGRAM_BOT_TOKEN: str
     TELEGRAM_CHAT_ID: str
 
@@ -38,5 +38,9 @@ class Settings(BaseSettings):
         env_file = os.path.join(root_dir, ".env")
         env_file_encoding = "utf-8"
 
-def get_settings():
+# Singleton-style getter (FastAPI friendly)
+from functools import lru_cache
+
+@lru_cache()
+def get_settings() -> Settings:
     return Settings()
