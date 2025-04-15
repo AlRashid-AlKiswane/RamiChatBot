@@ -26,9 +26,9 @@ def log_info(message):
     """Logs informational messages."""
     logger.info(message)
 
-def log_warning(message):
+def log_debug(message):
     """Logs warnings."""
-    logger.warning(message)
+    logger.debug(message)
     
 
 def log_error(message):
@@ -43,5 +43,5 @@ def log_error(message):
 # Example usage
 if __name__ == "__main__":
     log_info("Application started.")
-    log_warning("This is a warning message.")
+    log_debug("This is a warning message.")
     log_error("This is a test error alert.")

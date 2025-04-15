@@ -1,11 +1,11 @@
 import time, os, sys, psutil
 
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.append(root_dir)
 
 
-from src.logs.logger import log_error, log_info, log_warning
-from src.config.helpers import get_settings, Settings
+from logs.logger import log_error, log_info, log_debug
+from config.setting import get_settings, Settings
 from .alerts import AlertManager
 
 class SystemMonitor:
@@ -22,7 +22,7 @@ class SystemMonitor:
             cpu_stage = psutil.cpu_percent(interval=1)
             log_info(f"CPU Usage: {cpu_stage}%")
             if cpu_stage > self.cpu_threshold:
-                log_warning(f"High CPU Usage: {cpu_stage}%")
+                log_debug(f"High CPU Usage: {cpu_stage}%")
                 alert = AlertManager().send_telegram_alert("High CPU Usage", f"CPU Usage: {cpu_stage}%")
         except Exception as e:
             log_error(f"Error checking CPU usage: {str(e)}")
@@ -32,7 +32,7 @@ class SystemMonitor:
         memory = psutil.virtual_memory()
         log_info(f"Memory Usage: {memory.percent}%")
         if memory.percent > self.memory_threshold:
-            log_warning(f"High Memory Usage: {memory.percent}%")
+            log_debug(f"High Memory Usage: {memory.percent}%")
             alert = AlertManager().send_telegram_alert("High Memory Usage", f"Memory Usage: {memory.percent}%")
 
     def check_disk_usage(self):
@@ -40,7 +40,7 @@ class SystemMonitor:
         disk = psutil.disk_usage('/')
         log_info(f"Disk Usage: {disk.percent}%")
         if disk.percent > self.disk_threshold:
-            log_warning(f"High Disk Usage: {disk.percent}%")
+            log_debug(f"High Disk Usage: {disk.percent}%")
             alert = AlertManager().send_telegram_alert("High Disk Usage", f"Disk Usage: {disk.percent}%")
 
     def start_monitoring(self):
