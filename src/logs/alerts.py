@@ -5,7 +5,7 @@ import os, sys
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(root_dir)
 
-from src.utils.helpers import get_settings, Settings
+from src.config.helpers import get_settings, Settings
 
 class AlertManager:
     def __init__(self):

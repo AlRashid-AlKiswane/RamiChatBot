@@ -1,4 +1,91 @@
-.env
-enva
-__pycache__
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
 *.log
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+*.env
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# macOS & Linux
+.DS_Store
+*.swp
+*.swo
+
+# PyCharm
+.idea/
+
+# Test cache
+.pytest_cache/
+.tox/
+coverage.xml
+htmlcov/
+.noseids
+
+# Mypy and type checker
+.mypy_cache/
+.dmypy.json
+
+# Data & Models
+data/
+datasets/
+*.csv
+*.tsv
+*.json
+*.xlsx
+*.db
+*.sqlite
+*.h5
+*.hdf5
+*.zip
+*.tar.gz
+*.npz
+*.npy
+*.pkl
+*.joblib
+
+# HuggingFace & LLMs
+*.ckpt
+*.pt
+*.bin
+*.onnx
+*.tflite
+*.safetensors
+*.pb
+checkpoints/
+runs/
+wandb/
+hf_cache/
+transformers_cache/
+output/
+outputs/
+logs/
+results/
+
+# Local secrets
+.env
+.env.*
+secrets.*
+config.*
+*.yaml
+*.yml

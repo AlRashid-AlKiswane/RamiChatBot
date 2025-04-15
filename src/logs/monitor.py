@@ -5,7 +5,7 @@ sys.path.append(root_dir)
 
 
 from src.logs.logger import log_error, log_info, log_warning
-from src.utils.helpers import get_settings, Settings
+from src.config.helpers import get_settings, Settings
 from .alerts import AlertManager
 
 class SystemMonitor:
