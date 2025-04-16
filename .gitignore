@@ -13,7 +13,6 @@ venv/
 ENV/
 env.bak/
 *.env
-
 # Python packaging
 *.egg-info/
 dist/
