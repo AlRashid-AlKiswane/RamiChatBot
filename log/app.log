@@ -3054,3 +3054,486 @@
 2025-04-16 19:45:48,503 - INFO - Table 'chunks' created successfully.
 2025-04-16 19:45:48,503 - INFO - Table 'embeddings' created successfully.
 2025-04-16 19:45:48,503 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:11:48,621 - INFO - [LLM CONFIG] Saving config for model: meta-llama/Llama-3.2-1B
+2025-04-16 20:11:54,431 - INFO - App info retrieved: RamiChatBot 1.0.0
+2025-04-16 20:12:11,895 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:11,895 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:11,895 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:11,896 - DEBUG - Calling on_part_data with data[209:114688]
+2025-04-16 20:12:11,896 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:11,896 - DEBUG - Calling on_part_data with data[0:28134]
+2025-04-16 20:12:11,896 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:11,896 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:11,898 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201211_16368665.pdf
+2025-04-16 20:12:11,899 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201211_16368665.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201211_16368665.pdf'
+2025-04-16 20:12:13,703 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:13,703 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:13,703 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:13,704 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:13,704 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:13,704 - DEBUG - Calling on_part_data with data[209:49152]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_part_data with data[0:93670]
+2025-04-16 20:12:13,704 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:13,704 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:13,705 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201213_f9cfed31.pdf
+2025-04-16 20:12:13,708 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201213_f9cfed31.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201213_f9cfed31.pdf'
+2025-04-16 20:12:14,069 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:14,070 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,070 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:14,070 - DEBUG - Calling on_part_data with data[209:16384]
+2025-04-16 20:12:14,070 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:14,071 - DEBUG - Calling on_part_data with data[0:126438]
+2025-04-16 20:12:14,071 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:14,071 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:14,072 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_db6a3d7f.pdf
+2025-04-16 20:12:14,072 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_db6a3d7f.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_db6a3d7f.pdf'
+2025-04-16 20:12:14,273 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:14,273 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:14,273 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:14,273 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,274 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:14,274 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:14,274 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,274 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:14,274 - DEBUG - Calling on_part_data with data[209:163840]
+2025-04-16 20:12:14,274 - DEBUG - Calling on_part_data with data[0:241126]
+2025-04-16 20:12:14,274 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:14,274 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:14,275 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_bff68d56.pdf
+2025-04-16 20:12:14,275 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_bff68d56.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_bff68d56.pdf'
+2025-04-16 20:12:14,444 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:14,444 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,444 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:14,445 - DEBUG - Calling on_part_data with data[209:16384]
+2025-04-16 20:12:14,445 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:14,445 - DEBUG - Calling on_part_data with data[0:126438]
+2025-04-16 20:12:14,445 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:14,445 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:14,446 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_94ad8d57.pdf
+2025-04-16 20:12:14,447 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_94ad8d57.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_94ad8d57.pdf'
+2025-04-16 20:12:14,875 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:14,875 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:14,875 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:14,875 - DEBUG - Calling on_part_data with data[209:229376]
+2025-04-16 20:12:14,875 - DEBUG - Calling on_part_data with data[0:175590]
+2025-04-16 20:12:14,876 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:14,876 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:14,876 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_ad568249.pdf
+2025-04-16 20:12:14,877 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_ad568249.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_ad568249.pdf'
+2025-04-16 20:12:15,056 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,057 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:15,057 - DEBUG - Calling on_part_data with data[209:49152]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_part_data with data[0:93670]
+2025-04-16 20:12:15,057 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:15,057 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:15,058 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d5106cb7.pdf
+2025-04-16 20:12:15,058 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d5106cb7.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d5106cb7.pdf'
+2025-04-16 20:12:15,250 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:15,250 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,250 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:15,251 - DEBUG - Calling on_part_data with data[209:16384]
+2025-04-16 20:12:15,251 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:15,251 - DEBUG - Calling on_part_data with data[0:126438]
+2025-04-16 20:12:15,251 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:15,251 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:15,252 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_4282afb5.pdf
+2025-04-16 20:12:15,252 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_4282afb5.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_4282afb5.pdf'
+2025-04-16 20:12:15,432 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:15,432 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:15,432 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:15,432 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,432 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:15,432 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:15,433 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,433 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:15,433 - DEBUG - Calling on_part_data with data[209:32768]
+2025-04-16 20:12:15,434 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:15,435 - DEBUG - Calling on_part_data with data[0:110054]
+2025-04-16 20:12:15,435 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:15,435 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:15,436 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d77a8523.pdf
+2025-04-16 20:12:15,437 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d77a8523.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d77a8523.pdf'
+2025-04-16 20:12:15,640 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:15,640 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:15,640 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:15,640 - DEBUG - Calling on_part_data with data[209:245760]
+2025-04-16 20:12:15,641 - DEBUG - Calling on_part_data with data[0:159206]
+2025-04-16 20:12:15,641 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:15,641 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:15,641 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_cbad4483.pdf
+2025-04-16 20:12:15,642 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_cbad4483.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_cbad4483.pdf'
+2025-04-16 20:12:16,013 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:16,013 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,013 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:16,013 - DEBUG - Calling on_part_data with data[209:32768]
+2025-04-16 20:12:16,013 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:16,014 - DEBUG - Calling on_part_data with data[0:110054]
+2025-04-16 20:12:16,014 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:16,014 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:16,014 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_ed3a84f9.pdf
+2025-04-16 20:12:16,015 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_ed3a84f9.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_ed3a84f9.pdf'
+2025-04-16 20:12:16,212 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:16,212 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:16,212 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:16,212 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,213 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:16,213 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:16,213 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,213 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:16,213 - DEBUG - Calling on_part_data with data[209:32768]
+2025-04-16 20:12:16,213 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:16,213 - DEBUG - Calling on_part_data with data[0:110054]
+2025-04-16 20:12:16,213 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:16,213 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:16,214 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_e5b369db.pdf
+2025-04-16 20:12:16,214 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_e5b369db.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_e5b369db.pdf'
+2025-04-16 20:12:16,415 - DEBUG - Calling on_part_begin with no data
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_value with data[63:174]
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_field with data[176:188]
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_value with data[190:205]
+2025-04-16 20:12:16,415 - DEBUG - Calling on_header_end with no data
+2025-04-16 20:12:16,416 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 20:12:16,416 - DEBUG - Calling on_part_data with data[209:16384]
+2025-04-16 20:12:16,416 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 20:12:16,416 - DEBUG - Calling on_part_data with data[0:126438]
+2025-04-16 20:12:16,416 - DEBUG - Calling on_part_end with no data
+2025-04-16 20:12:16,416 - DEBUG - Calling on_end with no data
+2025-04-16 20:12:16,417 - DEBUG - Original filename: COLIEE 2022 Summary- Methods for Legal Document Retrieval and Entailment.pdf | Cleaned: COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_33324043.pdf
+2025-04-16 20:12:16,417 - INFO - File uploaded and saved as 'COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_33324043.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_33324043.pdf'
+2025-04-16 20:12:26,433 - INFO - Starting chunking for: [ALL DOCUMENTS]
+2025-04-16 20:12:26,437 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:12:26,571 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_c4da5e0b.pdf
+2025-04-16 20:12:26,600 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,627 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,639 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,653 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,675 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,694 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,714 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,725 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,744 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,756 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,890 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,901 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,923 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,936 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:26,940 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_ed3a84f9.pdf
+2025-04-16 20:12:26,993 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_834182ee.pdf
+2025-04-16 20:12:27,017 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,042 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,052 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,063 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,084 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,108 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,136 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,159 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,183 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,194 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,249 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,259 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,285 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,299 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,307 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_050731_5279e6d8.pdf
+2025-04-16 20:12:27,363 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_efa7fb77.pdf
+2025-04-16 20:12:27,394 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,417 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,429 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,447 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,464 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,484 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,503 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,520 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,536 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,550 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,615 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,626 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,651 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,662 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,664 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d5106cb7.pdf
+2025-04-16 20:12:27,719 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_71232bc0.pdf
+2025-04-16 20:12:27,772 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_0d9e9678.pdf
+2025-04-16 20:12:27,800 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,821 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,833 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,846 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,865 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,880 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,899 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,912 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,931 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,947 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:27,996 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,005 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,039 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,055 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,058 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_ad568249.pdf
+2025-04-16 20:12:28,084 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,106 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,117 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,127 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,148 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,164 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,184 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,197 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,212 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,226 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,280 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,292 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,316 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,326 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,329 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_4282afb5.pdf
+2025-04-16 20:12:28,376 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_b9799021.pdf
+2025-04-16 20:12:28,433 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_a1adfee4.pdf
+2025-04-16 20:12:28,484 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_6fb96c9a.pdf
+2025-04-16 20:12:28,881 - INFO - Processed 165 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/s10506_024_09396_9_20250416_052304_6ebcd3f0.pdf
+2025-04-16 20:12:28,909 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,932 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,947 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,958 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,981 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:28,997 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,019 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,044 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,070 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,088 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,139 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,148 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,178 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,194 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,196 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_33324043.pdf
+2025-04-16 20:12:29,244 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_687a10cd.pdf
+2025-04-16 20:12:29,269 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,285 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,297 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,313 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,329 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,341 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,362 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,374 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,392 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,406 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,453 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,462 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,487 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,499 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,500 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_050536_81b5d163.pdf
+2025-04-16 20:12:29,548 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_339d7bc4.pdf
+2025-04-16 20:12:29,573 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,595 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,605 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,618 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,636 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,650 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,673 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,685 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,704 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,720 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,775 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,785 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,817 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,829 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:29,831 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_bff68d56.pdf
+2025-04-16 20:12:29,884 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_a93885de.pdf
+2025-04-16 20:12:29,928 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_1e439d76.pdf
+2025-04-16 20:12:32,912 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 20:12:32,964 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_677caef3.pdf
+2025-04-16 20:12:32,988 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,007 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,019 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,030 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,046 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,064 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,082 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,097 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,115 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,125 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,174 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,185 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,209 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,223 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,226 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_051453_2c822c10.pdf
+2025-04-16 20:12:33,274 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_ef749846.pdf
+2025-04-16 20:12:33,295 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,317 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,330 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,340 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,358 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,372 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,411 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,430 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,451 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,465 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,516 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,526 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,552 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,563 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,565 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201211_16368665.pdf
+2025-04-16 20:12:33,617 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_a4fd10c8.pdf
+2025-04-16 20:12:33,643 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,662 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,674 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,686 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,709 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,725 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,751 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,763 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,785 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,799 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,932 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,942 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,966 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,979 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:33,981 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_db6a3d7f.pdf
+2025-04-16 20:12:34,004 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,031 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,042 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,056 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,078 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,092 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,116 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,132 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,153 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,164 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,214 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,226 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,248 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,261 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,264 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201214_94ad8d57.pdf
+2025-04-16 20:12:34,314 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_043001_f8af3e3d.pdf
+2025-04-16 20:12:34,364 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_b2beb3b2.pdf
+2025-04-16 20:12:34,415 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_30d4344e.pdf
+2025-04-16 20:12:34,463 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_ad9a0a2c.pdf
+2025-04-16 20:12:34,513 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_093d6c62.pdf
+2025-04-16 20:12:34,562 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_fe2ae86c.pdf
+2025-04-16 20:12:34,584 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,606 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,617 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,628 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,648 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,660 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,682 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,698 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,714 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,727 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,777 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,789 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,820 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,832 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,834 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201216_e5b369db.pdf
+2025-04-16 20:12:34,895 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_55406d6b.pdf
+2025-04-16 20:12:34,926 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,960 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,975 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:34,997 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,025 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,043 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,061 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,076 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,097 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,116 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,167 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,177 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,201 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,217 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,219 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_cbad4483.pdf
+2025-04-16 20:12:35,271 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_906787d2.pdf
+2025-04-16 20:12:35,302 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,319 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,332 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,343 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,359 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,375 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,396 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,411 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,428 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,442 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,489 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,499 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,523 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,535 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,537 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201213_f9cfed31.pdf
+2025-04-16 20:12:35,570 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,688 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,699 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,710 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,729 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,742 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,768 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,784 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,801 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,819 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,869 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,879 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,914 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,927 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 20:12:35,929 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_201215_d77a8523.pdf
+2025-04-16 20:12:35,942 - INFO - Total number of chunks processed: 2387
+2025-04-16 20:12:35,963 - INFO - Inserted 2387 chunk(s) into 'chunks' table.
+2025-04-16 20:12:35,963 - INFO - Inserted 2387 chunks into the database.
+2025-04-16 20:13:45,533 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:13:45,533 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:13:45,533 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:13:45,533 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:14:13,491 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:14:13,491 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:14:13,491 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:14:13,491 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:14:13,502 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:14:15,958 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:14:15,958 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:14:15,958 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:14:15,958 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:14:15,972 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:14:22,442 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:14:22,442 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:14:22,442 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:14:22,442 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:14:22,457 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
