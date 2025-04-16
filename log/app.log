@@ -576,3 +576,1181 @@
 2025-04-16 09:35:31,643 - INFO - Table 'chunks' created successfully.
 2025-04-16 09:35:31,643 - INFO - Table 'embeddings' created successfully.
 2025-04-16 09:35:31,643 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:45:53,174 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:45:53,175 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:45:53,175 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:45:53,175 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:46:29,216 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:46:29,216 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:46:29,216 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:46:29,216 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:46:33,208 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:46:33,209 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:46:33,209 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:46:33,209 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:47:25,612 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:47:25,612 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:47:25,612 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:47:25,612 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:47:32,788 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:47:32,789 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:47:32,789 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:47:32,789 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:47:33,453 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:47:33,454 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:47:33,454 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:47:33,454 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:47:34,120 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:47:34,120 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:47:34,120 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:47:34,120 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:47:34,859 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:47:34,859 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:47:34,859 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:47:34,859 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:48:27,575 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:48:27,575 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:48:27,575 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:48:27,575 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:49:03,180 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:03,181 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:49:03,181 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:49:03,181 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:49:05,073 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:05,073 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:49:05,073 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:49:05,073 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:49:05,818 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:05,818 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:49:05,818 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:49:05,818 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:49:16,064 - INFO - Starting chunking for: string
+2025-04-16 17:49:16,064 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:16,069 - INFO - All records deleted from table 'chunks'.
+2025-04-16 17:49:16,069 - DEBUG - Unsupported file type: 
+2025-04-16 17:49:16,071 - INFO - Total number of chunks processed: 0
+2025-04-16 17:49:16,071 - ERROR - No valid documents found to process.
+2025-04-16 17:49:16,077 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 17:49:16,405 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 369
+2025-04-16 17:49:29,427 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:29,428 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:49:29,428 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:49:29,428 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:49:30,306 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:49:30,307 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:49:30,307 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:49:30,307 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:50:12,022 - INFO - App info retrieved: RamiChatBot 1.0.0
+2025-04-16 17:50:52,314 - DEBUG - Calling on_part_begin with no data
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_field with data[42:61]
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_value with data[63:124]
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_end with no data
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_field with data[126:138]
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_value with data[140:155]
+2025-04-16 17:50:52,314 - DEBUG - Calling on_header_end with no data
+2025-04-16 17:50:52,314 - DEBUG - Calling on_headers_finished with no data
+2025-04-16 17:50:52,315 - DEBUG - Calling on_part_data with data[159:16384]
+2025-04-16 17:50:52,316 - DEBUG - Calling on_part_data with data[0:114688]
+2025-04-16 17:50:52,317 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 17:50:52,318 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 17:50:52,318 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 17:50:52,318 - DEBUG - Calling on_part_data with data[0:262144]
+2025-04-16 17:50:52,320 - DEBUG - Calling on_part_data with data[0:148755]
+2025-04-16 17:50:52,320 - DEBUG - Calling on_part_end with no data
+2025-04-16 17:50:52,320 - DEBUG - Calling on_end with no data
+2025-04-16 17:50:52,321 - DEBUG - Original filename: Evid Full_e-2020-FINAL.pdf | Cleaned: Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:50:52,323 - INFO - File uploaded and saved as 'Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf' at '/home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf'
+2025-04-16 17:51:20,229 - INFO - Starting chunking for: /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:51:20,229 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:51:22,762 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:51:22,766 - INFO - Total number of chunks processed: 719
+2025-04-16 17:51:22,776 - INFO - Inserted 719 chunk(s) into 'chunks' table.
+2025-04-16 17:51:22,776 - INFO - Inserted 719 chunks into the database.
+2025-04-16 17:51:22,776 - ERROR - Unexpected error in /to_chunks endpoint: 'metadata->>filename'
+2025-04-16 17:51:22,780 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 17:51:23,114 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 455
+2025-04-16 17:53:20,806 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:53:20,806 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:53:20,806 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:53:20,806 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:53:25,241 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:53:25,241 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:53:25,242 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:53:25,242 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:53:35,362 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:53:35,363 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:53:35,363 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:53:35,363 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:54:15,024 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:54:15,024 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:54:15,024 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:54:15,024 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:54:16,491 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:54:16,491 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:54:16,491 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:54:16,491 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:54:32,863 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:54:32,863 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:54:32,863 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:54:32,863 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:56:18,458 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:56:18,458 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:56:18,458 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:56:18,458 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:56:20,396 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:56:20,396 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:56:20,396 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:56:20,396 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:56:22,476 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:56:22,477 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:56:22,477 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:56:22,477 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:56:30,842 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:56:30,842 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:56:30,842 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:56:30,842 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:56:36,499 - INFO - Starting chunking for: /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:56:36,499 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:56:38,993 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:56:38,994 - INFO - Total number of chunks processed: 719
+2025-04-16 17:56:39,005 - INFO - Inserted 719 chunk(s) into 'chunks' table.
+2025-04-16 17:56:39,005 - INFO - Inserted 719 chunks into the database.
+2025-04-16 17:56:39,005 - ERROR - Unexpected error in /to_chunks endpoint: Object of type Series is not JSON serializable
+2025-04-16 17:56:39,010 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 17:56:39,323 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 480
+2025-04-16 17:57:53,281 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:57:53,282 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:57:53,282 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:57:53,282 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:58:03,949 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:58:03,949 - INFO - Table 'chunks' created successfully.
+2025-04-16 17:58:03,950 - INFO - Table 'embeddings' created successfully.
+2025-04-16 17:58:03,950 - INFO - Table 'query_responses' created successfully.
+2025-04-16 17:58:11,286 - INFO - Starting chunking for: /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:58:11,286 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 17:58:13,900 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 17:58:13,901 - INFO - Total number of chunks processed: 719
+2025-04-16 17:58:13,913 - INFO - Inserted 719 chunk(s) into 'chunks' table.
+2025-04-16 17:58:13,913 - INFO - Inserted 719 chunks into the database.
+2025-04-16 18:00:16,932 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:16,932 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:16,932 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:16,932 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:23,862 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:23,862 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:23,862 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:23,862 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:37,382 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:37,383 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:37,383 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:37,383 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:47,212 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:47,213 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:47,213 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:47,213 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:51,589 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:51,590 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:51,590 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:51,590 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:53,823 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:00:53,824 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:00:53,824 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:00:53,824 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:00:59,886 - INFO - Starting chunking for: /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 18:00:59,886 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:01:02,355 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 18:01:02,356 - INFO - Total number of chunks processed: 719
+2025-04-16 18:01:02,389 - INFO - Inserted 719 chunk(s) into 'chunks' table.
+2025-04-16 18:01:02,389 - INFO - Inserted 719 chunks into the database.
+2025-04-16 18:01:02,389 - ERROR - Unexpected error in /to_chunks endpoint: Object of type DataFrame is not JSON serializable
+2025-04-16 18:01:02,393 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 18:01:02,771 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 483
+2025-04-16 18:03:43,582 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:03:43,583 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:03:43,583 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:03:43,583 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:03:44,569 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:03:44,569 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:03:44,569 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:03:44,569 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:03:47,132 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:03:47,133 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:03:47,133 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:03:47,133 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:03:50,067 - INFO - Starting chunking for: /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 18:03:50,068 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:03:52,556 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 18:03:52,557 - INFO - Total number of chunks processed: 719
+2025-04-16 18:03:52,568 - INFO - Inserted 719 chunk(s) into 'chunks' table.
+2025-04-16 18:03:52,568 - INFO - Inserted 719 chunks into the database.
+2025-04-16 18:04:35,827 - INFO - Starting chunking for: [ALL DOCUMENTS]
+2025-04-16 18:04:35,827 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:04:35,906 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_c4da5e0b.pdf
+2025-04-16 18:04:35,954 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_834182ee.pdf
+2025-04-16 18:04:35,976 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:35,994 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,010 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,025 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,042 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,057 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,075 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,087 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,102 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,112 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,152 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,162 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,184 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,195 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,197 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_050731_5279e6d8.pdf
+2025-04-16 18:04:36,244 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_efa7fb77.pdf
+2025-04-16 18:04:36,286 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_71232bc0.pdf
+2025-04-16 18:04:36,388 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_0d9e9678.pdf
+2025-04-16 18:04:36,429 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_b9799021.pdf
+2025-04-16 18:04:36,473 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_a1adfee4.pdf
+2025-04-16 18:04:36,515 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_6fb96c9a.pdf
+2025-04-16 18:04:36,758 - INFO - Processed 165 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/s10506_024_09396_9_20250416_052304_6ebcd3f0.pdf
+2025-04-16 18:04:36,804 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_687a10cd.pdf
+2025-04-16 18:04:36,830 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,847 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,858 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,873 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,891 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,904 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,922 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,933 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,950 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:36,961 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:37,001 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:37,011 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:37,031 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:37,042 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:37,044 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_050536_81b5d163.pdf
+2025-04-16 18:04:37,090 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_339d7bc4.pdf
+2025-04-16 18:04:37,132 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_a93885de.pdf
+2025-04-16 18:04:37,174 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044824_1e439d76.pdf
+2025-04-16 18:04:39,649 - INFO - Processed 719 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/Evid_Full_e_2020_FINAL_20250416_175052_321a6e32.pdf
+2025-04-16 18:04:39,693 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_677caef3.pdf
+2025-04-16 18:04:39,717 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,734 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,745 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,757 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,773 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,785 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,804 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,816 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,832 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,843 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,884 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,894 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,916 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,928 - ERROR - Advanced encoding /UniJIS-UTF16-H not implemented yet
+2025-04-16 18:04:39,929 - INFO - Processed 81 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/COLIEE_2022_Summary__Methods_for_Legal_Document_Retrieval_and_Entailment_20250416_051453_2c822c10.pdf
+2025-04-16 18:04:39,977 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_ef749846.pdf
+2025-04-16 18:04:40,021 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_a4fd10c8.pdf
+2025-04-16 18:04:40,060 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_043001_f8af3e3d.pdf
+2025-04-16 18:04:40,102 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_b2beb3b2.pdf
+2025-04-16 18:04:40,142 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_30d4344e.pdf
+2025-04-16 18:04:40,182 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_ad9a0a2c.pdf
+2025-04-16 18:04:40,222 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_093d6c62.pdf
+2025-04-16 18:04:40,262 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044823_fe2ae86c.pdf
+2025-04-16 18:04:40,360 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044822_55406d6b.pdf
+2025-04-16 18:04:40,399 - INFO - Processed 9 chunks from /home/alrashid/Desktop/RamiChatBot/assets/docs_files/AlRashid_AlKiswane_Machine_Learning_Engineer_2025_Q2_20250416_044821_906787d2.pdf
+2025-04-16 18:04:40,401 - INFO - Total number of chunks processed: 1334
+2025-04-16 18:04:40,412 - INFO - Inserted 1334 chunk(s) into 'chunks' table.
+2025-04-16 18:04:40,413 - INFO - Inserted 1334 chunks into the database.
+2025-04-16 18:12:14,526 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:12:14,526 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:12:14,527 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:12:14,527 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:12:44,266 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:12:44,266 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:12:44,266 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:12:44,266 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:13,749 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:13,749 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:13,749 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:13,749 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:17,202 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:17,202 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:17,202 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:17,203 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:20,933 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:20,933 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:20,933 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:20,933 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:24,081 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:24,081 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:24,081 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:24,081 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:35,759 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:35,759 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:35,759 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:35,760 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:37,811 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:37,812 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:37,812 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:37,812 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:49,936 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:49,936 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:49,936 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:49,936 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:53,146 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:53,146 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:53,146 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:53,146 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:55,018 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:55,018 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:55,018 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:55,018 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:13:58,989 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:13:58,989 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:13:58,989 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:13:58,989 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:00,128 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:00,128 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:00,128 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:00,128 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:30,569 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:30,569 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:30,569 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:30,569 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:33,433 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:33,434 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:33,434 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:33,434 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:35,400 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:35,400 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:35,400 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:35,400 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:37,386 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:37,387 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:37,387 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:37,387 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:40,344 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:40,344 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:40,344 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:40,344 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:43,316 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:43,316 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:43,316 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:43,316 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:14:45,266 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:14:45,266 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:14:45,266 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:14:45,266 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:00,202 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:00,202 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:00,202 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:00,203 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:01,621 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:01,622 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:01,622 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:01,622 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:05,530 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:05,530 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:05,530 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:05,530 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:09,278 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:09,279 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:09,279 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:09,279 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:10,148 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:10,148 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:10,148 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:10,148 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:10,782 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:10,782 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:10,782 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:10,782 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:11,456 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:11,456 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:11,456 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:11,456 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:13,913 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:13,913 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:13,913 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:13,913 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:14,591 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:14,591 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:14,591 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:14,591 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:25,452 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:25,453 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:25,453 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:25,453 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:30,401 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:30,402 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:30,402 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:30,402 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:33,821 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:33,821 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:33,821 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:33,821 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:36,245 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:36,246 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:36,246 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:36,246 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:37,627 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:37,627 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:37,628 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:37,628 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:40,082 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:40,082 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:40,082 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:40,082 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:43,641 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:43,642 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:43,642 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:43,642 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:45,285 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:45,285 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:45,285 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:45,285 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:47,859 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:47,859 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:47,860 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:47,860 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:51,031 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:51,031 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:51,031 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:51,031 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:54,227 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:54,228 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:54,228 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:54,228 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:15:59,734 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:15:59,734 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:15:59,734 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:15:59,735 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:00,875 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:00,875 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:00,876 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:00,876 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:07,370 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:07,370 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:07,370 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:07,370 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:18,466 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:18,467 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:18,467 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:18,467 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:21,604 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:21,605 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:21,605 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:21,605 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:24,995 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:24,995 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:24,995 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:24,995 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:46,633 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:46,634 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:46,634 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:46,634 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:47,616 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:47,616 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:47,616 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:47,616 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:55,172 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:55,172 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:55,172 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:55,172 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:16:55,879 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:16:55,880 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:16:55,880 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:16:55,880 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:17:08,671 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:17:08,672 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:17:08,672 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:17:08,672 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:17:31,615 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:17:31,616 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:17:31,616 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:17:31,616 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:17:38,922 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:17:38,922 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:17:38,922 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:17:38,923 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:17:43,889 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:17:43,890 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:17:43,890 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:17:43,890 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:17:59,147 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:17:59,148 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:17:59,148 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:17:59,148 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:00,260 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:00,261 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:00,261 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:00,261 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:15,292 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:15,293 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:15,293 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:15,293 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:18,821 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:18,821 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:18,821 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:18,821 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:26,082 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:26,082 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:26,082 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:26,082 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:31,526 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:31,526 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:31,526 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:31,526 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:32,895 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:32,896 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:32,896 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:32,896 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:34,604 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:34,604 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:34,604 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:34,604 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:37,971 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:37,971 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:37,971 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:37,971 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:40,628 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:40,628 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:40,628 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:40,629 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:43,771 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:43,772 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:43,772 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:43,772 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:52,856 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:52,856 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:52,857 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:52,857 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:55,867 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:55,868 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:55,868 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:55,868 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:18:57,729 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:18:57,729 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:18:57,729 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:18:57,729 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:00,203 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:00,203 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:00,204 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:00,204 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:04,381 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:04,381 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:04,381 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:04,381 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:08,344 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:08,344 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:08,344 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:08,344 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:12,330 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:12,330 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:12,330 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:12,330 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:15,037 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:15,038 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:15,038 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:15,038 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:19,317 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:19,318 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:19,318 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:19,318 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:27,281 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:27,282 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:27,282 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:27,282 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:31,719 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:31,719 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:31,719 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:31,719 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:38,758 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:38,758 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:38,759 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:38,759 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:45,189 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:45,189 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:45,190 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:45,190 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:19:58,522 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:19:58,522 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:19:58,522 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:19:58,522 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:01,515 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:01,515 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:01,515 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:01,515 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:13,093 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:13,093 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:13,093 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:13,093 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:16,219 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:16,220 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:16,220 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:16,220 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:16,848 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:16,849 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:16,849 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:16,849 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:23,841 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:23,841 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:23,842 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:23,842 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:24,500 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:24,500 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:24,500 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:24,500 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:32,845 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:32,845 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:32,845 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:32,845 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:34,036 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:34,037 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:34,037 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:34,037 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:20:57,144 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:20:57,145 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:20:57,145 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:20:57,145 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:02,121 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:02,121 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:02,121 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:02,121 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:08,118 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:08,118 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:08,118 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:08,118 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:09,523 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:09,524 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:09,524 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:09,524 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:10,933 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:10,934 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:10,934 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:10,934 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:12,648 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:12,649 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:12,649 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:12,649 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:29,504 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:29,504 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:29,504 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:29,504 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:34,018 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:34,018 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:34,019 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:34,019 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:38,219 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:38,219 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:38,219 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:38,219 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:43,940 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:43,940 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:43,940 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:43,940 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:45,325 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:45,326 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:45,326 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:45,326 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:49,992 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:49,992 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:49,992 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:49,993 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:54,757 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:54,757 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:54,757 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:54,757 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:21:57,200 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:21:57,200 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:21:57,200 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:21:57,200 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:02,660 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:02,660 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:02,660 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:02,660 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:03,555 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:03,555 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:03,555 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:03,555 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:04,941 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:04,941 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:04,941 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:04,941 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:08,686 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:08,686 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:08,686 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:08,686 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:10,254 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:10,254 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:10,254 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:10,254 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:13,217 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:13,218 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:13,218 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:13,218 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:18,183 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:18,183 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:18,183 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:18,183 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:28,369 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:28,369 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:28,369 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:28,369 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:29,915 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:29,915 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:29,915 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:29,915 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:33,761 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:33,761 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:33,761 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:33,761 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:34,853 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:34,853 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:34,853 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:34,853 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:36,691 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:36,691 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:36,691 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:36,691 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:40,136 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:40,136 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:40,136 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:40,136 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:43,381 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:43,381 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:43,381 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:43,381 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:44,734 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:44,734 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:44,735 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:44,735 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:47,225 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:47,226 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:47,226 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:47,226 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:49,131 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:49,131 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:49,131 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:49,131 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:22:58,337 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:22:58,337 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:22:58,337 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:22:58,337 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:01,012 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:01,013 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:01,013 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:01,013 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:09,475 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:09,475 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:09,475 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:09,475 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:11,196 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:11,196 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:11,196 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:11,196 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:12,375 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:12,376 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:12,376 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:12,376 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:13,568 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:13,568 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:13,568 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:13,568 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:18,556 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:18,556 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:18,557 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:18,557 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:20,512 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:20,512 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:20,512 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:20,513 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:22,989 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:22,989 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:22,989 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:22,989 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:25,666 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:25,667 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:25,667 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:25,667 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:29,178 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:29,178 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:29,178 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:29,178 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:31,570 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:31,570 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:31,570 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:31,570 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:33,748 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:33,748 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:33,748 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:33,748 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:39,511 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:39,511 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:39,511 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:39,511 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:48,773 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:48,774 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:48,774 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:48,774 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:54,989 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:54,989 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:54,989 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:54,989 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:23:59,455 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:23:59,455 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:23:59,455 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:23:59,455 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:03,435 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:03,435 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:03,435 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:03,436 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:05,443 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:05,443 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:05,443 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:05,443 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:06,840 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:06,840 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:06,840 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:06,840 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:09,065 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:09,066 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:09,066 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:09,066 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:10,475 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:10,475 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:10,475 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:10,475 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:13,818 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:13,819 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:13,819 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:13,819 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:25,997 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:25,997 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:25,997 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:25,998 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:27,517 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:27,517 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:27,517 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:27,517 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:30,834 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:30,834 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:30,834 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:30,834 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:34,767 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:34,768 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:34,768 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:34,768 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:42,539 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:42,539 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:42,539 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:42,539 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:47,398 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:47,399 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:47,399 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:47,399 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:50,465 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:50,465 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:50,465 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:50,465 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:53,615 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:53,615 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:53,615 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:53,615 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:54,617 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:54,617 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:54,617 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:54,618 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:56,252 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:56,253 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:56,253 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:56,253 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:24:57,376 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:24:57,377 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:24:57,377 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:24:57,377 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:00,304 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:00,304 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:00,304 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:00,304 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:01,604 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:01,605 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:01,605 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:01,605 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:03,411 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:03,411 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:03,411 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:03,411 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:10,147 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:10,148 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:10,148 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:10,148 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:13,557 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:13,557 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:13,557 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:13,558 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:17,816 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:17,816 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:17,816 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:17,816 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:20,485 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:20,485 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:20,485 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:20,485 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:21,610 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:21,610 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:21,610 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:21,610 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:25:23,764 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:25:23,764 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:25:23,764 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:25:23,764 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:26:50,647 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:26:50,648 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:26:50,648 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:26:50,648 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:26:55,640 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:26:55,640 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:26:55,640 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:26:55,640 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:26:56,333 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:26:56,334 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:26:56,334 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:26:56,334 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:27:47,879 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:27:47,879 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:27:47,879 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:27:47,879 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:27:52,373 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:27:52,374 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:27:52,374 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:27:52,374 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:27:54,638 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:27:54,638 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:27:54,638 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:27:54,638 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:01,424 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:01,425 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:01,425 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:01,425 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:05,542 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:05,542 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:05,542 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:05,542 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:07,695 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:07,696 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:07,696 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:07,696 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:14,999 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:15,000 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:15,000 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:15,000 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:16,669 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:16,669 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:16,669 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:16,669 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:20,620 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:20,621 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:20,621 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:20,621 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:23,077 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:23,078 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:23,078 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:23,078 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:28,028 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:28,029 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:28,029 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:28,029 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:32,866 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:32,867 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:32,867 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:32,867 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:34,472 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:34,472 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:34,472 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:34,472 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:37,353 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:37,354 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:37,354 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:37,354 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:39,005 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:39,005 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:39,005 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:39,005 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:40,698 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:40,698 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:40,698 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:40,698 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:45,395 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:45,395 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:45,395 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:45,395 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:46,538 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:46,539 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:46,539 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:46,539 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:51,386 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:51,386 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:51,386 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:51,386 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:53,808 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:53,808 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:53,808 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:53,808 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:56,556 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:56,556 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:56,556 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:56,556 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:28:58,518 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:28:58,519 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:28:58,519 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:28:58,519 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:04,433 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:04,433 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:04,433 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:04,433 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:05,894 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:05,894 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:05,894 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:05,894 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:09,255 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:09,255 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:09,256 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:09,256 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:13,536 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:13,537 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:13,537 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:13,537 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:23,853 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:23,853 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:23,853 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:23,853 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:29,537 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:29,538 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:29,538 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:29,538 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:33,005 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:33,006 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:33,006 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:33,006 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:34,665 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:34,665 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:34,665 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:34,665 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:29:38,008 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:29:38,008 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:29:38,008 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:29:38,008 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:31,081 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:31,081 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:31,081 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:31,081 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:34,382 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:34,382 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:34,382 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:34,382 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:39,785 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:39,785 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:39,785 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:39,785 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:42,198 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:42,198 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:42,198 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:42,198 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:43,442 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:43,442 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:43,442 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:43,442 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:46,284 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:46,285 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:46,285 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:46,285 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:56,932 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:56,932 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:56,932 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:56,932 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:31:59,916 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:31:59,917 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:31:59,917 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:31:59,917 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:01,795 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:01,795 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:01,795 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:01,796 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:47,720 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:47,721 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:47,722 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:47,722 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:52,368 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:52,369 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:52,369 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:52,369 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:54,332 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:54,333 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:54,333 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:54,333 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:58,683 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:58,683 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:58,683 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:58,683 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:32:59,383 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:32:59,384 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:32:59,384 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:32:59,384 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:08,999 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:08,999 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:08,999 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:08,999 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:16,084 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:16,084 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:16,084 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:16,084 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:21,689 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:21,689 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:21,689 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:21,689 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:24,339 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:24,340 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:24,340 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:24,340 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:36,782 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:36,782 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:36,782 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:36,783 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:41,760 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:41,760 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:41,760 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:41,760 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:46,639 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:46,639 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:46,639 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:46,639 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:48,848 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:48,848 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:48,849 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:48,849 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:33:57,043 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:33:57,043 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:33:57,043 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:33:57,043 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:01,021 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:01,021 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:01,021 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:01,021 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:06,070 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:06,070 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:06,070 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:06,070 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:16,271 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:16,271 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:16,271 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:16,271 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:16,919 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:16,919 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:16,919 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:16,919 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:17,553 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:17,554 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:17,554 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:17,554 - INFO - Table 'query_responses' created successfully.
+2025-04-16 18:34:22,547 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 18:34:22,547 - INFO - Table 'chunks' created successfully.
+2025-04-16 18:34:22,547 - INFO - Table 'embeddings' created successfully.
+2025-04-16 18:34:22,547 - INFO - Table 'query_responses' created successfully.

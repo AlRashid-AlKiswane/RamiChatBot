@@ -1,9 +1,7 @@
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
-from typing import Optional
 import os
 import sys
-import pandas as pd
 
 FILE_LOCATION = f"{os.path.dirname(__file__)}/doc_to_chunks.py"
 
@@ -11,14 +9,13 @@ try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
 
-    from logs import log_error, log_info, log_debug
+    from logs import log_error, log_info
     from config import get_settings, Settings
-    from controllers import load_and_chunk
+    from controllers import load_and_chunk, clear_table
     from schemes import ChunkRequest
     from SQLite_database import create_sqlite_engine, insert_chunk
 except Exception as e:
-    msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"
-    raise ImportError(msg)
+    raise ImportError(f"Import Error in: {FILE_LOCATION}, Error: {e}")
 
 to_chunks_route = APIRouter()
 
@@ -29,17 +26,32 @@ async def to_chunks(
     app_settings: Settings = Depends(get_settings)
 ):
     """
-    Converts a document (or all documents in the folder) into text chunks and stores them in the SQLite database.
+    Converts documents into text chunks and stores them in the SQLite database.
 
-    Optional JSON body:
+    JSON body:
     {
-        "file_path": "<optional_absolute_file_path>"
+        "file_path": "<optional_absolute_file_path>",
+        "do_reset": 0 or 1
     }
+
+    Returns:
+        JSONResponse with inserted chunk count and metadata.
     """
     file_path = body.file_path
+    do_reset = body.do_reset
+
     log_info(f"Starting chunking for: {file_path if file_path else '[ALL DOCUMENTS]'}")
 
     try:
+        # Connect to SQLite
+        conn = create_sqlite_engine()
+
+        # Reset DB if requested (expected as int: 0 or 1)
+        if do_reset == 1:
+            clear_table(conn=conn, table_name="chunks")
+            log_info("Chunks table cleared.")
+
+        # Process files to DataFrame
         df = load_and_chunk(file_path=file_path)
 
         if df.empty:
@@ -47,11 +59,18 @@ async def to_chunks(
             log_error(msg)
             return JSONResponse(content={"status": "error", "message": msg}, status_code=404)
 
-        conn = create_sqlite_engine()
+        # Insert into DB
         insert_chunk(conn=conn, data=df)
+        log_info(f"Inserted {len(df)} chunks into the database.")
 
-        log_info(f"Successfully inserted {len(df)} chunks into the database.")
-        return JSONResponse(content={"status": "success", "inserted_chunks": len(df)}, status_code=200)
+        return JSONResponse(
+            content={
+                "status": "success",
+                "inserted_chunks": len(df),
+                "documents": df.to_dict(orient="records")  # Ensures JSON-serializable output
+            },
+            status_code=200
+        )
 
     except Exception as e:
         log_error(f"Unexpected error in /to_chunks endpoint: {e}")

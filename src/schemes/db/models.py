@@ -4,6 +4,7 @@ from datetime import datetime
 
 class ChunkRequest(BaseModel):
     file_path: Optional[str] = None 
+    do_reset: int = 0
 
 class Chunk(BaseModel):
     chunks: str

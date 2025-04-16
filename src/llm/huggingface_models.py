@@ -18,7 +18,7 @@ except ImportError as ie:
     raise
 
 
-class LlaMAModel(LLMsInterface):
+class HuggingFcaeModel(LLMsInterface):
     """
     Concrete implementation of the LLMsInterface for LLaMA-based models.
     Uses Hugging Face Transformers to load a model and generate responses.
