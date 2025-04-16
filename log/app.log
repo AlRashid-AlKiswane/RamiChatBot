@@ -3537,3 +3537,582 @@
 2025-04-16 20:14:22,442 - INFO - Table 'embeddings' created successfully.
 2025-04-16 20:14:22,442 - INFO - Table 'query_responses' created successfully.
 2025-04-16 20:14:22,457 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:51:11,949 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:51:11,950 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:51:11,950 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:51:11,950 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:51:33,387 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:51:33,388 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:51:33,388 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:51:33,388 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:51:57,719 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:51:57,719 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:51:57,719 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:51:57,719 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:51:59,977 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:51:59,977 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:51:59,977 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:51:59,977 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:52:50,469 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:52:50,470 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:52:50,470 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:52:50,470 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:53:14,071 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:53:14,072 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:53:14,072 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:53:14,072 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:53:15,268 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:53:15,268 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 20:53:15,268 - ERROR - [LLM INIT ERROR] 'Settings' object has no attribute 'HUGGINGFACE_TOKIENS'
+2025-04-16 20:53:15,271 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:53:15,616 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 406
+2025-04-16 20:53:16,696 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:53:16,696 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:53:16,696 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:53:16,696 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:53:17,871 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:53:17,872 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 20:53:17,872 - ERROR - [LLM INIT ERROR] 'Settings' object has no attribute 'HUGGINGFACE_TOKIENS'
+2025-04-16 20:53:17,875 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:53:18,179 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 406
+2025-04-16 20:55:06,952 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:55:06,952 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:55:06,952 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:55:06,952 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:55:08,248 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:55:08,248 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 20:55:08,250 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 20:55:08,589 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 20:55:08,592 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 20:55:08,768 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 20:55:08,770 - DEBUG - Attempting to acquire lock 133781870342704 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-16 20:55:08,770 - DEBUG - Lock 133781870342704 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-16 20:55:08,947 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 50500
+2025-04-16 20:55:09,006 - DEBUG - Attempting to release lock 133781870342704 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-16 20:55:09,006 - DEBUG - Lock 133781870342704 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-16 20:55:09,247 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2025-04-16 20:55:09,249 - DEBUG - Attempting to acquire lock 133778059063888 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-16 20:55:09,249 - DEBUG - Lock 133778059063888 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-16 20:55:09,453 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-1B/resolve/main/tokenizer.json HTTP/1.1" 200 9085657
+2025-04-16 20:55:10,690 - DEBUG - Attempting to release lock 133778059063888 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-16 20:55:10,690 - DEBUG - Lock 133778059063888 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-16 20:55:10,885 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer.model HTTP/1.1" 404 0
+2025-04-16 20:55:11,090 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2025-04-16 20:55:11,294 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/special_tokens_map.json HTTP/1.1" 200 0
+2025-04-16 20:55:11,295 - DEBUG - Attempting to acquire lock 133778059063888 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-16 20:55:11,295 - DEBUG - Lock 133778059063888 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-16 20:55:11,500 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-1B/resolve/main/special_tokens_map.json HTTP/1.1" 200 301
+2025-04-16 20:55:11,503 - DEBUG - Attempting to release lock 133778059063888 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-16 20:55:11,503 - DEBUG - Lock 133778059063888 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-16 20:55:11,704 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2025-04-16 20:55:12,319 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 20:55:12,321 - DEBUG - Attempting to acquire lock 133778044787312 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/83b8b2aebb1a987b3802dae75fb9470234a3aaaf.lock
+2025-04-16 20:55:12,321 - DEBUG - Lock 133778044787312 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/83b8b2aebb1a987b3802dae75fb9470234a3aaaf.lock
+2025-04-16 20:55:12,523 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 843
+2025-04-16 20:55:12,525 - DEBUG - Attempting to release lock 133778044787312 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/83b8b2aebb1a987b3802dae75fb9470234a3aaaf.lock
+2025-04-16 20:55:12,525 - DEBUG - Lock 133778044787312 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/83b8b2aebb1a987b3802dae75fb9470234a3aaaf.lock
+2025-04-16 20:55:13,493 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Using a `device_map` or `tp_plan` requires `accelerate`. You can install it with `pip install accelerate`
+2025-04-16 20:55:13,496 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:55:13,799 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 491
+2025-04-16 20:55:13,800 - ERROR - [LLM INIT ERROR] Using a `device_map` or `tp_plan` requires `accelerate`. You can install it with `pip install accelerate`
+2025-04-16 20:55:13,801 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:55:14,264 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 455
+2025-04-16 20:55:15,571 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:55:15,571 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:55:15,571 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:55:15,571 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:55:16,759 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:55:16,759 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 20:55:16,760 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 20:55:17,091 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 20:55:17,094 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 20:55:17,336 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 20:55:17,848 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 20:55:18,515 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Using a `device_map` or `tp_plan` requires `accelerate`. You can install it with `pip install accelerate`
+2025-04-16 20:55:18,518 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:55:18,821 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 491
+2025-04-16 20:55:18,822 - ERROR - [LLM INIT ERROR] Using a `device_map` or `tp_plan` requires `accelerate`. You can install it with `pip install accelerate`
+2025-04-16 20:55:18,823 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 20:55:19,100 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 455
+2025-04-16 20:55:55,665 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 20:55:55,666 - INFO - Table 'chunks' created successfully.
+2025-04-16 20:55:55,666 - INFO - Table 'embeddings' created successfully.
+2025-04-16 20:55:55,666 - INFO - Table 'query_responses' created successfully.
+2025-04-16 20:55:57,103 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 20:55:57,103 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 20:55:57,104 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 20:55:57,472 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 20:55:57,475 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 20:55:57,670 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 20:55:58,147 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 20:55:59,117 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/model.safetensors HTTP/1.1" 302 0
+2025-04-16 20:55:59,119 - DEBUG - Attempting to acquire lock 129577442922848 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/68a2e4be76fa709455a60272fba8e512c02d81c46e6c671cc9449e374fd6809a.lock
+2025-04-16 20:55:59,119 - DEBUG - Lock 129577442922848 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/68a2e4be76fa709455a60272fba8e512c02d81c46e6c671cc9449e374fd6809a.lock
+2025-04-16 20:55:59,122 - DEBUG - Starting new HTTPS connection (1): cdn-lfs-us-1.hf.co:443
+2025-04-16 20:55:59,398 - DEBUG - https://cdn-lfs-us-1.hf.co:443 "GET /repos/46/00/46001ae0478831903029d3dfca642974a652dfe8c5a4a525a48a3c700a7a99dd/68a2e4be76fa709455a60272fba8e512c02d81c46e6c671cc9449e374fd6809a?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1744829758&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0NDgyOTc1OH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzQ2LzAwLzQ2MDAxYWUwNDc4ODMxOTAzMDI5ZDNkZmNhNjQyOTc0YTY1MmRmZThjNWE0YTUyNWE0OGEzYzcwMGE3YTk5ZGQvNjhhMmU0YmU3NmZhNzA5NDU1YTYwMjcyZmJhOGU1MTJjMDJkODFjNDZlNmM2NzFjYzk0NDllMzc0ZmQ2ODA5YT9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=k5EqbD3peU2HywnApyzIQ9XsmV8fJOLYmqdBwnii-LZ9Ude3p80KLHf0W7I9pIEINUWUu0GxNK2~efUyDT7qYrkCPsoYQrvosVjf~HxF3IALP6pAzb8qqeKPo3cQaxTozU1J0b2OYuR-ODbBiKUrhHJmcTL4KFMrVcFu51PtTmscKUk9DRTUv7CH8r8kPJr-33GdwloHV6hdq5Tgwa6qde1KV~gNaZlmw91QQsheKvnPhzFwCarfUv3TSInCpan2KRIN8AQUtCEsXpFyfp2Cjuvvbxb~ovrC4MVJAhZcxpmD4slawm8LU4FHnVfQ85b9mv8UMcdXk100qSxl44MwKg__&Key-Pair-Id=K24J24Z295AEI9 HTTP/1.1" 200 2471645608
+2025-04-16 20:59:51,806 - DEBUG - Attempting to release lock 129577442922848 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/68a2e4be76fa709455a60272fba8e512c02d81c46e6c671cc9449e374fd6809a.lock
+2025-04-16 20:59:51,806 - DEBUG - Lock 129577442922848 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/68a2e4be76fa709455a60272fba8e512c02d81c46e6c671cc9449e374fd6809a.lock
+2025-04-16 20:59:53,003 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 20:59:53,006 - DEBUG - Attempting to acquire lock 129577444572560 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/2d73a6863086ff9d491c28e49df9fb697cd92c2b.lock
+2025-04-16 20:59:53,007 - DEBUG - Lock 129577444572560 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/2d73a6863086ff9d491c28e49df9fb697cd92c2b.lock
+2025-04-16 20:59:53,412 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 185
+2025-04-16 20:59:53,415 - DEBUG - Attempting to release lock 129577444572560 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/2d73a6863086ff9d491c28e49df9fb697cd92c2b.lock
+2025-04-16 20:59:53,416 - DEBUG - Lock 129577444572560 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-1B/2d73a6863086ff9d491c28e49df9fb697cd92c2b.lock
+2025-04-16 20:59:53,426 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 20:59:53,426 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:01:06,264 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:01:06,265 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:01:06,300 - ERROR - Error generating response. Prompt: You are RamyBot, a helpful and professional assistant repres... Error: Input length of input_ids is 173, but `max_length` is set to 128. This can lead to unexpected behavior. You should consider increasing `max_length` or, better yet, setting `max_new_tokens`.
+2025-04-16 21:01:06,305 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:01:06,837 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 628
+2025-04-16 21:03:03,922 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:03:03,923 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:03:03,923 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:03:03,923 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:03:05,882 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:03:05,882 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:03:05,884 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:03:06,225 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:03:06,230 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:03:06,409 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:06,926 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:03:09,511 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:09,528 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:03:09,529 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:03:10,629 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:03:10,630 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:03:10,630 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:03:10,630 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:03:12,576 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:03:12,576 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:03:12,577 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:03:12,967 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:03:12,971 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:03:13,196 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:13,811 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:03:16,064 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:16,081 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:03:16,081 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:03:20,245 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:03:20,245 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:03:20,245 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:03:20,245 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:03:22,198 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:03:22,198 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:03:22,200 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:03:22,721 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:03:22,727 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:03:22,925 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:23,457 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:03:25,895 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:25,911 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokenstop_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:03:25,911 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:03:26,876 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:03:26,876 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:03:26,876 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:03:26,876 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:03:28,620 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:03:28,620 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:03:28,621 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:03:29,479 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:03:29,484 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:03:29,786 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:30,273 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:03:32,448 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:03:32,458 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 128, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:03:32,458 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:04:42,671 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:04:42,671 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:04:42,671 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:04:42,671 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:04:44,511 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:04:44,511 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:04:44,512 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:04:44,857 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:04:44,861 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:04:45,039 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:04:45,652 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:04:47,717 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:04:47,734 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 128, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:04:47,734 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:04:48,662 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:04:48,662 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:04:48,662 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:04:48,662 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:04:50,351 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:04:50,352 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:04:50,353 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:04:50,654 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:04:50,658 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:04:50,887 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:04:51,399 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:04:53,550 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:04:53,568 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 128, 'top_p': 0.95, 'top_k': 0.5, 'do_sample': True}
+2025-04-16 21:04:53,569 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:04:58,173 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:04:58,173 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:04:58,202 - ERROR - Error generating response. Prompt: You are RamyBot, a helpful and professional assistant repres... Error: `top_k` has to be a strictly positive integer, but is 0.5
+2025-04-16 21:04:58,207 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:04:58,510 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 496
+2025-04-16 21:07:27,164 - INFO - [LLM CONFIG] Saving config for model: meta-llama/Llama-3.2-1B
+2025-04-16 21:07:35,203 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:07:35,203 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:07:35,205 - ERROR - Error generating response. Prompt: You are RamyBot, a helpful and professional assistant repres... Error: `top_k` has to be a strictly positive integer, but is 0.5
+2025-04-16 21:07:35,205 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:07:35,572 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 496
+2025-04-16 21:08:09,323 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:08:09,324 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:08:09,324 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:08:09,324 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:08:11,091 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:08:11,091 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:08:11,093 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:08:11,441 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:08:11,447 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:08:11,623 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:08:12,105 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:08:14,153 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:08:14,167 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 128, 'top_p': 0.95, 'top_k': 50.0, 'do_sample': True}
+2025-04-16 21:08:14,168 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:08:27,718 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:08:27,718 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:08:27,743 - ERROR - Error generating response. Prompt: You are RamyBot, a helpful and professional assistant repres... Error: `top_k` has to be a strictly positive integer, but is 50.0
+2025-04-16 21:08:27,747 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:08:28,018 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 497
+2025-04-16 21:09:35,068 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:09:35,068 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:09:35,068 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:09:35,068 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:09:36,680 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:09:36,680 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:09:36,682 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:09:37,073 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:09:37,079 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:09:37,406 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:09:38,019 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:09:40,274 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:09:40,288 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 128, 'top_p': 0.95, 'top_k': 50, 'do_sample': True}
+2025-04-16 21:09:40,289 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:09:50,333 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:09:50,333 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:10:05,369 - DEBUG - Generated response: You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, hel...
+2025-04-16 21:10:45,909 - INFO - [LLM CONFIG] Saving config for model: meta-llama/Llama-3.2-1B
+2025-04-16 21:11:06,582 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:11:06,582 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:11:06,582 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:11:06,582 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:11:08,236 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:11:08,237 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:11:08,238 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:11:08,574 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:11:08,579 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:11:08,849 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:11:09,361 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:11:11,513 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:11:11,528 - INFO - Model meta-llama/Llama-3.2-1B loaded successfully with generation config: {'max_length': 128, 'temperature': 0.7, 'max_new_tokens': 512, 'top_p': 0.95, 'top_k': 50, 'do_sample': True}
+2025-04-16 21:11:11,528 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:11:33,955 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:11:33,956 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:11:39,351 - DEBUG - Generated response: You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, hel...
+2025-04-16 21:12:12,240 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Hi, I'm AlRashid.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:12:12,241 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:12:17,565 - DEBUG - Generated response: You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, hel...
+2025-04-16 21:14:39,037 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:14:39,038 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:14:39,038 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:14:39,038 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:14:40,763 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:14:40,763 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:14:40,763 - ERROR - [LLM INIT ERROR] HuggingFcaeModel.init_llm() got an unexpected keyword argument 'max_length'
+2025-04-16 21:14:40,766 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:14:41,024 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 425
+2025-04-16 21:15:30,280 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:15:30,280 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:15:30,280 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:15:30,280 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:15:31,533 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:15:31,534 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:15:31,535 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:15:31,887 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:15:31,895 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:15:32,082 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:15:32,634 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:15:34,990 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:15:35,008 - INFO - Model meta-llama/Llama-3.2-1B loaded with config: {'max_new_tokens': 512, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 50, 'do_sample': True, 'pad_token_id': 128001}
+2025-04-16 21:15:35,008 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:15:39,024 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:15:39,024 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:15:39,024 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:15:39,024 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:15:40,887 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:15:40,887 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:15:40,889 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:15:41,222 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:15:41,228 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:15:41,441 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:15:42,055 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:15:44,411 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:15:44,435 - INFO - Model meta-llama/Llama-3.2-1B loaded with config: {'max_new_tokens': 512, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 50, 'do_sample': True, 'pad_token_id': 128001}
+2025-04-16 21:15:44,435 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:15:59,194 - INFO - [LLM CONFIG] Saving config for model: string
+2025-04-16 21:16:20,256 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Hi, I'm AlRashid.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:16:20,284 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:17:46,771 - DEBUG - Generated response: You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about someth...
+2025-04-16 21:19:21,406 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:19:21,406 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:19:21,406 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:19:21,406 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:19:25,648 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:19:25,651 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:19:25,651 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:19:25,651 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:19:29,460 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:19:29,460 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:19:29,460 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:19:29,460 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:19:31,276 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/string_config.yaml
+2025-04-16 21:19:31,276 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:19:31,277 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:19:31,843 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:19:31,847 - INFO - Initializing model: string
+2025-04-16 21:19:32,047 - DEBUG - https://huggingface.co:443 "HEAD /string/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-04-16 21:19:32,050 - ERROR - Failed to load model string. Error: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:32,057 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:32,340 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 767
+2025-04-16 21:19:32,341 - ERROR - [LLM INIT ERROR] Model initialization failed: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:32,342 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:32,598 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 777
+2025-04-16 21:19:33,290 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:19:33,290 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:19:33,290 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:19:33,290 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:19:34,540 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/string_config.yaml
+2025-04-16 21:19:34,541 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:19:34,543 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:19:35,086 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:19:35,090 - INFO - Initializing model: string
+2025-04-16 21:19:35,260 - DEBUG - https://huggingface.co:443 "HEAD /string/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-04-16 21:19:35,261 - ERROR - Failed to load model string. Error: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:35,271 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:35,518 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 767
+2025-04-16 21:19:35,520 - ERROR - [LLM INIT ERROR] Model initialization failed: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:35,521 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:35,774 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 777
+2025-04-16 21:19:37,030 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:19:37,030 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:19:37,030 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:19:37,030 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:19:38,270 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/string_config.yaml
+2025-04-16 21:19:38,270 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:19:38,272 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:19:38,648 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:19:38,651 - INFO - Initializing model: string
+2025-04-16 21:19:38,908 - DEBUG - https://huggingface.co:443 "HEAD /string/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-04-16 21:19:38,909 - ERROR - Failed to load model string. Error: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:38,916 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:39,185 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 767
+2025-04-16 21:19:39,186 - ERROR - [LLM INIT ERROR] Model initialization failed: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:19:39,188 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:19:39,486 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 777
+2025-04-16 21:20:27,439 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:20:27,439 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:20:27,439 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:20:27,439 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:20:28,607 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/string_config.yaml
+2025-04-16 21:20:28,607 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:20:28,608 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:20:28,933 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:20:28,936 - INFO - Initializing model: string
+2025-04-16 21:20:29,188 - DEBUG - https://huggingface.co:443 "HEAD /string/resolve/main/tokenizer_config.json HTTP/1.1" 404 0
+2025-04-16 21:20:29,189 - ERROR - Failed to load model string. Error: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:20:29,199 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:20:29,597 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 767
+2025-04-16 21:20:29,598 - ERROR - [LLM INIT ERROR] Model initialization failed: string is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-16 21:20:29,600 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-16 21:20:29,891 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 777
+2025-04-16 21:23:05,800 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-16 21:23:05,800 - INFO - Table 'chunks' created successfully.
+2025-04-16 21:23:05,800 - INFO - Table 'embeddings' created successfully.
+2025-04-16 21:23:05,800 - INFO - Table 'query_responses' created successfully.
+2025-04-16 21:23:06,952 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-16 21:23:06,952 - INFO - [LLM] Loaded model config successfully.
+2025-04-16 21:23:06,953 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-16 21:23:07,303 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-16 21:23:07,306 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-16 21:23:07,589 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-16 21:23:08,101 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-16 21:23:10,253 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-16 21:23:10,276 - INFO - Model meta-llama/Llama-3.2-1B loaded with config: {'max_new_tokens': 512, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 50, 'do_sample': True, 'pad_token_id': 128001}
+2025-04-16 21:23:10,276 - INFO - [LLM] Model initialized successfully.
+2025-04-16 21:23:25,980 - DEBUG - [PROMPT] Final prompt:
+You are RamyBot, a helpful and professional assistant representing Rami Issa, a major retail manager. Your job is to answer WhatsApp Business messages on Rami’s behalf. Always respond in a polite, helpful, and clear tone, as if you are Rami's trusted digital assistant.
+
+If the user asks about something related to the business, products, schedules, or services, use the relevant retrieved context (RAG) to answer accurately.
+
+If you don't have enough context, politely say you will follow up with Rami or ask for more clarification.
+
+Always personalize responses, use the sender’s name if known, and keep the style friendly but professional.
+
+=== RAG CONTEXT START ===
+...
+=== RAG CONTEXT END ===
+
+User message:
+Write about your self.
+
+Your task: Based on the above, write a helpful and professional response message.
+2025-04-16 21:23:26,006 - DEBUG - Generating response for prompt: You are RamyBot, a helpful and professional assistant repres...
+2025-04-16 21:23:31,396 - DEBUG - Generated response: ...
+2025-04-17 02:17:20,607 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-17 02:17:20,608 - INFO - Table 'chunks' created successfully.
+2025-04-17 02:17:20,608 - INFO - Table 'embeddings' created successfully.
+2025-04-17 02:17:20,608 - INFO - Table 'query_responses' created successfully.
+2025-04-17 02:17:22,902 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-17 02:17:22,902 - INFO - [LLM] Loaded model config successfully.
+2025-04-17 02:17:22,904 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-17 02:17:23,252 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 823
+2025-04-17 02:17:23,254 - INFO - Initializing model: meta-llama/Llama-3.2-1B
+2025-04-17 02:17:23,440 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-17 02:17:24,235 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-17 02:17:27,211 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-1B/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-04-17 02:17:27,261 - WARNING - Some parameters are on the meta device because they were offloaded to the cpu and disk.
+2025-04-17 02:17:27,265 - INFO - Model meta-llama/Llama-3.2-1B loaded with config: {'max_new_tokens': 512, 'temperature': 0.7, 'top_p': 0.95, 'top_k': 50, 'do_sample': True, 'pad_token_id': 128001}
+2025-04-17 02:17:27,265 - INFO - [LLM] Model initialized successfully.

@@ -1,7 +1,7 @@
 import os
 import sys
-import torch # type: ignore
-from typing import Dict, Any, Optional, List
+import torch
+from typing import Dict, Any
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from huggingface_hub import login
@@ -12,33 +12,37 @@ try:
 
     from logs import log_error, log_info, log_debug
     from config import get_settings, Settings
-    from LLMsINTERFACE import LLMsInterface
+    from .LLMsINTERFACE import LLMsInterface
 except ImportError as ie:
-    print(f"ImportError in {__file__}: {ie}")
-    raise
-
+    raise ImportError(f"ImportError in {__file__}: {ie}")
 
 class HuggingFcaeModel(LLMsInterface):
     """
-    Concrete implementation of the LLMsInterface for LLaMA-based models.
-    Uses Hugging Face Transformers to load a model and generate responses.
+    Implementation of LLMsInterface for Hugging Face models (e.g., LLaMA).
     """
+
+    def __init__(self):
+        self.model = None
+        self.tokenizer = None
+        self.generate_kwargs: Dict[str, Any] = {}
 
     def init_llm(
         self,
         model_name: str,
-        max_length: int,
+        max_new_tokens: int = 128,
         temperature: float = 0.7,
         top_p: float = 0.95,
-        top_k: float = 0.5,
-        do_sample: bool = True
+        top_k: int = 50,
+        do_sample: bool = True,
+        pad_token_id: int = None
     ) -> None:
         """
-        Initialize the model and tokenizer with generation parameters.
+        Initialize tokenizer and model, with validated generation parameters.
         """
-        login(get_settings().HUGGINGFACE_TOKIENS)
         try:
+            login(get_settings().HUGGINGFACE_TOKIENS)
             log_info(f"Initializing model: {model_name}")
+
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name,
@@ -46,37 +50,52 @@ class HuggingFcaeModel(LLMsInterface):
                 device_map="auto"
             )
 
+            if top_k <= 0:
+                raise ValueError("top_k must be a strictly positive integer.")
+
             self.generate_kwargs = {
-                "max_length": max_length,
+                "max_new_tokens": max_new_tokens,
                 "temperature": temperature,
                 "top_p": top_p,
                 "top_k": top_k,
                 "do_sample": do_sample
             }
 
-            log_info(f"Model {model_name} loaded successfully with generation config: {self.generate_kwargs}")
+            # Optional: pad_token_id setup
+            if pad_token_id is not None:
+                self.generate_kwargs["pad_token_id"] = pad_token_id
+            else:
+                self.generate_kwargs["pad_token_id"] = self.tokenizer.eos_token_id
+
+            log_info(f"Model {model_name} loaded with config: {self.generate_kwargs}")
 
         except Exception as e:
             log_error(f"Failed to load model {model_name}. Error: {e}")
-            raise
+            raise RuntimeError(f"Model initialization failed: {e}")
 
     def generate_response(self, prompt: str) -> str:
         """
-        Generate a response from the model based on a prompt.
+        Generate text response from the model.
         """
+        if not self.model or not self.tokenizer:
+            log_error("Model not initialized. Call `init_llm` first.")
+            return "Error: Model is not initialized."
+
         try:
             log_debug(f"Generating response for prompt: {prompt[:60]}...")
 
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
 
             with torch.no_grad():
-                output = self.model.generate(**inputs, **self.generate_kwargs)
+                outputs = self.model.generate(**inputs, **self.generate_kwargs)
 
-            response = self.tokenizer.decode(output[0], skip_special_tokens=True)
-            log_debug(f"Generated response: {response[:200]}...")
+            full_output = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+            response = full_output[len(prompt):].strip()
+
+            log_debug(f"Generated response: {response[:300]}...")
 
             return response
 
         except Exception as e:
             log_error(f"Error generating response. Prompt: {prompt[:60]}... Error: {e}")
-            return "Error: Unable to generate response at this time."
+            return "Error: Unable to generate response due to internal processing error."

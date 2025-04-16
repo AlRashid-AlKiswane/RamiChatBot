@@ -1,1 +1,1 @@
-from huggingface_models import HuggingFcaeModel
+from .huggingface_models import HuggingFcaeModel

@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     DOC_LOCATION_SAVE: str
     CONFIG_DIR: str
     DATABASE_URL: str
-
+    HUGGINGFACE_TOKIENS: str
     # ✅ File Processing Settings
     FILE_ALLOWED_TYPES: list
 
