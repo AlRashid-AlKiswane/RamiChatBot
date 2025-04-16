@@ -10,10 +10,8 @@ class Settings(BaseSettings):
     # ✅ Application Settings
     APP_NAME: str
     APP_VERSION: str
-    OPENAI_API_KEY: Optional[str] = None
-    HUGGINGFACE_TOKIENS: Optional[str] = None
     DOC_LOCATION_SAVE: str
-
+    CONFIG_DIR: str
     DATABASE_URL: str
 
     # ✅ File Processing Settings
