@@ -1,7 +1,7 @@
 import os
 import json
 from typing import List, Optional
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 # Define root_dir relative to this file
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -12,13 +12,16 @@ class Settings(BaseSettings):
     APP_VERSION: str
     OPENAI_API_KEY: Optional[str] = None
     HUGGINGFACE_TOKIENS: Optional[str] = None
+    DOC_LOCATION_SAVE: str
 
     DATABASE_URL: str
 
     # ✅ File Processing Settings
-    FILE_ALLOWED_TYPES: List[str]
+    FILE_ALLOWED_TYPES: list
+
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
+    CHUNKS_OVERLAP: int
 
     # ✅ Logging Settings
     LOG_LEVEL: str

@@ -4,9 +4,9 @@ root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.append(root_dir)
 
 
-from logs.logger import log_error, log_info, log_debug
+from logs import log_error, log_info, log_debug
 from config.setting import get_settings, Settings
-from .alerts import AlertManager
+from logs import AlertManager
 
 class SystemMonitor:
     def __init__(self):
