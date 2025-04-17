@@ -8,7 +8,7 @@ try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
 
-    from logs import log_error, log_info
+    from logs import log_error, log_info, log_debug
     from config import Settings, get_settings
     from enums import YMLFileEnums
 except Exception as e:
@@ -34,7 +34,7 @@ def load_last_yaml(file_path: Optional[str] = None) -> Optional[Dict[str, Any]]:
             yaml_files = [f for f in os.listdir(DIRECTORY) if f.endswith((".yaml", ".yml"))]
 
             if not yaml_files:
-                log_error(YMLFileEnums.NO_YAML_FILES_FOUND.value)
+                log_debug(YMLFileEnums.NO_YAML_FILES_FOUND.value)
                 return None
 
             # Sort files by last modified time
@@ -47,6 +47,7 @@ def load_last_yaml(file_path: Optional[str] = None) -> Optional[Dict[str, Any]]:
 
         log_info(f"{YMLFileEnums.YAML_LOAD_SUCCESS.value}: {target_file}")
         return data
+    
 
     except Exception as e:
         log_error(f"{YMLFileEnums.YAML_LOAD_ERROR.value}: {e}")
