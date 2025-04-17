@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 import os
 import sys
@@ -27,20 +27,24 @@ os.makedirs(CONFIG_DIR, exist_ok=True)
 llms_config_route = APIRouter()
 
 @llms_config_route.post("/llms_config")
-async def configure_llm(config: LLMResponse) -> JSONResponse:
+async def configure_llm(config: LLMResponse,
+                        request: Request) -> JSONResponse:
     """
-    Saves model configuration to a YAML file using model name as the filename.
+    Saves model configuration to a YAML file using model name as the filename,
+    and initializes the model on-the-fly if not already loaded.
     """
     try:
         log_info(f"[LLM CONFIG] Saving config for model: {config.model_name}")
 
-        # Clean file name (e.g., meta-llama/Llama-3.2-1B → meta_llama_Llama_3_2_1B_config.yaml)
         safe_model_name = re.sub(r'[^a-zA-Z0-9]', '_', config.model_name)
         config_path = os.path.join(CONFIG_DIR, f"{safe_model_name}_config.yaml")
 
-        # Write config to YAML
+        # Write config
         with open(config_path, "w") as f:
             yaml.safe_dump(config.dict(), f, default_flow_style=False)
+        
+        # Set config to app instance directly
+        request.app.LLM_CONFIG = config.dict()
 
         return JSONResponse(
             content={
@@ -63,3 +67,4 @@ async def configure_llm(config: LLMResponse) -> JSONResponse:
             },
             status_code=500
         )
+

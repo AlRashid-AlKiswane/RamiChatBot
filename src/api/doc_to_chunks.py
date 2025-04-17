@@ -13,7 +13,7 @@ try:
     from config import get_settings, Settings
     from controllers import load_and_chunk, clear_table
     from schemes import ChunkRequest
-    from SQLite_database import create_sqlite_engine, insert_chunk
+    from Database import create_sqlite_engine, insert_chunk
 except Exception as e:
     raise ImportError(f"Import Error in: {FILE_LOCATION}, Error: {e}")
 
