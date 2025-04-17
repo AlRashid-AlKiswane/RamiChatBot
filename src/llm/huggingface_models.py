@@ -33,8 +33,10 @@ class HuggingFcaeModel(LLMsInterface):
         temperature: float = 0.7,
         top_p: float = 0.95,
         top_k: int = 50,
+        trust_remote_code: bool = False,
         do_sample: bool = True,
         pad_token_id: int = None
+
     ) -> None:
         """
         Initialize tokenizer and model, with validated generation parameters.
@@ -47,7 +49,9 @@ class HuggingFcaeModel(LLMsInterface):
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 torch_dtype=torch.float16,
-                device_map="auto"
+                device_map="auto",
+                trust_remote_code = trust_remote_code,
+
             )
 
             if top_k <= 0:
@@ -58,7 +62,7 @@ class HuggingFcaeModel(LLMsInterface):
                 "temperature": temperature,
                 "top_p": top_p,
                 "top_k": top_k,
-                "do_sample": do_sample
+                "do_sample": do_sample,
             }
 
             # Optional: pad_token_id setup

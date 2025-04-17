@@ -15,7 +15,8 @@ class LLMsInterface(ABC):
         temperature: float = 0.7,
         top_p: float = 0.95,
         top_k: float = 0.5,
-        do_sample: bool = True
+        do_sample: bool = True,
+        trust_remote_code: bool = False
     ) -> None:
         """
         Initialize the LLM with specific parameters.
@@ -27,6 +28,7 @@ class LLMsInterface(ABC):
             top_p (float): Nucleus sampling probability threshold.
             top_k (float): Top-K sampling cutoff.
             do_sample (bool): Whether to sample randomly or use greedy decoding.
+            trust_remote_code (bool): Whether to trust remote code execution.
         """
         pass
 
