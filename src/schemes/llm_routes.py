@@ -8,3 +8,4 @@ class LLMResponse(BaseModel):
     top_p: Optional[float] = 0.95
     top_k: Optional[int] = 50
     do_sample: Optional[bool] = True
+    trust_remote_code: Optional[bool] = False
