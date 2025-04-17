@@ -1,5 +1,6 @@
 import logging
 import os, sys
+import traceback
 
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(root_dir)
@@ -31,14 +32,18 @@ def log_debug(message):
     logger.debug(message)
     
 
-def log_error(message):
-    """Logs errors and sends an alert."""
-    logger.error(message)
+def log_error(message: str):
+    """Logs errors with traceback and sends an alert."""
+    # Capture and append the current traceback
+    tb = traceback.format_exc()
+    full_message = f"{message}\nTraceback:\n{tb}" if tb.strip() != 'NoneType: None' else message
 
-    from src.logs.alerts import AlertManager  # Import inside function to prevent circular import
-    
+    logger.error(full_message)
+
+    # Import inside to avoid circular imports
+    from src.logs.alerts import AlertManager
     alert = AlertManager()
-    alert.send_telegram_alert("Error Alert", message)
+    alert.send_telegram_alert("Error Alert", full_message)
 
 # Example usage
 if __name__ == "__main__":
