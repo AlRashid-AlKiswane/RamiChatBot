@@ -17,40 +17,38 @@ except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
 
 
-RETRIEVAL_CONTEXT = "..."  # You can hook this into your vector store / RAG retrieval
+RETRIEVAL_CONTEXT = "Time work  5 Day in week s, m , t, w, "  # You can hook this into your vector store / RAG retrieval
 
 generate_routes = APIRouter()
 
 
 @generate_routes.post("/chat", response_class=JSONResponse)
-async def generate_response(request: Request, body: Generate):
+async def generate_response(request: Request, body: Generate, prompt_template_name: str = "llama"):
     """
     Generate response from LLM based on user query and retrieved context.
     """
     try:
-        if request.app.LLM_CONFIG["model_name"] == LLMNames.LLAMA.value:
+        query = body.query
 
-            query = body.query
+        if prompt_template_name.lower() == "llama":
             prompt_template = PromptRamiLlaMA()
             final_prompt = prompt_template.prompt.format(
                 retrieved_context=RETRIEVAL_CONTEXT,
                 user_message=query
             )
-
-            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}")
+            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}, Note: Llama model is used")
             response_text = request.app.model.generate_response(prompt=final_prompt)
-        
-        if  request.app.LLM_CONFIG["model_name"] == LLMNames.JAIS.value:
-            query = body.query
+
+        elif prompt_template_name.lower() == "jais":
             prompt_template = PromptRamiJAIS()
             final_prompt = prompt_template.prompt.format(
                 retrieved_context=RETRIEVAL_CONTEXT,
                 user_message=query
             )
-
-            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}")
+            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}, Note: Jais model is used")
             response_text = request.app.model.generate_response(prompt=final_prompt)
-        else:  
+
+        else:
             raise ValueError("Unsupported model name")
 
         insert_query_response(
@@ -77,3 +75,5 @@ async def generate_response(request: Request, body: Generate):
                 "message": "Failed to generate response"
             }
         )
+    finally:
+        log_info(f"[LLM GENERATION] Finished processing request.")
