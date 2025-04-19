@@ -15,6 +15,8 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     HUGGINGFACE_TOKIENS: str
     DEFAULT_SYSTEM_PROMPT: str
+    ENABLE_MEMORY: bool
+    
     # ✅ File Processing Settings
     FILE_ALLOWED_TYPES: list
 
