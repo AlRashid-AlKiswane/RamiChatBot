@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     CONFIG_DIR: str
     DATABASE_URL: str
     HUGGINGFACE_TOKIENS: str
+    DEFAULT_SYSTEM_PROMPT: str
     # ✅ File Processing Settings
     FILE_ALLOWED_TYPES: list
 
