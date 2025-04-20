@@ -42,7 +42,12 @@ class HuggingFcaeModel(LLMsInterface):
         Initialize tokenizer and model, with validated generation parameters.
         """
         try:
-            login(get_settings().HUGGINGFACE_TOKIENS)
+            try:
+                
+                login(get_settings().HUGGINGFACE_TOKIENS)
+            except Exception as e:
+                log_error(f"Failed to login to Hugging Face: {e}")
+                raise RuntimeError(f"Hugging Face login failed: {e}")
             log_info(f"Initializing model: {model_name}")
 
             self.tokenizer = AutoTokenizer.from_pretrained(model_name)

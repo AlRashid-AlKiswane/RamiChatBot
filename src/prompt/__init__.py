@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-from .prompt import PromptBuilder
+from . import PromptBuilder

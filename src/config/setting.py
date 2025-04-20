@@ -10,23 +10,24 @@ class Settings(BaseSettings):
     # ✅ Application Settings
     APP_NAME: str
     APP_VERSION: str
+
     DOC_LOCATION_SAVE: str
     CONFIG_DIR: str
     DATABASE_URL: str
+
+
     HUGGINGFACE_TOKIENS: str
     DEFAULT_SYSTEM_PROMPT: str
     ENABLE_MEMORY: bool
     
     # ✅ File Processing Settings
     FILE_ALLOWED_TYPES: list
-
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
     CHUNKS_OVERLAP: int
 
     # ✅ Logging Settings
     LOG_LEVEL: str
-    LOG_FILE_PATH: str
 
     # ✅ Monitoring Settings
     CPU_THRESHOLD: int

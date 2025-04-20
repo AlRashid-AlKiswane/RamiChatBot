@@ -2658,3 +2658,1138 @@ Context:
 2025-04-18 20:07:28,139 - INFO - [LLM GENERATION] Finished processing request.
 2025-04-18 20:15:40,902 - INFO - [SHUTDOWN] Closing SQLite database connection...
 2025-04-18 20:15:40,905 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:45:23,393 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:45:23,394 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:45:23,396 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:45:23,766 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:45:23,780 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c513-6a86879c46ab60126b1c0b9e;378d8760-a63a-4e1b-a503-b422513b1c6c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 45, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:45:23,785 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:45:24,100 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3454
+2025-04-19 18:45:24,104 - ERROR - [LLM INIT ERROR] Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c513-6a86879c46ab60126b1c0b9e;378d8760-a63a-4e1b-a503-b422513b1c6c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 45, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 78, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:45:24,105 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:45:24,416 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4070
+2025-04-19 18:45:24,421 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:45:24,423 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:45:24,423 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:45:24,423 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:45:24,424 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:46:44,154 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:46:44,157 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:49:02,969 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:49:02,970 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:49:02,971 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:49:03,355 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:49:03,366 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c5ef-4cd1fd945f44acf37b0156af;ff0f1082-dc3d-4655-b7e4-45b15393017a)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 45, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:03,371 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:03,777 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3454
+2025-04-19 18:49:03,781 - ERROR - [LLM INIT ERROR] Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c5ef-4cd1fd945f44acf37b0156af;ff0f1082-dc3d-4655-b7e4-45b15393017a)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 45, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 78, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:03,782 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:04,082 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4070
+2025-04-19 18:49:04,086 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:49:04,087 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:49:04,087 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:49:04,087 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:49:04,087 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:49:23,762 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:49:23,762 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:49:25,920 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:49:25,920 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:49:25,922 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:49:26,249 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:49:26,252 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c606-105c31d95768e60751128511;9742f03a-44c6-485e-95e3-fbc95a75a63c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 46, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:26,255 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:26,578 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3454
+2025-04-19 18:49:26,580 - ERROR - [LLM INIT ERROR] Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c606-105c31d95768e60751128511;9742f03a-44c6-485e-95e3-fbc95a75a63c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 46, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 79, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:26,580 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:26,969 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4070
+2025-04-19 18:49:26,970 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:49:26,971 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:49:26,971 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:49:26,971 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:49:26,971 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:49:28,980 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:49:28,981 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:49:55,989 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:49:55,990 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:49:55,991 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:49:56,291 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:49:56,294 - ERROR - Failed to login to Hugging Face: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c624-0b4a43d31d77751b6a00df55;ce24c76e-34c0-4f87-bc69-328e723b1c9b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:56,299 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:56,574 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3434
+2025-04-19 18:49:56,578 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c624-0b4a43d31d77751b6a00df55;ce24c76e-34c0-4f87-bc69-328e723b1c9b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:56,580 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:56,868 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3890
+2025-04-19 18:49:56,872 - ERROR - [LLM INIT ERROR] Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c624-0b4a43d31d77751b6a00df55;ce24c76e-34c0-4f87-bc69-328e723b1c9b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 83, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:49:56,873 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:49:57,179 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4533
+2025-04-19 18:49:57,180 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:49:57,181 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:49:57,181 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:49:57,181 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:49:57,181 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:50:09,434 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:50:09,434 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:50:11,325 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:50:11,326 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:50:11,327 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:50:11,694 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:50:11,699 - ERROR - Failed to login to Hugging Face: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c633-7ff7f46d097126c95caf8385;9b3ac495-1c52-4ab2-95ff-8485fd228a6b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:50:11,701 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:50:12,097 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3434
+2025-04-19 18:50:12,102 - ERROR - Failed to load model meta-llama/Llama-3.2-1B. Error: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c633-7ff7f46d097126c95caf8385;9b3ac495-1c52-4ab2-95ff-8485fd228a6b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:50:12,102 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:50:12,399 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3890
+2025-04-19 18:50:12,405 - ERROR - [LLM INIT ERROR] Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c633-7ff7f46d097126c95caf8385;9b3ac495-1c52-4ab2-95ff-8485fd228a6b)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 83, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:50:12,409 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:50:12,675 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4533
+2025-04-19 18:50:12,677 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:50:12,678 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:50:12,678 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:50:12,678 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:50:12,678 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:55:08,318 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:55:08,321 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:55:14,665 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:55:14,666 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:55:14,667 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:55:15,016 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:55:15,027 - ERROR - Failed to login to Hugging Face: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c762-4364cdd1224701c14b0189df;356dff0d-1b9c-4411-9b58-b5de0d6b908c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:55:15,033 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:55:15,331 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3434
+2025-04-19 18:55:15,335 - ERROR - Failed to load model meta-llama/Llama-3.2-3B. Error: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c762-4364cdd1224701c14b0189df;356dff0d-1b9c-4411-9b58-b5de0d6b908c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:55:15,336 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:55:15,672 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3890
+2025-04-19 18:55:15,673 - ERROR - [LLM INIT ERROR] Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c762-4364cdd1224701c14b0189df;356dff0d-1b9c-4411-9b58-b5de0d6b908c)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 83, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:55:15,674 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:55:15,964 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4533
+2025-04-19 18:55:15,966 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:55:15,967 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:55:15,967 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:55:15,967 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:55:15,967 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:57:21,062 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:57:21,062 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:57:30,719 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:57:30,720 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:57:30,722 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:57:31,035 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 401 55
+2025-04-19 18:57:31,044 - ERROR - Failed to login to Hugging Face: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c7ea-2962f7e01d3e93f74779f31a;b025b8ed-60a2-4263-a16a-d26f48a7bbcb)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:57:31,049 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:57:31,395 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3434
+2025-04-19 18:57:31,401 - ERROR - Failed to load model meta-llama/Llama-3.2-3B. Error: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c7ea-2962f7e01d3e93f74779f31a;b025b8ed-60a2-4263-a16a-d26f48a7bbcb)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:57:31,403 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:57:31,676 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 3890
+2025-04-19 18:57:31,680 - ERROR - [LLM INIT ERROR] Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1737, in whoami
+    hf_raise_for_status(r)
+    ~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 482, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/api/whoami-v2 (Request ID: Root=1-6803c7ea-2962f7e01d3e93f74779f31a;b025b8ed-60a2-4263-a16a-d26f48a7bbcb)
+
+Invalid credentials in Authorization header
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 47, in init_llm
+    login(get_settings().HUGGINGFACE_TOKIENS)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 101, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_deprecation.py", line 31, in inner_f
+    return f(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 126, in login
+    _login(token, add_to_git_credential=add_to_git_credential)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/_login.py", line 404, in _login
+    token_info = whoami(token)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/huggingface_hub/hf_api.py", line 1750, in whoami
+    raise HTTPError(error_message, request=e.request, response=e.response) from e
+requests.exceptions.HTTPError: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 50, in init_llm
+    raise RuntimeError(f"Hugging Face login failed: {e}")
+RuntimeError: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/main.py", line 48, in startup_event
+    app.model.init_llm(**app.LLM_CONFIG)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/llm/huggingface_models.py", line 83, in init_llm
+    raise RuntimeError(f"Model initialization failed: {e}")
+RuntimeError: Model initialization failed: Hugging Face login failed: Invalid user token. The token stored is invalid. Please run `huggingface-cli login` to update it.
+
+2025-04-19 18:57:31,682 - DEBUG - Starting new HTTPS connection (1): api.telegram.org:443
+2025-04-19 18:57:31,983 - DEBUG - https://api.telegram.org:443 "POST /bot7916874813:AAGTjHZGBTWsJ8bLt-Pwt84o6Y-ezEBoojU/sendMessage HTTP/1.1" 200 4533
+2025-04-19 18:57:31,985 - INFO - Successfully connected to the database: /home/alrashid/Desktop/RamiChatBot/ChatBotRAG.db
+2025-04-19 18:57:31,985 - INFO - Table 'chunks' created successfully.
+2025-04-19 18:57:31,985 - INFO - Table 'embeddings' created successfully.
+2025-04-19 18:57:31,985 - INFO - Table 'query_responses' created successfully.
+2025-04-19 18:57:31,985 - INFO - [DB] SQLite database and tables initialized.
+2025-04-19 18:59:37,696 - INFO - [SHUTDOWN] Closing SQLite database connection...
+2025-04-19 18:59:37,696 - INFO - [DB] SQLite database connection closed.
+2025-04-19 18:59:58,108 - INFO - [STARTUP] Initializing FastAPI application...
+2025-04-19 18:59:58,109 - INFO - Load YAML sucessfully.: /home/alrashid/Desktop/RamiChatBot/.configs/meta_llama_Llama_3_2_1B_config.yaml
+2025-04-19 18:59:58,110 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 18:59:58,476 - DEBUG - https://huggingface.co:443 "GET /api/whoami-v2 HTTP/1.1" 200 840
+2025-04-19 18:59:58,479 - INFO - Initializing model: meta-llama/Llama-3.2-3B
+2025-04-19 18:59:58,768 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-19 18:59:58,773 - DEBUG - Attempting to acquire lock 127578295202352 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-19 18:59:58,774 - DEBUG - Lock 127578295202352 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-19 18:59:59,079 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-3B/resolve/main/tokenizer_config.json HTTP/1.1" 200 50500
+2025-04-19 18:59:59,151 - DEBUG - Attempting to release lock 127578295202352 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-19 18:59:59,152 - DEBUG - Lock 127578295202352 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cb9ec25536e44d86778b10509d3e5bdca459a5cf.lock
+2025-04-19 18:59:59,361 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2025-04-19 18:59:59,363 - DEBUG - Attempting to acquire lock 127574466373072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-19 18:59:59,363 - DEBUG - Lock 127574466373072 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-19 18:59:59,693 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-3B/resolve/main/tokenizer.json HTTP/1.1" 200 9085657
+2025-04-19 19:00:01,145 - DEBUG - Attempting to release lock 127574466373072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-19 19:00:01,145 - DEBUG - Lock 127574466373072 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/5cc5f00a5b203e90a27a3bd60d1ec393b07971e8.lock
+2025-04-19 19:00:01,383 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/tokenizer.model HTTP/1.1" 404 0
+2025-04-19 19:00:01,634 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2025-04-19 19:00:01,822 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/special_tokens_map.json HTTP/1.1" 200 0
+2025-04-19 19:00:01,823 - DEBUG - Attempting to acquire lock 127574466373072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-19 19:00:01,824 - DEBUG - Lock 127574466373072 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-19 19:00:02,044 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-3B/resolve/main/special_tokens_map.json HTTP/1.1" 200 301
+2025-04-19 19:00:02,048 - DEBUG - Attempting to release lock 127574466373072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-19 19:00:02,048 - DEBUG - Lock 127574466373072 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/cfabacc2620186cd3dd4b1dde9a37e057208636e.lock
+2025-04-19 19:00:02,351 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2025-04-19 19:00:02,863 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/config.json HTTP/1.1" 200 0
+2025-04-19 19:00:02,866 - DEBUG - Attempting to acquire lock 127574467231824 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/47d4a5aa69cdef91a53b77f5c5583647a578ca0e.lock
+2025-04-19 19:00:02,867 - DEBUG - Lock 127574467231824 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/47d4a5aa69cdef91a53b77f5c5583647a578ca0e.lock
+2025-04-19 19:00:03,069 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-3B/resolve/main/config.json HTTP/1.1" 200 844
+2025-04-19 19:00:03,071 - DEBUG - Attempting to release lock 127574467231824 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/47d4a5aa69cdef91a53b77f5c5583647a578ca0e.lock
+2025-04-19 19:00:03,071 - DEBUG - Lock 127574467231824 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/47d4a5aa69cdef91a53b77f5c5583647a578ca0e.lock
+2025-04-19 19:00:04,093 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/model.safetensors HTTP/1.1" 404 0
+2025-04-19 19:00:04,303 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/main/model.safetensors.index.json HTTP/1.1" 200 0
+2025-04-19 19:00:04,305 - DEBUG - Attempting to acquire lock 127574467243072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58.lock
+2025-04-19 19:00:04,305 - DEBUG - Lock 127574467243072 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58.lock
+2025-04-19 19:00:04,505 - DEBUG - https://huggingface.co:443 "GET /meta-llama/Llama-3.2-3B/resolve/main/model.safetensors.index.json HTTP/1.1" 200 20919
+2025-04-19 19:00:04,509 - DEBUG - Attempting to release lock 127574467243072 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58.lock
+2025-04-19 19:00:04,509 - DEBUG - Lock 127574467243072 released on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/d3a1f0f5f401eeadca0c7a6786bd9e877fd42e58.lock
+2025-04-19 19:00:04,710 - DEBUG - https://huggingface.co:443 "GET /api/models/meta-llama/Llama-3.2-3B/revision/main HTTP/1.1" 200 18652
+2025-04-19 19:00:04,719 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 19:00:04,721 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-19 19:00:05,045 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/13afe5124825b4f3751f836b40dafda64c1ed062/model-00001-of-00002.safetensors HTTP/1.1" 302 0
+2025-04-19 19:00:05,048 - DEBUG - Attempting to acquire lock 127574505804080 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002.lock
+2025-04-19 19:00:05,048 - DEBUG - Lock 127574505804080 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002.lock
+2025-04-19 19:00:05,051 - DEBUG - Starting new HTTPS connection (1): cdn-lfs-us-1.hf.co:443
+2025-04-19 19:00:05,059 - DEBUG - https://huggingface.co:443 "HEAD /meta-llama/Llama-3.2-3B/resolve/13afe5124825b4f3751f836b40dafda64c1ed062/model-00002-of-00002.safetensors HTTP/1.1" 302 0
+2025-04-19 19:00:05,061 - DEBUG - Attempting to acquire lock 127574507040800 on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb.lock
+2025-04-19 19:00:05,061 - DEBUG - Lock 127574507040800 acquired on /home/alrashid/.cache/huggingface/hub/.locks/models--meta-llama--Llama-3.2-3B/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb.lock
+2025-04-19 19:00:05,063 - DEBUG - Starting new HTTPS connection (1): cdn-lfs-us-1.hf.co:443
+2025-04-19 19:00:05,315 - DEBUG - https://cdn-lfs-us-1.hf.co:443 "GET /repos/6d/a3/6da3ad48e7530ea674856c3f86323f9a69ec576144e93fc424266f52cfa215ed/584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00001-of-00002.safetensors%3B+filename%3D%22model-00001-of-00002.safetensors%22%3B&Expires=1745082004&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0NTA4MjAwNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzZkL2EzLzZkYTNhZDQ4ZTc1MzBlYTY3NDg1NmMzZjg2MzIzZjlhNjllYzU3NjE0NGU5M2ZjNDI0MjY2ZjUyY2ZhMjE1ZWQvNTg0ZDhkM2UzZjgyZjc5NjQ5NTUxNzRkZmU1ZTNiMWNmMTE3YTlkODU5ZjAyMmNmZGY3ZmNiODg0ODU2ZTAwMj9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=leZT83z~mefqLw1zlk2KMoPDDcuuayvqtEXylwgSXKrxYPxwMJ8xkWYWwnkRJV9COaiQmkdA3F8qEk1Mm~BENtQcf1I3lkcLfyucavaMdl6FOIpIoJsyc6MiAuf7LBzVlGScOfYj9Fefwu2wLNTBorOFhIfpTZDRh8bAYpJUh8nfixcncJyibSecrN4ftvboEVmaurKriXIGfXp-jiGMzCvouZ~TB9DXslI7hUVUczYm82QndMUvbl7l2Ud6azx82ZEupssznMbZFn7G8uGtzQRkhUAkKgp90RayDgm6g1beyr1OHlNaY0HE5XA06Rp9I7q5cLaIZzLttTqpL92nRg__&Key-Pair-Id=K24J24Z295AEI9 HTTP/1.1" 200 4965799096
+2025-04-19 19:00:05,380 - DEBUG - https://cdn-lfs-us-1.hf.co:443 "GET /repos/6d/a3/6da3ad48e7530ea674856c3f86323f9a69ec576144e93fc424266f52cfa215ed/4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model-00002-of-00002.safetensors%3B+filename%3D%22model-00002-of-00002.safetensors%22%3B&Expires=1745082005&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0NTA4MjAwNX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zLzZkL2EzLzZkYTNhZDQ4ZTc1MzBlYTY3NDg1NmMzZjg2MzIzZjlhNjllYzU3NjE0NGU5M2ZjNDI0MjY2ZjUyY2ZhMjE1ZWQvNDcxOWEwNDUxNGVjMmYwNjAyNDA3MTFiN2MzM2FiMjExODdjYWM3MzBlY2FiYTMwNDBiN2EwZmQ5NWE5Y2VmYj9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=NSm95lhcXlUMMbSIM3-CKDLYkrE72kIhGJ-BKFBEgIWnbzNnYqtaLDnPkOmG1Hrj~n9wK8OsjIfBkVnH087UFGCBRAbb71zEyMSoBQm9w9OYJEsysDrSy9ogJ6czjS3AykVRgykYA97RSVNSZSZDkieaemqAWf3HpV2djoJIdUX8Mf-xnNRHfdEWnw1OXeuGAxvd-ysQmcVwu3kT2dVyK7JUUhn3~mnQEQNyKqnj7MsLOztSHZPpCeff2YawyE-eRKD-h3Zt-DZBUpKdIJ8ZCh5KnJPqt1g1r2z9F99ixni7Yg22sK3zhNM8QmxWq7Q~wfFefp~neANqx8FT2Oc8TA__&Key-Pair-Id=K24J24Z295AEI9 HTTP/1.1" 200 1459729952
+2025-04-19 19:22:32,663 - ERROR - Failed to load system prompt from settings. Using default: 2 validation errors for Settings
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/prompt/prompt.py", line 27, in <module>
+    DEFAULT_SYSTEM_PROMPT = get_settings().DEFAULT_SYSTEM_PROMPT
+                            ~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/config/setting.py", line 50, in get_settings
+    return Settings()
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic_settings/main.py", line 176, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__._settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        )
+        ^
+    )
+    ^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Settings
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+
+2025-04-19 19:23:24,652 - ERROR - Failed to load system prompt from settings. Using default: 2 validation errors for Settings
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+Traceback:
+Traceback (most recent call last):
+  File "/home/alrashid/Desktop/RamiChatBot/src/prompt/prompt.py", line 27, in <module>
+    DEFAULT_SYSTEM_PROMPT = get_settings().DEFAULT_SYSTEM_PROMPT
+                            ~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/config/setting.py", line 50, in get_settings
+    return Settings()
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic_settings/main.py", line 176, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__._settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        )
+        ^
+    )
+    ^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Settings
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={'APP_NAME': 'RamiChatBot..._CHAT_ID': '2119321689'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+
+2025-04-19 19:30:09,648 - DEBUG - Prompt built for model: llama
+2025-04-19 19:30:09,648 - INFO - Prompt template for llama generated successfully.
