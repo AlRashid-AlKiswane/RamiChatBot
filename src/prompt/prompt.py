@@ -49,28 +49,35 @@ class PromptBuilder:
     def build_instruction_template(self) -> str:
         """
         Returns a structured instruction prompt with history and retrieved context.
+        Optimized for clarity and LLM performance.
         """
         try:
             return (
                 f"{B_INST}\n"
-                f"    <|HISTORY|>\n"
-                f"    {{history}}\n"
-                f"    <|END_HISTORY|>\n"
-                f"    <|Retrieved Context:\n"
-                f"    <|RETRIEVED_CONTEXT|>\n"
-                f"    {{retrieved_context}}\n"
-                f"    <|END_RETRIEVED_CONTEXT|>\n\n"
-                f"    {B_USER}\n"
-                f"    {{query}}\n"
-                f"    {E_USER} \n"
-                f"    {B_ASSIST}\n"
-                f"    [Response]: \n"
-                f"    {E_ASSIST}\n"
+                f"<|HISTORY|>\n"
+                f"{'{'}history{'}'}\n"
+                f"<|END_HISTORY|>\n\n"
+                f"<|RETRIEVED_CONTEXT|>\n"
+                f"{'{'}retrieved_context{'}'}\n"
+                f"<|END_RETRIEVED_CONTEXT|>\n\n"
+                f"{B_USER}\n"
+                f"{'{'}query{'}'}\n"
+                f"{E_USER}\n\n"
+                f"{B_ASSIST}\n"
+                f"Respond in a clear, friendly, and helpful tone. Use any relevant information from the retrieved context and conversation history.\n\n"
+                f"Rules:\n"
+                f"- If the context is relevant, use it in your answer.\n"
+                f"- If the context is unrelated, ignore it.\n"
+                f"- If the answer is unknown, reply with “I don’t know.”\n"
+                f"- Make sure your answer sounds natural and conversational.\n\n"
+                f"[Response]:\n"
+                f"{E_ASSIST}\n"
                 f"{E_INST}"
             )
         except Exception as e:
             log_error(f"[build_instruction_template Error] {e}")
             raise
+
 
     def build_llama_prompt_template(self, system_message: str = DEFAULT_SYSTEM_PROMPT) -> str:
         """
