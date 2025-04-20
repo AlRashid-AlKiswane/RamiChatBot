@@ -115,7 +115,11 @@ if __name__ == "__main__":
     # Example usage
     prompt_builder = PromptBuilder()
     prompt, memory = prompt_builder.get_prompt_template("llama")
-    print(prompt.template)
-    print(memory.memory_key)
+    history = memory.load_memory_variables({})["history"]
 
-
+    formatted_prompt = prompt.format(
+        query="What is the capital of France?",
+        history=history,
+        retrieved_context="France is a country in Europe. Paris is known as its capital."
+    )
+    print(formatted_prompt)
