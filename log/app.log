@@ -3793,3 +3793,139 @@ ENABLE_MEMORY
 
 2025-04-19 19:30:09,648 - DEBUG - Prompt built for model: llama
 2025-04-19 19:30:09,648 - INFO - Prompt template for llama generated successfully.
+2025-04-20 18:47:55,456 - ERROR - Failed to load system prompt from settings. Using default: 19 validation errors for Settings
+APP_NAME
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+APP_VERSION
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DOC_LOCATION_SAVE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CONFIG_DIR
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DATABASE_URL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+HUGGINGFACE_TOKIENS
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_ALLOWED_TYPES
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_MAX_SIZE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_DEFAULT_CHUNK_SIZE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CHUNKS_OVERLAP
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+LOG_LEVEL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CPU_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+MEMORY_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+MONITOR_INTERVAL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DISK_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+TELEGRAM_BOT_TOKEN
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+TELEGRAM_CHAT_ID
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+Traceback:
+Traceback (most recent call last):
+  File "<ipython-input-1-bda00dc9a83d>", line 27, in <module>
+    DEFAULT_SYSTEM_PROMPT = get_settings().DEFAULT_SYSTEM_PROMPT
+                            ~~~~~~~~~~~~^^
+  File "/home/alrashid/Desktop/RamiChatBot/src/config/setting.py", line 51, in get_settings
+    return Settings()
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic_settings/main.py", line 176, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__._settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        )
+        ^
+    )
+    ^
+  File "/home/alrashid/Desktop/RamiChatBot/ENV/lib/python3.13/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 19 validation errors for Settings
+APP_NAME
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+APP_VERSION
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DOC_LOCATION_SAVE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CONFIG_DIR
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DATABASE_URL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+HUGGINGFACE_TOKIENS
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DEFAULT_SYSTEM_PROMPT
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+ENABLE_MEMORY
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_ALLOWED_TYPES
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_MAX_SIZE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+FILE_DEFAULT_CHUNK_SIZE
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CHUNKS_OVERLAP
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+LOG_LEVEL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+CPU_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+MEMORY_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+MONITOR_INTERVAL
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+DISK_THRESHOLD
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+TELEGRAM_BOT_TOKEN
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+TELEGRAM_CHAT_ID
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+
