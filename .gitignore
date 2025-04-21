@@ -48,6 +48,7 @@ htmlcov/
 .dmypy.json
 
 # Data & Models
+*.txt
 data/
 datasets/
 *.csv
@@ -56,6 +57,7 @@ datasets/
 *.xlsx
 *.db
 *.sqlite
+*.sqlite3
 *.h5
 *.hdf5
 *.zip

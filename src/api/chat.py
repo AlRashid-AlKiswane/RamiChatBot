@@ -9,17 +9,17 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_debug, log_error, log_info
-    from prompt import PromptRamiLlaMA, PromptRamiJAIS
+    from prompt import PromptBuilder
     from schemes import Generate
     from Database import insert_query_response
-    from enums import LLMNames
+    from utils import extract_assistant_response
 except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
 
 
-RETRIEVAL_CONTEXT = "Time work  5 Day in week s, m , t, w, "  # You can hook this into your vector store / RAG retrieval
 
 generate_routes = APIRouter()
+prompt_builder = PromptBuilder()
 
 
 @generate_routes.post("/chat", response_class=JSONResponse)
@@ -29,40 +29,27 @@ async def generate_response(request: Request, body: Generate, prompt_template_na
     """
     try:
         query = body.query
+        prompt, memory = prompt_builder.get_prompt_template(model_name=prompt_template_name)
+        history = memory.load_memory_variables({})["history"]
 
-        if prompt_template_name.lower() == "llama":
-            prompt_template = PromptRamiLlaMA()
-            final_prompt = prompt_template.prompt.format(
-                retrieved_context=RETRIEVAL_CONTEXT,
-                user_message=query
-            )
-            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}, Note: Llama model is used")
-            response_text = request.app.model.generate_response(prompt=final_prompt)
-
-        elif prompt_template_name.lower() == "jais":
-            prompt_template = PromptRamiJAIS()
-            final_prompt = prompt_template.prompt.format(
-                retrieved_context=RETRIEVAL_CONTEXT,
-                user_message=query
-            )
-            log_debug(f"[PROMPT] Final prompt:\n{final_prompt}, Note: Jais model is used")
-            response_text = request.app.model.generate_response(prompt=final_prompt)
-
-        else:
-            raise ValueError("Unsupported model name")
-
+        formatted_prompt = prompt.format(
+            query=query,
+            history=history,
+            retrieved_context=request.app.RETRIEVAL_CONTEXT)
+        
+        response = request.app.model.generate_response(prompt=formatted_prompt)
         insert_query_response(
             conn=request.app.conn,
             query=query,
-            response=response_text
+            response=response
         )        
-        log_info(f"[LLM RESPONSE] {response_text}")
+        log_info(f"[LLM RESPONSE FINISHID]")
 
         return JSONResponse(
             status_code=HTTP_200_OK,
             content={
                 "status": "success",
-                "response": response_text
+                "response": response
             }
         )
 

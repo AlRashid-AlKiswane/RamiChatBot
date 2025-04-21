@@ -1,5 +1,7 @@
 import os
 import sys
+import threading
+import time
 from fastapi import FastAPI
 from logs import log_debug, log_error, log_info
 
@@ -32,24 +34,34 @@ except Exception as e:
 # === FastAPI App ===
 app = FastAPI(title="RamiChatBot API")
 
+app.RETRIEVAL_CONTEXT =  "Hello Rami I'm AlRashid, How are you? Hello dear friend, I'm doing well."
+# === Retry LLM Config & Model Loading in Background ===
+def llm_init_loop():
+    while True:
+        try:
+            app.LLM_CONFIG = load_last_yaml()
+            if not app.LLM_CONFIG:
+                log_error("[LLM CONFIG MISSING] No config found. Retrying in 10 seconds...")
+                time.sleep(10)
+                continue
+
+            app.model = HuggingFcaeModel()
+            app.model.init_llm(**app.LLM_CONFIG)
+            log_info("[LLM] Model initialized successfully.")
+            break
+        except Exception as e:
+            log_error(f"[LLM INIT ERROR] {e}")
+            app.model = None
+            time.sleep(10)
+
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize DB, model config, and LLM instance on app startup."""
     log_info("[STARTUP] Initializing FastAPI application...")
 
-    # === Load LLM Config ===
-    app.LLM_CONFIG = load_last_yaml()
-    if not app.LLM_CONFIG:
-        log_error("[LLM CONFIG MISSING] No LLM config found. Please POST your config to /api/llms_config before using LLM features.")
-        app.model = None
-    else:
-        try:
-            app.model = HuggingFcaeModel()
-            app.model.init_llm(**app.LLM_CONFIG)
-            log_info("[LLM] Model initialized successfully.")
-        except Exception as e:
-            log_error(f"[LLM INIT ERROR] {e}")
-            app.model = None
+    # === Start LLM Init Thread ===
+    threading.Thread(target=llm_init_loop, daemon=True).start()
 
     # === Initialize SQLite Database ===
     try:
@@ -60,7 +72,6 @@ async def startup_event():
         log_info("[DB] SQLite database and tables initialized.")
     except Exception as e:
         log_error(f"[DB INIT ERROR] {e}")
-
 
 
 # === Include API Routers ===
@@ -80,4 +91,3 @@ async def shutdown_event():
         log_info("[DB] SQLite database connection closed.")
     else:
         log_error("[DB] No active database connection to close.")
-

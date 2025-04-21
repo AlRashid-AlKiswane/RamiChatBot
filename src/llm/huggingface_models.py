@@ -98,8 +98,7 @@ class HuggingFcaeModel(LLMsInterface):
             with torch.no_grad():
                 outputs = self.model.generate(**inputs, **self.generate_kwargs)
 
-            full_output = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-            response = full_output[len(prompt):].strip()
+            response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
             log_debug(f"Generated response: {response[:300]}...")
 

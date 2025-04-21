@@ -23,7 +23,7 @@ class AlertManager:
             "chat_id": self.telegram_chat_id,
             "text": f"Subject: {subject}\n\nMessage: {message}"
         }
-        
+
         try:
             response = requests.post(url, data=data)
             response.raise_for_status()
