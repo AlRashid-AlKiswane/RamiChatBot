@@ -7,6 +7,7 @@ __pycache__
 *.so
 *.log
 app.log
+/log/app.log
 # Virtual environments
 env/
 venv/
