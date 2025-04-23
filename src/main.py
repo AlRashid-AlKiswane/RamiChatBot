@@ -2,8 +2,16 @@ import os
 import sys
 import threading
 import time
+import warnings
 from fastapi import FastAPI
 from logs import log_debug, log_error, log_info
+from dotenv import load_dotenv
+
+
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", category=UserWarning)
+    load_dotenv()
+
 
 # === Path Configuration ===
 try:
