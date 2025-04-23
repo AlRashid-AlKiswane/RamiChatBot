@@ -22,6 +22,7 @@ generate_routes = APIRouter()
 prompt_builder = PromptBuilder()
 
 
+
 @generate_routes.post("/chat", response_class=JSONResponse)
 async def generate_response(request: Request, body: Generate, prompt_template_name: str = "llama"):
     """
@@ -29,18 +30,22 @@ async def generate_response(request: Request, body: Generate, prompt_template_na
     """
     try:
         query = body.query
-        prompt, memory = prompt_builder.get_prompt_template(model_name=prompt_template_name)
-        history = memory.load_memory_variables({})["history"]
 
-        formatted_prompt = prompt.format(
-            query=query,
-            history=history,
-            retrieved_context=request.app.RETRIEVAL_CONTEXT)
+
+        formatted_prompt = prompt = PromptBuilder.build_prompt(
+            history=request.app.RETRIEVAL_CONTEXT,
+            context=request.app.RETRIEVAL_CONTEXT,
+            user_message=query
+        )
+        log_info(f"[LLM GENERATION] Generating response for query: {query}")
+
         
         response = request.app.model.generate_response(prompt=formatted_prompt)
+        singel_response = extract_assistant_response(text=response)
+
         insert_query_response(
             conn=request.app.conn,
-            query=query,
+            query=formatted_prompt,
             response=response
         )        
         log_info(f"[LLM RESPONSE FINISHID]")
@@ -49,7 +54,7 @@ async def generate_response(request: Request, body: Generate, prompt_template_na
             status_code=HTTP_200_OK,
             content={
                 "status": "success",
-                "response": response
+                "response": singel_response
             }
         )
 
