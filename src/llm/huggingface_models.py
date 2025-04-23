@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 import torch
+import bitsandbytes
 from typing import Dict, Any
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -18,7 +20,8 @@ except ImportError as ie:
 
 class HuggingFcaeModel(LLMsInterface):
     """
-    Implementation of LLMsInterface for Hugging Face models (e.g., LLaMA).
+    Implementation of LLMsInterface for Hugging Face models (e.g., LLaMA),
+    with optional support for quantization using bitsandbytes.
     """
 
     def __init__(self):
@@ -35,52 +38,68 @@ class HuggingFcaeModel(LLMsInterface):
         top_k: int = 50,
         trust_remote_code: bool = False,
         do_sample: bool = True,
-        pad_token_id: int = None
-
+        pad_token_id: int = None,
+        quantization: bool = False,
+        quantization_type: str = "8bit"  # Can be "8bit" or "4bit"
     ) -> None:
         """
-        Initialize tokenizer and model, with validated generation parameters.
+        Initialize tokenizer and model with validated generation parameters.
+        Supports optional quantization using bitsandbytes.
         """
         try:
-            try:
-                
-                login(get_settings().HUGGINGFACE_TOKIENS)
-            except Exception as e:
-                log_error(f"Failed to login to Hugging Face: {e}")
-                raise RuntimeError(f"Hugging Face login failed: {e}")
-            log_info(f"Initializing model: {model_name}")
+            login(get_settings().HUGGINGFACE_TOKIENS)
+        except Exception as e:
+            log_error(f"Failed to login to Hugging Face: {e}")
+            raise RuntimeError(f"Hugging Face login failed: {e}")
 
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        log_info(f"Initializing model: {model_name} with quantization={quantization}")
+
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+        model_kwargs = {
+            "torch_dtype": torch.float16,
+            "device_map": "auto",
+            "trust_remote_code": trust_remote_code,
+        }
+
+        if quantization:
+            try:
+                import bitsandbytes  # noqa: F401
+                if quantization_type == "8bit":
+                    model_kwargs["load_in_8bit"] = True
+                elif quantization_type == "4bit":
+                    model_kwargs["load_in_4bit"] = True
+                else:
+                    raise ValueError("quantization_type must be '8bit' or '4bit'")
+            except ImportError:
+                raise ImportError("Quantization requested but bitsandbytes is not installed.")
+
+        try:
             self.model = AutoModelForCausalLM.from_pretrained(
                 model_name,
-                torch_dtype=torch.float16,
-                device_map="auto",
-                trust_remote_code = trust_remote_code,
-
+                **model_kwargs
             )
-
-            if top_k <= 0:
-                raise ValueError("top_k must be a strictly positive integer.")
-
-            self.generate_kwargs = {
-                "max_new_tokens": max_new_tokens,
-                "temperature": temperature,
-                "top_p": top_p,
-                "top_k": top_k,
-                "do_sample": do_sample,
-            }
-
-            # Optional: pad_token_id setup
-            if pad_token_id is not None:
-                self.generate_kwargs["pad_token_id"] = pad_token_id
-            else:
-                self.generate_kwargs["pad_token_id"] = self.tokenizer.eos_token_id
-
-            log_info(f"Model {model_name} loaded with config: {self.generate_kwargs}")
-
         except Exception as e:
             log_error(f"Failed to load model {model_name}. Error: {e}")
             raise RuntimeError(f"Model initialization failed: {e}")
+
+        if top_k <= 0:
+            raise ValueError("top_k must be a strictly positive integer.")
+
+        self.generate_kwargs = {
+            "max_new_tokens": max_new_tokens,
+            "temperature": temperature,
+            "top_p": top_p,
+            "top_k": top_k,
+            "do_sample": do_sample,
+        }
+
+        # Setup pad_token_id
+        self.generate_kwargs["pad_token_id"] = (
+            pad_token_id if pad_token_id is not None else self.tokenizer.eos_token_id
+        )
+
+        log_info(f"Model {model_name} loaded with config: {self.generate_kwargs}")
 
     def generate_response(self, prompt: str) -> str:
         """
