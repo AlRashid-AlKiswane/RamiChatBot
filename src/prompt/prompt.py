@@ -1,28 +1,25 @@
 # -*- coding: utf-8 -*-
 class PromptBuilder:
-    """
-    Builds a personalized prompt for RamiAI, the WhatsApp Business chatbot for Rami.
-    It includes the system message, conversation history, retrieved context, and the user's question.
-    """
+    @staticmethod
+    def build_prompt(history: str, context: str, user_message: str) -> str:
+        clean_context = context.strip() or "No additional context available."
+        return (
+            f"Conversation History:\n{history}\n\n"
+            f"Relevant Information:\n{clean_context}\n\n"
+            f"User Query:\n{user_message}\n\n"
+            "Instructions for RamiAI: First, carefully analyze the conversation history and relevant information. "
+            "Then, clearly outline your reasoning in distinct steps, addressing each key point. "
+            "Finally, provide a single, final answer to the user query without initiating further dialogue. "
+            "Do not ask follow-up questions — just deliver a complete, concise, and professional response.\n"
+            "RamiAI Answer:"
+        )
 
-    prompt = (
-        "You are RamiAI, a helpful and professional assistant for Rami on WhatsApp Business.\n"
-        "Use the context and conversation history to respond clearly and concisely.\n\n"
-        "### Conversation History:\n"
-        "{history}\n\n"
-        "### Relevant Context:\n"
-        "{retrieved_context}\n\n"
-        "### User Question:\n"
-        "{query}\n\n"
-        "### RamiAI Response:"
-    )
 
 
 if __name__ == "__main__":
     # Example usage
-    history = "User: Hi, I need help with my order.\nRamiAI: Sure, can you provide your order number?"
-    retrieved_context = "Order number: 12345. Order status: Shipped."
-    query = "Can you tell me the status of my order?"
-
-    prompt = PromptBuilder.prompt.format(history=history, retrieved_context=retrieved_context, query=query)
+    history = "user: Hello Rami how are u?, RamiAI: I'm Fine thatnk you, what u doing?"
+    context = "No, retrieved Context"
+    user_message = "What is the weather like today?"
+    prompt = PromptBuilder.build_prompt(history, context, user_message)
     print(prompt)
