@@ -16,9 +16,9 @@ except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
 
 
-chat_mange_routes = APIRouter()
+chat_manage_routes = APIRouter()
 
-@chat_mange_routes.post("/chat/manage")
+@chat_manage_routes.post("/chat/manage")
 async def manage_chat_history(request: Request, body: ChatManager):
     """
     Manage the user's chat memory: reset or clear.
