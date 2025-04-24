@@ -4,7 +4,6 @@ import threading
 import time
 import warnings
 from fastapi import FastAPI
-from logs import log_debug, log_error, log_info
 from dotenv import load_dotenv
 
 with warnings.catch_warnings():
@@ -25,6 +24,7 @@ with warnings.catch_warnings():
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
+    from src.logs import log_debug, log_error, log_info
 
     from api import (
         hello_routes,
