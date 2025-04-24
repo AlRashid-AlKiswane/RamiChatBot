@@ -4,6 +4,7 @@ import sys
 import tracemalloc
 import traceback
 
+from typing import Dict
 from langchain.memory import ConversationBufferMemory
 from langchain.schema import HumanMessage
 
@@ -22,81 +23,99 @@ tracemalloc.start()
 
 class ChatHistoryManager:
     """
-    Manages and stores the chat history of a conversation using LangChain's ConversationBufferMemory.
+    Manages and stores chat histories for multiple users using LangChain's ConversationBufferMemory.
     """
 
     def __init__(self):
         try:
-            self.memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
-            log_info("ChatHistoryManager initialized.")
+            self.user_memories: Dict[str, ConversationBufferMemory] = {}
+            log_info("Multi-user ChatHistoryManager initialized.")
         except Exception as e:
-            log_error(f"Error initializing memory: {e}")
+            log_error(f"Error initializing ChatHistoryManager: {e}")
             raise
 
-    def add_user_message(self, message: str) -> None:
+    def get_memory(self, user_id: str) -> ConversationBufferMemory:
+        if user_id not in self.user_memories:
+            self.user_memories[user_id] = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
+            log_debug(f"New memory initialized for user: {user_id}")
+        return self.user_memories[user_id]
+
+    def add_user_message(self, user_id: str, message: str) -> None:
         try:
-            self.memory.chat_memory.add_user_message(message)
-            log_debug(f"User message added: {message}")
+            self.get_memory(user_id).chat_memory.add_user_message(message)
+            log_debug(f"[{user_id}] User message added: {message}")
         except Exception as e:
-            log_error(f"Failed to add user message: {e}")
+            log_error(f"[{user_id}] Failed to add user message: {e}")
             raise
 
-    def add_ai_message(self, message: str) -> None:
+    def add_ai_message(self, user_id: str, message: str) -> None:
         try:
-            self.memory.chat_memory.add_ai_message(message)
-            log_debug(f"AI message added: {message}")
+            self.get_memory(user_id).chat_memory.add_ai_message(message)
+            log_debug(f"[{user_id}] AI message added: {message}")
         except Exception as e:
-            log_error(f"Failed to add AI message: {e}")
+            log_error(f"[{user_id}] Failed to add AI message: {e}")
             raise
 
-    def get_chat_history(self) -> list:
+    def get_chat_history(self, user_id: str) -> list:
         try:
-            history = self.memory.load_memory_variables({}).get("chat_history", [])
-            log_debug(f"Retrieved chat history with {len(history)} messages.")
+            memory = self.get_memory(user_id)
+            history = memory.load_memory_variables({}).get("chat_history", [])
+            log_debug(f"[{user_id}] Retrieved chat history with {len(history)} messages.")
             return history
         except Exception as e:
-            log_error(f"Failed to retrieve chat history: {e}")
+            log_error(f"[{user_id}] Failed to retrieve chat history: {e}")
             return []
 
-    def clear_chat_history(self) -> None:
+    def clear_chat_history(self, user_id: str) -> None:
         try:
-            self.memory.chat_memory.clear()
-            log_info("Chat history cleared.")
+            memory = self.get_memory(user_id)
+            memory.chat_memory.clear()
+            log_info(f"[{user_id}] Chat history cleared.")
         except Exception as e:
-            log_error(f"Failed to clear chat history: {e}")
+            log_error(f"[{user_id}] Failed to clear chat history: {e}")
             raise
 
-    def reset_memory(self) -> None:
+    def reset_memory(self, user_id: str) -> None:
         try:
-            self.clear_chat_history()
-            self.memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
-            log_info("Memory has been reset.")
+            self.user_memories[user_id] = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
+            log_info(f"[{user_id}] Memory has been reset.")
         except Exception as e:
-            log_error(f"Failed to reset memory: {e}")
+            log_error(f"[{user_id}] Failed to reset memory: {e}")
             raise
+    
 
 def main():
-    try:
-        chat_manager = ChatHistoryManager()
-        chat_manager.add_user_message("Hello, how are you?")
-        chat_manager.add_ai_message("I'm fine, thank you!")
+    import tracemalloc
+    import traceback
 
-        for message in chat_manager.get_chat_history():
-            try:
+    try:
+        tracemalloc.start()
+        chat_manager = ChatHistoryManager()
+
+        # Simulate User A
+        user_a = "user_a"
+        chat_manager.add_user_message(user_a, "Hi, who are you?")
+        chat_manager.add_ai_message(user_a, "I'm your assistant!")
+
+        # Simulate User B
+        user_b = "user_b"
+        chat_manager.add_user_message(user_b, "Hello, what's the weather?")
+        chat_manager.add_ai_message(user_b, "It's sunny today.")
+
+        # Print chat history for both users
+        for uid in [user_a, user_b]:
+            print(f"\n--- Chat History for {uid} ---")
+            for message in chat_manager.get_chat_history(uid):
                 role = "User" if isinstance(message, HumanMessage) else "AI"
                 print(f"{role}: {message.content}")
-            except Exception as e:
-                log_error(f"Failed to print a message: {e}")
 
         current, peak = tracemalloc.get_traced_memory()
-        print(f"Current memory usage: {current / 1024:.2f} KB")
+        print(f"\nCurrent memory usage: {current / 1024:.2f} KB")
         print(f"Peak memory usage: {peak / 1024:.2f} KB")
 
     except Exception as e:
-        error_trace = traceback.format_exc()
-        log_error(f"An error occurred in main(): {e}\n{error_trace}")
-        print(f"An unexpected error occurred. See logs for more details.")
-
+        log_error(f"An error occurred in main(): {e}\n{traceback.format_exc()}")
+        print("An unexpected error occurred. See logs for more details.")
     finally:
         tracemalloc.stop()
 
