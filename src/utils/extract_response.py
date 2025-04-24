@@ -4,7 +4,9 @@ def extract_assistant_response(text: str) -> str:
     """
     Extracts the response between <|ASSIST|> and <|END_ASSIST|> tags.
     """
-    match = re.search(r"<\|ASSIST\|>(.*?)<\|END_ASSIST\|>", text, re.DOTALL)
-    if match:
-        return match.group(1).strip()
-    return "No assistant response found."
+    texts = text.split("RamiAI Answer:")
+    if texts and len(texts) > 1:
+        text = texts[1]
+    else:
+        return "No assistant response found."
+    return text
