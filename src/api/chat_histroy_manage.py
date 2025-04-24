@@ -19,7 +19,7 @@ except Exception as e:
 chat_manage_routes = APIRouter()
 
 @chat_manage_routes.post("/chat/manage")
-async def manage_chat_history(request: Request, body: ChatManager):
+async def manage_chat_history(request: Request, body: ChatManager, user_id: str):
     """
     Manage the user's chat memory: reset or clear.
     Accepts parameters from ChatManager:
@@ -31,14 +31,14 @@ async def manage_chat_history(request: Request, body: ChatManager):
         clear = body.clear_chat
 
         if reset:
-            request.app.chat_manager.reset_memory()
+            request.app.chat_manager.reset_memory(user_id)
             return JSONResponse(
                 content={"message": "Memory reset successfully."},
                 status_code=HTTP_200_OK
             )
 
         if clear:
-            request.app.chat_manager.clear_chat_history()
+            request.app.chat_manager.clear_chat_history(user_id)
             return JSONResponse(
                 content={"message": "Chat history cleared successfully."},
                 status_code=HTTP_200_OK

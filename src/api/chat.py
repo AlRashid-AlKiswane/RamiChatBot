@@ -25,7 +25,7 @@ prompt_builder = PromptBuilder()
 tracemalloc.start()
 
 @generate_routes.post("/chat", response_class=JSONResponse)
-async def generate_response(request: Request, body: Generate, prompt_template_name: str = "llama"):
+async def generate_response(request: Request, body: Generate, user_id: str, prompt_template_name: str = "llama"):
     """
     Generate response from LLM based on user query and retrieved context.
     """
@@ -33,7 +33,7 @@ async def generate_response(request: Request, body: Generate, prompt_template_na
         query = body.query.strip()
         if not query:
             raise HTTPException(status_code=400, detail="Query cannot be empty.")
-
+        
         chat_manager = getattr(request.app, "chat_manager", None)
         model = getattr(request.app, "model", None)
         conn = getattr(request.app, "conn", None)
@@ -62,8 +62,8 @@ async def generate_response(request: Request, body: Generate, prompt_template_na
         )        
 
         # Update memory
-        chat_manager.add_user_message(query)
-        chat_manager.add_ai_message(single_response)
+        chat_manager.add_user_message(user_id, query)
+        chat_manager.add_ai_message(user_id, single_response)
 
         # Log memory usage
         current, peak = tracemalloc.get_traced_memory()
