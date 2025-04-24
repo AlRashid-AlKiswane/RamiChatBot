@@ -126,3 +126,4 @@ class HuggingFcaeModel(LLMsInterface):
         except Exception as e:
             log_error(f"Error generating response. Prompt: {prompt[:60]}... Error: {e}")
             return "Error: Unable to generate response due to internal processing error."
+    
