@@ -32,7 +32,6 @@ def insert_chunk(conn: sqlite3.Connection, data: pd.DataFrame):
         data.to_sql("chunks", conn, if_exists='append', index=False)
 
         conn.commit()
-        conn.close()
         log_info(f"Inserted {len(data)} chunk(s) into 'chunks' table.")
     except Exception as e:
         log_error(f"Error inserting chunk(s): {e}")
