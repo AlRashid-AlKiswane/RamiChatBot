@@ -31,7 +31,8 @@ try:
         upload_route,
         to_chunks_route,
         llms_config_route,
-        generate_routes
+        generate_routes,
+        chat_manage_routes
     )
     from Database import (
         create_sqlite_engine,
@@ -42,13 +43,14 @@ try:
     from utils import load_last_yaml
     from llm import HuggingFcaeModel
 
-    from schemes import LLMResponse
 
+    from historys import ChatHistoryManager
 except Exception as e:
     raise ImportError(f"Import Error in {__file__}: {e}")
 
 # === FastAPI App ===
 app = FastAPI(title="RamiChatBot API")
+app.chat_manager = ChatHistoryManager()
 
 app.RETRIEVAL_CONTEXT =  "Hello Rami I'm AlRashid, How are you? Hello dear friend, I'm doing well."
 # === Retry LLM Config & Model Loading in Background ===
@@ -96,6 +98,8 @@ app.include_router(upload_route, prefix="/api", tags=["Upload File"])
 app.include_router(to_chunks_route, prefix="/api", tags=["Documents to Chunks"])
 app.include_router(llms_config_route, prefix="/api", tags=["LLMs Configs"])
 app.include_router(generate_routes, prefix="/api", tags=["Chat Response"])
+app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
+
 
 
 @app.on_event("shutdown")
