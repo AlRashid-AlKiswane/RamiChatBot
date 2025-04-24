@@ -58,6 +58,7 @@ def create_query_responses_table(conn: sqlite3.Connection):
         conn.execute("""
             CREATE TABLE IF NOT EXISTS query_responses (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id TEXT NOT NULL,
                 query TEXT NOT NULL,
                 response TEXT NOT NULL
             );

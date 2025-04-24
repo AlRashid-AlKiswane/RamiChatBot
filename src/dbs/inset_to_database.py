@@ -60,7 +60,7 @@ def insert_embedding(conn: sqlite3.Connection, embedding: Embedding):
         conn.rollback()
 
 
-def insert_query_response(conn: sqlite3.Connection, query, response):
+def insert_query_response(conn: sqlite3.Connection, query, response, user_id: str):
     """
     Inserts a query-response pair into the 'query_responses' table after validation.
     """
@@ -69,6 +69,8 @@ def insert_query_response(conn: sqlite3.Connection, query, response):
             raise ValueError("Query must be a string.")
         if not isinstance(response, str):
             raise ValueError("Response must be a string.")
+        if not isinstance(user_id, str):
+            raise ValueError("User ID must be a string.")
     except ValueError as ve:
         log_error(f"Validation failed for query-response pair: {ve}")
         return
@@ -86,9 +88,9 @@ def insert_query_response(conn: sqlite3.Connection, query, response):
     try:
         # Validate the query-response data with Pydantic
         cursor.execute("""
-            INSERT INTO query_responses (query, response)
-            VALUES (?, ?)
-        """, (query, response))
+            INSERT INTO query_responses (user_id, query, response)
+            VALUES (?, ?, ?)
+        """, (user_id, query, response))
 
         conn.commit()
 
