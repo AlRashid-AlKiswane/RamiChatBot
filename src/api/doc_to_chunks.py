@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
 from fastapi.responses import JSONResponse
 import os
 import sys
@@ -13,7 +13,7 @@ try:
     from config import get_settings, Settings
     from controllers import load_and_chunk, clear_table
     from schemes import ChunkRequest
-    from Database import create_sqlite_engine, insert_chunk
+    from Database import insert_chunk
 except Exception as e:
     raise ImportError(f"Import Error in: {FILE_LOCATION}, Error: {e}")
 
@@ -22,6 +22,7 @@ to_chunks_route = APIRouter()
 
 @to_chunks_route.post("/to_chunks")
 async def to_chunks(
+    request: Request,
     body: ChunkRequest,
     app_settings: Settings = Depends(get_settings)
 ):
@@ -43,12 +44,10 @@ async def to_chunks(
     log_info(f"Starting chunking for: {file_path if file_path else '[ALL DOCUMENTS]'}")
 
     try:
-        # Connect to SQLite
-        conn = create_sqlite_engine()
 
         # Reset DB if requested (expected as int: 0 or 1)
         if do_reset == 1:
-            clear_table(conn=conn, table_name="chunks")
+            clear_table(conn=request.app.conn, table_name="chunks")
             log_info("Chunks table cleared.")
 
         # Process files to DataFrame
@@ -60,7 +59,7 @@ async def to_chunks(
             return JSONResponse(content={"status": "error", "message": msg}, status_code=404)
 
         # Insert into DB
-        insert_chunk(conn=conn, data=df)
+        insert_chunk(conn=request.app.conn, data=df)
         log_info(f"Inserted {len(df)} chunks into the database.")
 
         return JSONResponse(
