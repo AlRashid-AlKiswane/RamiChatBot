@@ -48,6 +48,7 @@ htmlcov/
 .dmypy.json
 
 # Data & Models
+*.pdf
 *.txt
 data/
 datasets/
