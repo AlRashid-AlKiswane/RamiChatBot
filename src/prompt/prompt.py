@@ -15,7 +15,8 @@ class PromptBuilder:
         "5. **Don't ask any follow-up questions or start a new dialogue.**\n"
         "6. If the user query relates to previous input (e.g., 'What is my name?'), retrieve that information from the conversation history.\n\n"
         "7. Your answer must be Be short and concise, do not talk too much, and answer according to the question.\n"
-        "The answer:"
+        "<|ASSIST|>\n"
+        "The answer:\n"
         )
 
 
