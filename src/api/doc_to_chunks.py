@@ -13,7 +13,7 @@ try:
     from config import get_settings, Settings
     from controllers import load_and_chunk, clear_table
     from schemes import ChunkRequest
-    from Database import insert_chunk
+    from dbs import insert_chunk
 except Exception as e:
     raise ImportError(f"Import Error in: {FILE_LOCATION}, Error: {e}")
 

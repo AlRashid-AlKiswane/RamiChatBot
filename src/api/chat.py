@@ -14,7 +14,7 @@ try:
     from logs import log_debug, log_error, log_info
     from prompt import PromptBuilder
     from schemes import Generate
-    from Database import insert_query_response
+    from dbs import insert_query_response
     from utils import extract_assistant_response
 
 except Exception as e:
@@ -44,7 +44,7 @@ async def generate_response(request: Request, body: Generate, user_id: str, prom
 
         # Build the prompt
         formatted_prompt = PromptBuilder.build_prompt(
-            history=chat_manager.get_chat_history(),
+            history=chat_manager.get_chat_history(user_id),
             context=context,
             user_message=query
         )
@@ -58,7 +58,8 @@ async def generate_response(request: Request, body: Generate, user_id: str, prom
         insert_query_response(
             conn=conn,
             query=formatted_prompt,
-            response=response
+            response=response,
+            user_id=user_id
         )        
 
         # Update memory
