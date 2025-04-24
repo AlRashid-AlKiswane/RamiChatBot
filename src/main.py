@@ -2,23 +2,7 @@ import os
 import sys
 import threading
 import time
-import warnings
 from fastapi import FastAPI
-from dotenv import load_dotenv
-
-with warnings.catch_warnings():
-    load_dotenv()
-    warnings.filterwarnings("ignore", category=UserWarning)
-    warnings.filterwarnings("ignore", category=DeprecationWarning)
-    warnings.filterwarnings("ignore", category=FutureWarning)
-    warnings.filterwarnings("ignore", category=SyntaxWarning)
-    warnings.filterwarnings("ignore", category=ImportWarning)
-    warnings.filterwarnings("ignore", category=ResourceWarning)
-    warnings.filterwarnings("ignore", category=RuntimeWarning)
-    warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
-    warnings.filterwarnings("ignore", category=UnicodeWarning)
-    warnings.filterwarnings("ignore", category=BytesWarning)
-    warnings.filterwarnings("ignore", category=Warning)
 
 # === Path Configuration ===
 try:
@@ -34,7 +18,7 @@ try:
         generate_routes,
         chat_manage_routes
     )
-    from Database import (
+    from dbs import (
         create_sqlite_engine,
         create_chunks_table,
         create_embeddings_table,
