@@ -7,11 +7,19 @@ from fastapi import FastAPI
 from logs import log_debug, log_error, log_info
 from dotenv import load_dotenv
 
-
 with warnings.catch_warnings():
-    warnings.filterwarnings("ignore", category=UserWarning)
     load_dotenv()
-
+    warnings.filterwarnings("ignore", category=UserWarning)
+    warnings.filterwarnings("ignore", category=DeprecationWarning)
+    warnings.filterwarnings("ignore", category=FutureWarning)
+    warnings.filterwarnings("ignore", category=SyntaxWarning)
+    warnings.filterwarnings("ignore", category=ImportWarning)
+    warnings.filterwarnings("ignore", category=ResourceWarning)
+    warnings.filterwarnings("ignore", category=RuntimeWarning)
+    warnings.filterwarnings("ignore", category=PendingDeprecationWarning)
+    warnings.filterwarnings("ignore", category=UnicodeWarning)
+    warnings.filterwarnings("ignore", category=BytesWarning)
+    warnings.filterwarnings("ignore", category=Warning)
 
 # === Path Configuration ===
 try:
