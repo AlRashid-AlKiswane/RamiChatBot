@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     DOC_LOCATION_SAVE: str
     CONFIG_DIR: str
     DATABASE_URL: str
-
+    EMBEDDING_MODEL: str
 
     HUGGINGFACE_TOKIENS: str
     DEFAULT_SYSTEM_PROMPT: str
