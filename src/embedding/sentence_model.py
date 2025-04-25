@@ -3,7 +3,7 @@ import sys
 from sentence_transformers import SentenceTransformer
 from typing import Optional, Union
 
-FILE_LOCATION = f"{os.path.dirname(__file__)}/model.py"
+FILE_LOCATION = f"{os.path.dirname(__file__)}/sentence_model.py"
 
 # Add root dir and handle potential import errors
 try:
