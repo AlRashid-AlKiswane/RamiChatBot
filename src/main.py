@@ -16,7 +16,8 @@ try:
         to_chunks_route,
         llms_config_route,
         generate_routes,
-        chat_manage_routes
+        chat_manage_routes,
+        chunks_to_embedding_routes
     )
     from dbs import (
         create_sqlite_engine,
@@ -83,6 +84,8 @@ app.include_router(to_chunks_route, prefix="/api", tags=["Documents to Chunks"])
 app.include_router(llms_config_route, prefix="/api", tags=["LLMs Configs"])
 app.include_router(generate_routes, prefix="/api", tags=["Chat Response"])
 app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
+app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Chunks to Embedding"])
+
 
 
 

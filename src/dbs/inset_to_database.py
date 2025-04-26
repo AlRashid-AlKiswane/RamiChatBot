@@ -38,20 +38,22 @@ def insert_chunk(conn: sqlite3.Connection, data: pd.DataFrame):
         conn.rollback()
 
 
-def insert_embedding(conn: sqlite3.Connection, embedding: Embedding):
+def insert_embedding(conn: sqlite3.Connection, embedding: list, chunk_id: str):
     """
     Inserts an embedding into the 'embeddings' table after validation.
     """
     cursor = conn.cursor()
     try:
-        # Validate the embedding data with Pydantic
-        embedding_data = embedding.dict()
+        # Serialize embedding list to JSON string
+        embedding_json = json.dumps(embedding)
+
         cursor.execute("""
             INSERT INTO embeddings (chunk_id, embedding)
             VALUES (?, ?)
-        """, (embedding_data['chunk_id'], embedding_data['embedding']))
+        """, (chunk_id, embedding_json))
+
         conn.commit()
-        log_info(f"Inserted embedding for chunk_id: {embedding_data['chunk_id']}")
+        log_info(f"Inserted embedding for chunk_id: {chunk_id}")
     except ValidationError as ve:
         log_error(f"Validation failed for embedding: {ve}")
     except Exception as e:
