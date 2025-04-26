@@ -12,7 +12,7 @@ try:
 
     from dbs import pull_from_table, insert_embedding
     from controllers import convert_chunks_to_embedding  # fixed typo: convet -> convert
-    from logs import log_debug, log_error, log_info
+    from logs import log_error, log_info
 except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
 
