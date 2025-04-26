@@ -15,7 +15,7 @@ except ImportError as ie:
     print(f"ImportError in {__file__}: {ie}")
     raise
 
-def convert_text_to_embedding(text: str, embedding_model: SentenceTransformer) -> Optional[list[float]]:
+def convet_chunks_to_embedding(text: str, embedding_model: SentenceTransformer) -> Optional[list[float]]:
     """
     Convert text into an embedding vector using the specified model.
 
