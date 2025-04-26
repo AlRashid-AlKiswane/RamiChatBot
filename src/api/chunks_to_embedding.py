@@ -41,7 +41,7 @@ async def chunks_to_embedding(request: Request):
         
         log_info(f"Pulled {len(chunks)} chunk(s) from the database.")
         for chunk in chunks:
-            log_info(f"Chunk ID: {chunk[1]}, Content: {chunk[0][:30]}...")
+            log_info(f"Chunk ID: {chunk['id']}, Content: {chunk['chunk'][:30]}...")
             # Convert chunks to embeddings
             embeddings = convert_chunks_to_embedding(chunks["chunk"], embedding_model)  # embeddings plural (many chunks)
             if not embeddings:
