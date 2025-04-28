@@ -25,6 +25,7 @@ try:
         create_embeddings_table,
         create_query_responses_table
     )
+    from embedding import EmbeddingModel
     from utils import load_last_yaml
     from llm import HuggingFcaeModel
 
@@ -72,6 +73,7 @@ async def startup_event():
         create_chunks_table(conn=app.conn)
         create_embeddings_table(conn=app.conn)
         create_query_responses_table(conn=app.conn)
+        app.embedding_model = EmbeddingModel()
         log_info("[DB] SQLite database and tables initialized.")
     except Exception as e:
         log_error(f"[DB INIT ERROR] {e}")
