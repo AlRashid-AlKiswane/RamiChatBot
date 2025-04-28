@@ -60,6 +60,9 @@ class HuggingFcaeModel(LLMsInterface):
             "torch_dtype": torch.float16,
             "device_map": "auto",
             "trust_remote_code": trust_remote_code,
+            "low_cpu_mem_usage": True,
+            "device_map": "auto",
+            "torch_dtype": "auto",  
         }
 
         if quantization:
