@@ -11,7 +11,7 @@ from typing import Tuple, List, Dict, Any
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
-    from dbs.pull_from_table import pull_from_table
+    from dbs import pull_from_table
     from logs import log_debug, log_error, log_info
 except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
