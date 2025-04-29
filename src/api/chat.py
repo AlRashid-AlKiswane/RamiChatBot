@@ -15,7 +15,10 @@ try:
     from logs import log_debug, log_error, log_info
     from prompt import PromptBuilder
     from schemes import Generate
-    from dbs import insert_query_response
+    from dbs import (insert_query_response,
+                     get_cached_response,
+                     insert_cached_response)
+    
     from utils import extract_assistant_response
     from rag import search
 
@@ -51,40 +54,55 @@ async def generate_response(
         if not all([chat_manager, model, conn, embedding_model]):
             raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail="Application is not properly initialized.")
 
-        # Retrieve context
-        context = search(query=query, conn=conn, embedder=embedding_model, top_k=1)
-        if not context:
-            log_debug(f"[LLM GENERATION] No context found for query: {query}")
-            context = getattr(app, "RETRIEVAL_CONTEXT", "")
+        cached = get_cached_response(conn=conn, user_id=user_id, query=query)
+        if cached:
+            log_info(f"[CACHED HIT] Returning cached response for query: {query}")
+            return JSONResponse(
+                content={
+                    "status": "success",
+                    "response": cached
+                },
+                status_code=HTTP_200_OK
+            )
+        else:
+            # Retrieve context
+            context = search(query=query, conn=conn, embedder=embedding_model, top_k=1)
+            if not context:
+                log_debug(f"[LLM GENERATION] No context found for query: {query}")
+                context = getattr(app, "RETRIEVAL_CONTEXT", "")
 
-        log_debug(f"[LLM GENERATION] Context retrieved: {context}")
+            log_debug(f"[LLM GENERATION] Context retrieved: {context}")
 
-        # Build the prompt
-        formatted_prompt = prompt_builder.build_prompt(
-            history=chat_manager.get_chat_history(user_id),
-            context=context,
-            user_message=query        )
-        log_info(f"[LLM GENERATION] Generating response for query: {query}")
+            # Build the prompt
+            formatted_prompt = prompt_builder.build_prompt(
+                history=chat_manager.get_chat_history(user_id),
+                context=context,
+                user_message=query        )
+            log_info(f"[LLM GENERATION] Generating response for query: {query}")
 
-        # Generate model response
-        raw_response = model.generate_response(prompt=formatted_prompt)
-        single_response = extract_assistant_response(text=raw_response)
+            # Generate model response
+            raw_response = model.generate_response(prompt=formatted_prompt)
+            single_response = extract_assistant_response(text=raw_response)
 
-        # Store the query and response in the database
-        insert_query_response(
-            conn=conn,
-            query=formatted_prompt,
-            response=raw_response,
-            user_id=user_id
-        )        
+            # Store the query and response in the database
+            insert_query_response(
+                conn=conn,
+                query=formatted_prompt,
+                response=raw_response,
+                user_id=user_id
+            )        
 
-        # Update memory (chat history)
-        chat_manager.add_user_message(user_id, query)
-        chat_manager.add_ai_message(user_id, single_response)
+            # Update memory (chat history)
+            chat_manager.add_user_message(user_id, query)
+            chat_manager.add_ai_message(user_id, single_response)
 
-        # Log memory usage
-        current, peak = tracemalloc.get_traced_memory()
-        log_debug(f"[MEMORY USAGE] Current: {current / 1024:.2f} KB; Peak: {peak / 1024:.2f} KB")
+            # Log memory usage
+            current, peak = tracemalloc.get_traced_memory()
+            log_debug(f"[MEMORY USAGE] Current: {current / 1024:.2f} KB; Peak: {peak / 1024:.2f} KB")
+
+            log_info(f"[CACHED MISS] No cached response found for query: {query}")
+            insert_cached_response(conn=conn, user_id=user_id, query=query, response=single_response)
+            log_info(f"[CACHED INSERT] Cached response inserted for query: {query}")
 
         return JSONResponse(
             status_code=HTTP_200_OK,
