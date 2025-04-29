@@ -1,54 +1,54 @@
+# -*- coding: utf-8 -*-
+
 import os
 import sys
+import sqlite3
+from typing import List, Dict, Any
 
+# Setup path and logging
+FILE_LOCATION = f"{os.path.dirname(__file__)}/pull_from_table.py"
 
-FILE_LOCATION = f"{os.path.dirname(__file__)}/create_sqlite_engin.py"
-
-# Add root dir and handle potential import errors
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
 
     from logs import log_debug, log_error, log_info
 except Exception as e:
-    msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"
-    raise ImportError(msg)
+    raise ImportError(f"Import Error in {FILE_LOCATION}: {e}")
 
-
-def pull_from_table(conn, table_name: str, columns: list = ["page_content", "id"]):
+def pull_from_table(
+    conn: sqlite3.Connection,
+    table_name: str,
+    columns: List[str],
+    rely_data: str = "text"
+) -> List[Dict[str, Any]]:
     """
-    Pulls all data from a specified table in the SQLite database.
+    Pulls data from a specified table in the SQLite database.
 
     Args:
-        conn (sqlite3.Connection): The connection object to the SQLite database.
-        table_name (str): The name of the table to pull data from.
-        columns (list): The columns to select from the table. Default is ["page_content", "id"].
+        conn (sqlite3.Connection): SQLite connection.
+        table_name (str): Target table to pull from.
+        columns (List[str]): List of columns to select.
+        rely_data (str): Label key for the first selected column.
 
     Returns:
-        list: A list of dictionaries representing the rows in the specified table.
+        List[Dict[str, Any]]: List of records with 'id' and selected data.
     """
-    cursor = conn.cursor()
     try:
+        cursor = conn.cursor()
         cursor.execute(f"SELECT {', '.join(columns)} FROM {table_name}")
         rows = cursor.fetchall()
-        log_info(f"Pulled {len(rows)} row(s) from '{table_name}' table.")
 
-        # Corrected here: use 'rows', not 'chunks_data'
-        chunks_as_dicts = [{"id": chunk_id, "text": chunk_text} for chunk_text, chunk_id in rows]
+        log_info(f"Pulled {len(rows)} row(s) from table '{table_name}'.")
 
-        return chunks_as_dicts
+        result = [
+            {"id": row[1], rely_data: row[0]} for row in rows
+        ]
+
+        return result
+
     except Exception as e:
-        log_error(f"Error pulling data from '{table_name}' table: {e}")
+        log_error(f"Failed to pull data from '{table_name}': {e}")
         return []
     finally:
-        log_debug(f"Successfully executed pull_from_table function.")
-
-
-if __name__ == "__main__":
-    # Example usage
-    from create_sqlite_engin import create_sqlite_engine
-
-    conn = create_sqlite_engine()
-    table_name = "chunks"
-    data = pull_from_table(conn, table_name, columns=["page_contest", "id"])
-    print(f"Pulled data: {data}")
+        log_debug("Executed pull_from_table.")
