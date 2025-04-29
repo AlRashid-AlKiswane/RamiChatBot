@@ -71,7 +71,7 @@ def search(
             chunk_id = ids[idx]  # id from embeddings table (linked to chunks.id)
 
             # Fetch page_content and id from chunks table
-            cursor.execute("SELECT id, page_content FROM chunks WHERE id = ?", (chunk_id,))
+            cursor.execute("SELECT id, page_contest FROM chunks WHERE id = ?", (chunk_id,))
             row = cursor.fetchone()
             if row:
                 result_entries.append({

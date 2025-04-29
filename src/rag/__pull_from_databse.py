@@ -3,6 +3,7 @@
 import os
 import sys
 import sqlite3
+import json
 import numpy as np
 from typing import Tuple, List, Dict, Any
 
@@ -37,7 +38,7 @@ def load_embeddings_and_metadata(
         # Load embeddings
         embeddings_data = pull_from_table(
             conn, 
-            table_name="embedding", 
+            table_name="embeddings", 
             columns=["embedding", "chunk_id"], 
             rely_data="embedding"
         )
@@ -46,7 +47,7 @@ def load_embeddings_and_metadata(
         metadata_rows = pull_from_table(
             conn, 
             table_name="chunks", 
-            columns=["page", "source", "author"], 
+            columns=["pages", "sources", "authors"], 
             rely_data="metadata"
         )
 
@@ -56,7 +57,11 @@ def load_embeddings_and_metadata(
         for record in embeddings_data:
             id_ = record["id"]
             embedding_blob = record["embedding"]
-            embedding_array = np.frombuffer(embedding_blob, dtype=np.float32)
+
+            embedding_list = json.loads(embedding_blob)
+
+            # Convert the list to a NumPy array
+            embedding_array = np.array(embedding_list, dtype=np.float32)
 
             ids.append(id_)
             embeddings.append(embedding_array)
@@ -77,7 +82,7 @@ def load_embeddings_and_metadata(
 
         log_info(f"Loaded {len(ids)} embeddings and {len(metadata)} metadata entries.")
 
-        return ids, embeddings_array, metadata
+        return ids, np.vstack(embeddings_array), metadata
 
     except sqlite3.Error as e:
         log_error(f"SQLite error during loading: {e}")

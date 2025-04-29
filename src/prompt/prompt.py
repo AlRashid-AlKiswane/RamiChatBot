@@ -2,10 +2,9 @@
 class PromptBuilder:
     @staticmethod
     def build_prompt(history: str, context: str, user_message: str) -> str:
-        clean_context = context.strip() or "No additional context available."
         return (
         f"Conversation History:\n{history}\n\n"
-        f"Relevant Context:\n{clean_context}\n\n"
+        f"Relevant Context:\n{context}\n\n"
         f"User Query:\n{user_message}\n\n"
         "RamiAI Instructions:\n"
         "1. Carefully read the entire conversation history to extract any facts, names, or preferences added by the user.\n"

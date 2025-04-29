@@ -63,9 +63,7 @@ async def generate_response(
         formatted_prompt = prompt_builder.build_prompt(
             history=chat_manager.get_chat_history(user_id),
             context=context,
-            user_message=query,
-            prompt_template_name=prompt_template_name
-        )
+            user_message=query        )
         log_info(f"[LLM GENERATION] Generating response for query: {query}")
 
         # Generate model response
