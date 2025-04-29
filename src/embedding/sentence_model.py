@@ -31,12 +31,12 @@ class EmbeddingModel:
             log_error(f"Failed to load embedding model '{app_setting.EMBEDDING_MODEL}': {e}")
             raise
 
-    def embed(self, text: Union[str, list[str]]) -> Optional[Union[list[float], list[list[float]]]]:
+    def embed(self, text: Union[str, list[str]], convert_to_tensor: bool = True, normalize_embeddings: bool = False) -> Optional[Union[list[float], list[list[float]]]]:
         """
         Generate embeddings for a given string or list of strings.
         """
         try:
-            embedding = self.model.encode(text, convert_to_tensor=True)
+            embedding = self.model.encode(text, convert_to_tensor=convert_to_tensor, normalize_embeddings=normalize_embeddings)
             preview_text = text if isinstance(text, str) else text[0]
             log_info(f"Generated embedding for text: {preview_text[:30]}...")
             return embedding
