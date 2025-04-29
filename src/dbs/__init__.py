@@ -1,4 +1,5 @@
 from .create_sqlite_engin import create_sqlite_engine
 from .create_taples import create_chunks_table, create_embeddings_table, create_query_responses_table
 from .inset_to_database import insert_chunk, insert_embedding, insert_query_response
-from .pull_from_table import pull_from_table
+from .pull_from_database import pull_from_table
+from .chats_cache import create_cache_table, get_cached_response, insert_cached_response
