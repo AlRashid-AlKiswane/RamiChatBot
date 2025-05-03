@@ -77,8 +77,8 @@ async def configure_llama_cpp_model(
     config: LlamaCPP
 ) -> JSONResponse:
     try:
-        log_info(f"[LLM CONFIG] Saving LLaMA.cpp config for model: {config.model_name}")
-        safe_name = sanitize_model_name(config.model_name)
+        log_info(f"[LLM CONFIG] Saving LLaMA.cpp config for model: {config.filename}")
+        safe_name = sanitize_model_name(config.filename)
         filename = f"{safe_name}_llama_cpp_config.yaml"
         config_path = save_config(config.dict(), filename)
 

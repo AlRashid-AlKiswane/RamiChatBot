@@ -78,6 +78,7 @@ async def generate_response(
                 history=chat_manager.get_chat_history(user_id),
                 context=context,
                 user_message=query        )
+            log_debug(f"[MEASSAGE HISTORY] {chat_manager.get_chat_history(user_id)}")
             log_info(f"[LLM GENERATION] Generating response for query: {query}")
 
             # Generate model response

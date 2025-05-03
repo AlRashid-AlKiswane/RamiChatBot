@@ -18,7 +18,7 @@ try:
 except ImportError as ie:
     raise ImportError(f"ImportError in {__file__}: {ie}")
 
-class HuggingFcaeModel(LLMsInterface):
+class HuggingFaceModel(LLMsInterface):
     """
     Implementation of LLMsInterface for Hugging Face models (e.g., LLaMA),
     with optional support for quantization using bitsandbytes.

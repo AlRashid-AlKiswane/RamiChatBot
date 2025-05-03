@@ -32,6 +32,7 @@ class LlamaCPP(LLMsInterface):
         n_ctx: int = 128,
         n_threads: int = 4,
         seed: int = 42,
+        n_gpus: int = -1,
         verbose: bool = True,
         max_tokens: int = 128,
         temperature: float = 0.7,
