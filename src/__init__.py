@@ -1,5 +1,5 @@
 import logging
-from main import app
+
 # Suppress specific loggers
 suppress_loggers = [
     "dotenv",
