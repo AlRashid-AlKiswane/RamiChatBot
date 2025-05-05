@@ -1,0 +1,88 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+input[type="number"], input[type="text"] {
+    background-color: #f8f8f8;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #357abd;
+}
+
+button:disabled {
+    background-color: #b0d3f7;
+    cursor: not-allowed;
+}
+
+.modelConfig {
+    display: none;
+}
+
+#huggingfaceConfig {
+    display: block;
+}
+
+select {
+    background-color: #fff;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+}

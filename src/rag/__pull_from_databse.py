@@ -53,7 +53,6 @@ def load_embeddings_and_metadata(
 
         ids = []
         embeddings = []
-
         for record in embeddings_data:
             id_ = record["id"]
             embedding_blob = record["embedding"]
@@ -82,7 +81,7 @@ def load_embeddings_and_metadata(
 
         log_info(f"Loaded {len(ids)} embeddings and {len(metadata)} metadata entries.")
 
-        return ids, np.vstack(embeddings_array), metadata
+        return ids, embeddings_array, metadata
 
     except sqlite3.Error as e:
         log_error(f"SQLite error during loading: {e}")

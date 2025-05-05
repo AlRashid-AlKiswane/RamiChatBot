@@ -11,10 +11,10 @@ app.log
 # Virtual environments
 env/
 venv/
-.venv/
+.venv
 ENV/
 env.bak/
-*.env
+.env
 # Python packaging
 *.egg-info/
 dist/

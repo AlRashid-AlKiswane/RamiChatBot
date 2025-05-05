@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RamiChatBot Setup</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Initialize RamiChatBot</h1>
+        <form id="appForm">
+            <label for="model_name">Model Name:</label>
+            <select id="model_name" name="model_name" required>
+                <option value="huggingface">HuggingFace</option>
+                <option value="llama_cpp">LLaMA.cpp</option>
+            </select>
+
+            <label for="config_path">YAML Config Path:</label>
+            <input type="text" id="config_path" name="config_path" placeholder="/path/to/config.yaml" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="response" class="message"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

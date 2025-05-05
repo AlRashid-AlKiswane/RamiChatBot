@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document to Chunks</title>
+    <link rel="stylesheet" href="to_chunks.css">
+</head>
+<body>
+    <div class="chunk-container">
+        <h1>Document Chunking</h1>
+        <form id="chunkForm">
+            <label for="filePath">File Path (optional):</label>
+            <input type="text" id="filePath" name="file_path" placeholder="/absolute/path/to/file.txt">
+
+            <label for="doReset">Reset DB?</label>
+            <select id="doReset" name="do_reset">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <button type="submit">Convert to Chunks</button>
+        </form>
+        <div id="chunkResult" class="result-box"></div>
+    </div>
+
+    <script src="to_chunks.js"></script>
+</body>
+</html>

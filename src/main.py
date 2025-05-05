@@ -5,9 +5,10 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from starlette.status import HTTP_200_OK
 from src.logs import log_debug, log_error, log_info
-
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 # === Import Routes ===
-from api import (
+from routes import (
     hello_routes, upload_route, to_chunks_route, llms_config_route,
     generate_routes, chat_manage_routes, chunks_to_embedding_routes,
 )
@@ -25,6 +26,15 @@ from historys import ChatHistoryManager
 
 # === FastAPI App ===
 app = FastAPI(title="RamiChatBot API")
+
+# Add CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development; restrict this in production
+    allow_credentials=True,
+    allow_methods=["*"],  # This allows OPTIONS, POST, GET, etc.
+    allow_headers=["*"],  # This allows custom headers like Content-Type
+)
 
 # === Shared State ===
 app.chat_manager = ChatHistoryManager()
@@ -132,7 +142,7 @@ async def shutdown_event():
 app.include_router(hello_routes, prefix="/api", tags=["Hello"])
 app.include_router(upload_route, prefix="/api", tags=["Upload File"])
 app.include_router(to_chunks_route, prefix="/api", tags=["Documents to Chunks"])
+app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Chunks to Embedding"])
 app.include_router(llms_config_route, prefix="/api", tags=["LLMs Configs"])
 app.include_router(generate_routes, prefix="/api", tags=["Chat Response"])
 app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
-app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Chunks to Embedding"])

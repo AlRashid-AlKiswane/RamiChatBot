@@ -46,7 +46,7 @@ def insert_embedding(conn: sqlite3.Connection, embedding: list, chunk_id: str):
     try:
         # Serialize embedding list to JSON string
         embedding_json = json.dumps(embedding)
-
+        
         cursor.execute("""
             INSERT INTO embeddings (chunk_id, embedding)
             VALUES (?, ?)
