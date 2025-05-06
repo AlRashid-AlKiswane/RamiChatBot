@@ -25,8 +25,8 @@ async def chunks_to_embedding(request: Request):
     """
     try:
         # Retrieve connection and model from app
-        conn = getattr(request.app, 'conn', None)
-        embedding_model: EmbeddingModel = getattr(request.app, 'embedding_model', None)
+        conn = getattr(request.app.state, 'conn', None)
+        embedding_model: EmbeddingModel = getattr(request.app.state, 'embedding_model', None)
 
         # Pull chunks from the database
         chunks = pull_from_table(conn=conn, table_name="chunks", columns=["page_contest", "id"])

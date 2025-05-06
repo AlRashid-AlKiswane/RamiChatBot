@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class LLMsConfigStatus(Enum):
+class LLMsStatus(Enum):
     """
     Represents the status of retrieving LLM configuration.
     """

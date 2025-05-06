@@ -44,11 +44,15 @@ async def to_chunks(
     log_info(f"Starting chunking for: {file_path if file_path else '[ALL DOCUMENTS]'}")
 
     try:
+        conn = getattr(request.app.state, "conn", None)
 
         # Reset DB if requested (expected as int: 0 or 1)
         if do_reset == 1:
-            clear_table(conn=request.app.conn, table_name="chunks")
+            clear_table(conn=conn, table_name="chunks")
+            clear_table(conn=conn, table_name="embeddings")
             log_info("Chunks table cleared.")
+            log_info("Embeddings table cleared.")
+
 
         # Process files to DataFrame
         df = load_and_chunk(file_path=file_path)
@@ -59,7 +63,7 @@ async def to_chunks(
             return JSONResponse(content={"status": "error", "message": msg}, status_code=404)
 
         # Insert into DB
-        insert_chunk(conn=request.app.conn, data=df)
+        insert_chunk(conn=conn, data=df)
         log_info(f"Inserted {len(df)} chunks into the database.")
 
         return JSONResponse(

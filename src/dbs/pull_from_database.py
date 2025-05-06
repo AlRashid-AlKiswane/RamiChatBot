@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
-
 import os
 import sys
 import sqlite3
-from typing import List, Dict, Any
+from typing import List, Optional, Dict, Any, Union, Tuple
 
 # Setup path and logging
 FILE_LOCATION = f"{os.path.dirname(__file__)}/pull_from_table.py"
@@ -16,39 +14,55 @@ try:
 except Exception as e:
     raise ImportError(f"Import Error in {FILE_LOCATION}: {e}")
 
+
 def pull_from_table(
     conn: sqlite3.Connection,
     table_name: str,
-    columns: List[str],
-    rely_data: str = "text"
-) -> List[Dict[str, Any]]:
+    rely_data: str = "text",
+    cach: Optional[Tuple[str, str]] = None,  # Tuple[user_id, query]
+    columns: Optional[List[str]] = None,
+) -> Union[List[Dict[str, Any]], Optional[str]]:
     """
-    Pulls data from a specified table in the SQLite database.
+    Pulls data from a specified table or retrieves a cached response.
 
     Args:
         conn (sqlite3.Connection): SQLite connection.
-        table_name (str): Target table to pull from.
-        columns (List[str]): List of columns to select.
-        rely_data (str): Label key for the first selected column.
+        table_name (str): Target table name.
+        columns (List[str]): List of column names to select.
+        rely_data (str): Key name for data in return dictionary.
+        cach (Optional[Tuple[str, str]]): If set, retrieves cached response for (user_id, query).
 
     Returns:
-        List[Dict[str, Any]]: List of records with 'id' and selected data.
+        - List[Dict[str, Any]] for general table fetch.
+        - str or None for cache mode (cached response).
     """
     try:
         cursor = conn.cursor()
-        cursor.execute(f"SELECT {', '.join(columns)} FROM {table_name}")
-        rows = cursor.fetchall()
 
-        log_info(f"Pulled {len(rows)} row(s) from table '{table_name}'.")
+        # Cache mode
+        if cach:
+            user_id, query = cach
+            cursor.execute(
+                "SELECT response FROM query_responses WHERE user_id = ? AND query = ?",
+                (user_id, query)
+            )
+            row = cursor.fetchone()
+            log_info(f"[CACHE MODE] Queried cache for user_id={user_id}, query='{query}'. Found: {bool(row)}")
+            return row[0] if row else None
 
-        result = [
-            {"id": row[1], rely_data: row[0]} for row in rows
-        ]
+        # General fetch mode
+        else:
+            cursor.execute(f"SELECT {', '.join(columns)} FROM {table_name}")
+            rows = cursor.fetchall()
+            log_info(f"Pulled {len(rows)} row(s) from table '{table_name}'.")
 
-        return result
+            result = [
+                {"id": row[1], rely_data: row[0]} for row in rows
+            ]
+            return result
 
     except Exception as e:
         log_error(f"Failed to pull data from '{table_name}': {e}")
-        return []
+        return None if cach else []
     finally:
         log_debug("Executed pull_from_table.")

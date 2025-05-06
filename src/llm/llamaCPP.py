@@ -10,13 +10,13 @@ try:
 
     from src.config import get_settings, Settings
     from src.logs import log_debug, log_error, log_info
-    from src.llm.LLMsINTERFACE import LLMsInterface
+    from src.llm.abstract_llms import AstracrtLLMs
 
 except ImportError as ie:
     raise ImportError(f"ImportError in {__file__}: {ie}")
 
 
-class LlamaCPP(LLMsInterface):
+class LlamaCPP(AstracrtLLMs):
     """
     Implementation of LLMsInterface for Llama models using llama-cpp-python.
     """

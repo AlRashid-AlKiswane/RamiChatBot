@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 
 
-class LLMsInterface(ABC):
+class AstracrtLLMs(ABC):
     """
     Abstract base class that defines a standard interface for 
     initializing and generating responses from language models.
     """
 
     @abstractmethod
-    def init_llm(
+    def initilize_llm(
         self,
         model_name: str,
         max_length: int,
