@@ -1,0 +1,91 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #e4f0ff, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #0077cc;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  input[type="text"],
+  button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #0077cc;
+    outline: none;
+  }
+  
+  fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  label {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }
+  
+  .response-box {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    display: none;
+  }
+  
+  .response-box.success {
+    background-color: #e0ffe0;
+    color: #2b7a2b;
+    border: 1px solid #2b7a2b;
+  }
+  
+  .response-box.error {
+    background-color: #ffe0e0;
+    color: #a32b2b;
+    border: 1px solid #a32b2b;
+  }
+  

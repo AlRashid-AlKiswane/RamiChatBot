@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Memory Manager</title>
+  <link rel="stylesheet" href="chat_manager.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Manage Chat Memory</h2>
+    <form id="manageForm">
+      <label>User ID:</label>
+      <input type="text" id="user_id" placeholder="Enter user ID" />
+
+      <fieldset>
+        <legend>ChatManager Options</legend>
+        <label><input type="checkbox" id="reset_memory" /> Reset Memory</label>
+        <label><input type="checkbox" id="clear_chat" /> Clear Chat History</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Database Operations</legend>
+        <label><input type="checkbox" id="remove_chunks" /> Clear Chunks</label>
+        <label><input type="checkbox" id="remove_embeddings" /> Clear Embeddings</label>
+        <label><input type="checkbox" id="remove_query_response" /> Clear Query Responses</label>
+        <label><input type="checkbox" id="reseting" /> Full Reset (All Above)</label>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="responseBox" class="response-box"></div>
+  </div>
+
+  <script src="chat_manager.js"></script>
+</body>
+</html>
