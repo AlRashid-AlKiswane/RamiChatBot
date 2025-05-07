@@ -45,6 +45,8 @@ class Settings(BaseSettings):
     class Config:
         env_file = os.path.join(root_dir, ".env")
         env_file_encoding = "utf-8"
+    
+    print("Loading environment variables from:", os.path.join(root_dir, ".env"))
 
 # Singleton-style getter (FastAPI friendly)
 from functools import lru_cache
