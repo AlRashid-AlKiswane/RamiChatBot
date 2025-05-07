@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rami ChatBot Dashboard</title>
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="/src/web/assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-
 <body>
-    <div class="app-container">
-        <header>
-            <h1>Rami ChatBot Dashboard</h1>
-            <nav>
-                <ul>
-                    <li><a href="/src/web/html/hello.html"><i class="fas fa-home"></i> Hello</a></li>
-                    <li><a href="/src/web/html/upload.html"><i class="fas fa-upload"></i> Upload File</a></li>
-                    <li><a href="/src/web/html/to_chunks.html"><i class="fas fa-cogs"></i> Convert to Chunks</a></li>
-                    <li><a href="/src/web/html/chunks_to_embedding.html"><i class="fas fa-puzzle-piece"></i> Convert Chunks to Embeddings</a></li>
-                    <li><a href="/src/web/html/llms_config.html"><i class="fas fa-cogs"></i> LLMs Settings</a></li>
-                    <li><a href="/src/web/html/chat_manager.html"><i class="fas fa-brain"></i> Manage Chat Memory</a></li>
-                    <li><a href="/src/web/html/monitoring.html"><i class="fas fa-chart-line"></i> Monitoring System</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main id="content-container">
-            <p>Welcome to the Rami ChatBot Dashboard. Select a page from the menu above.</p>
+    <div class="layout">
+        <aside class="sidebar">
+            <h2 class="sidebar-title">Rami Bot</h2>
+            <ul class="nav">
+                <li><a href="/src/web/html/hello.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/src/web/html/upload.html"><i class="fas fa-upload"></i> Upload Document</a></li>
+                <li><a href="/src/web/html/to_chunks.html"><i class="fas fa-cogs"></i> Chunk Generator</a></li>
+                <li><a href="/src/web/html/chunks_to_embedding.html"><i class="fas fa-puzzle-piece"></i> Embed Chunks</a></li>
+                <li><a href="/src/web/html/llms_config.html"><i class="fas fa-sliders-h"></i> LLM Configuration</a></li>
+                <li><a href="/src/web/html/chat_manager.html"><i class="fas fa-brain"></i> Chat Memory</a></li>
+                <li><a href="/src/web/html/monitoring.html"><i class="fas fa-chart-line"></i> System Monitoring</a></li>
+                <li><a href="/src/web/html/logs.html"><i class="fas fa-history"></i> System Logs</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Rami ChatBot Dashboard</h1>
+            </header>
+            <section class="dashboard-content">
+                <p>Welcome to the Rami ChatBot Dashboard. Use the sidebar to navigate through the tools.</p>
+            </section>
+            <footer class="main-footer">
+                <p>NeurChat - ©2025</p>
+            </footer>
         </main>
-
-        <footer>
-            <p>Rami ChatBot - ©2025</p>
-        </footer>
     </div>
 </body>
-
 </html>

@@ -22,7 +22,6 @@ class SystemMonitor:
         """Check CPU usage and log alerts if needed."""
         try:
             cpu_usage = psutil.cpu_percent(interval=1)
-            log_info(f"CPU Usage: {cpu_usage}%")
             if cpu_usage > self.cpu_threshold:
                 log_debug(f"High CPU Usage: {cpu_usage}%")
                 AlertManager().send_telegram_alert("High CPU Usage", f"CPU Usage: {cpu_usage}%")
@@ -35,7 +34,6 @@ class SystemMonitor:
         """Check Memory usage and log alerts if needed."""
         try:
             memory = psutil.virtual_memory()
-            log_info(f"Memory Usage: {memory.percent}%")
             if memory.percent > self.memory_threshold:
                 log_debug(f"High Memory Usage: {memory.percent}%")
                 AlertManager().send_telegram_alert("High Memory Usage", f"Memory Usage: {memory.percent}%")
@@ -48,7 +46,6 @@ class SystemMonitor:
         """Check Disk usage and log alerts if needed."""
         try:
             disk = psutil.disk_usage('/')
-            log_info(f"Disk Usage: {disk.percent}%")
             if disk.percent > self.disk_threshold:
                 log_debug(f"High Disk Usage: {disk.percent}%")
                 AlertManager().send_telegram_alert("High Disk Usage", f"Disk Usage: {disk.percent}%")
@@ -76,7 +73,6 @@ class SystemMonitor:
             handle = nvmlDeviceGetHandleByIndex(0)
             util = nvmlDeviceGetUtilizationRates(handle)
             gpu = util.gpu
-            log_info(f"GPU Usage: {gpu}%")
             if gpu > self.gpu_threshold:
                 log_debug(f"High GPU Usage: {gpu}%")
                 AlertManager().send_telegram_alert("High GPU Usage", f"GPU: {gpu}%")

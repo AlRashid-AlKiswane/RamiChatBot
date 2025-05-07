@@ -6,3 +6,4 @@ from .route_chat import generate_routes
 from .route_histroy_mang import chat_manage_routes
 from .route_embedd_chunks import chunks_to_embedding_routes
 from .route_monitor import monitor_router
+from .route_logs import logers_router

@@ -12,7 +12,7 @@ from src.logs import log_debug, log_error, log_info
 from routes import (
     hello_routes, upload_route, to_chunks_route, llm_settings_route,
     generate_routes, chat_manage_routes, chunks_to_embedding_routes,
-    monitor_router
+    monitor_router, logers_router
 )
 
 # === DB and LLM Initialization ===
@@ -76,12 +76,16 @@ async def shutdown_event():
         log_error("[DB] No active DB connection found.")
 
 # === Include Routers ===
+# === Include Routers ===
 app.include_router(hello_routes, prefix="/api", tags=["Hello"])
-app.include_router(upload_route, prefix="/api", tags=["Upload File"])
-app.include_router(to_chunks_route, prefix="/api", tags=["Chunks"])
-app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Embedding"])
-app.include_router(llm_settings_route, prefix="/api", tags=["LLM Config"])
-app.include_router(generate_routes, prefix="/api", tags=["Chat Generation"])
+app.include_router(upload_route, prefix="/api", tags=["File Upload"])
+app.include_router(to_chunks_route, prefix="/api", tags=["Text Chunking"])
+app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Embeddings"])
+app.include_router(llm_settings_route, prefix="/api", tags=["LLM Settings"])
+app.include_router(generate_routes, prefix="/api", tags=["Text Generation"])
 app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
-app.include_router(monitor_router, prefix="/api", tags=["Monitroy System"])
+app.include_router(monitor_router, prefix="/api", tags=["Monitoring"])
+app.include_router(logers_router, prefix="/api", tags=["Logging"])
+
+
 

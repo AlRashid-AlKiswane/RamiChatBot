@@ -20,13 +20,11 @@ monitor = SystemMonitor()
 
 @monitor_router.get("/health/cpu", summary="Get CPU usage")
 def cpu_usage():
-    log_info("CPU usage check initiated")
     try:
         data = monitor.check_cpu_usage()
         usage = data.get("cpu_usage", None)
         if usage is None:
             raise ValueError("No CPU data returned")
-        log_debug(f"CPU usage value: {usage}")
         return usage  # Return float directly
     except Exception as e:
         log_error(f"Error getting CPU usage: {e}")
@@ -37,13 +35,11 @@ def cpu_usage():
 
 @monitor_router.get("/health/memory", summary="Get memory usage")
 def memory_usage():
-    log_info("Memory usage check initiated")
     try:
         data = monitor.check_memory_usage()
         usage = data.get("memory_usage", None)
         if usage is None:
             raise ValueError("No memory data returned")
-        log_debug(f"Memory usage value: {usage}")
         return usage  # Return float directly
     except Exception as e:
         log_error(f"Error getting memory usage: {e}")
@@ -54,13 +50,11 @@ def memory_usage():
 
 @monitor_router.get("/health/disk", summary="Get disk usage")
 def disk_usage():
-    log_info("Disk usage check initiated")
     try:
         data = monitor.check_disk_usage()
         usage = data.get("disk_usage", None)
         if usage is None:
             raise ValueError("No disk data returned")
-        log_debug(f"Disk usage value: {usage}")
         return usage  # Return float directly
     except Exception as e:
         log_error(f"Error getting disk usage: {e}")
@@ -71,13 +65,11 @@ def disk_usage():
 
 @monitor_router.get("/health/gpu", summary="Get GPU usage")
 def gpu_usage():
-    log_info("GPU usage check initiated")
     try:
         data = monitor.check_gpu_usage()
         usage = data.get("gpu_usage", None)
         if usage is None or isinstance(usage, str):  # Could be "GPU monitoring unavailable"
             raise NotImplementedError("GPU monitoring not supported or unavailable")
-        log_debug(f"GPU usage value: {usage}")
         return usage  # Return int directly
     except NotImplementedError as e:
         log_info(f"GPU not implemented: {e}")
