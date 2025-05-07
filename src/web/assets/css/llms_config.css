@@ -1,106 +1,109 @@
-/* Global Styles */
+/* General Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
-    color: #fff;
-  }
-  
-  /* Container */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #1d4ed8;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Form Styles */
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 500;
+  color: #334155;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #2563eb;
+}
+
+/* Button Styles */
+button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-radius: 4px;
+  border-left: 4px solid #3b82f6;
+  display: none;
+}
+
+/* Toggle between HF and lCPP fields */
+#hf-fields, #cpp-fields {
+  padding: 15px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .container {
-    max-width: 700px;
-    margin: 50px auto;
-    background: #1f2a40;
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    border: 2px solid #00c6ff;
+    padding: 20px;
   }
   
-  /* Heading */
-  .container h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #00c6ff;
+  input, select, button {
+    padding: 8px 12px;
   }
-  
-  /* Labels and Inputs */
-  label {
-    display: block;
-    margin-top: 20px;
-    font-weight: 600;
-    color: #e6f0ff;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 10px 15px;
-    margin-top: 5px;
-    border: 1px solid #00c6ff;
-    border-radius: 10px;
-    background-color: #102030;
-    color: #fff;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  select:focus {
-    border-color: #66fcf1;
-    box-shadow: 0 0 8px #66fcf1;
-  }
-  
-  input[type="checkbox"] {
-    transform: scale(1.2);
-    margin-right: 8px;
-  }
-  
-  /* Form Button */
-  button[type="submit"] {
-    width: 100%;
-    margin-top: 30px;
-    padding: 12px;
-    border: none;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background: linear-gradient(to right, #0072ff, #00c6ff);
-  }
-  
-  /* Sections Toggle Visibility */
-  #hf-fields,
-  #cpp-fields {
-    margin-top: 20px;
-  }
-  
-  /* Success Message */
-  .success-message {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #28a745;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px;
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+}

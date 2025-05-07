@@ -3,6 +3,7 @@ import threading
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from starlette.status import HTTP_200_OK
 
 from src.logs import log_debug, log_error, log_info
@@ -24,7 +25,9 @@ from utils import load_last_yaml
 from historys import ChatHistoryManager
 
 # === FastAPI App ===
-app = FastAPI(title="RamiChatBot API")
+
+
+app = FastAPI()
 
 # === Middleware ===
 app.add_middleware(

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>System Monitor</title>
+  <link rel="stylesheet" href="/src/web/assets/css/monitoring.css" />
+</head>
+<body>
+  <h1>System Resource Monitor</h1>
+  <div class="monitor-container">
+    <div class="monitor">
+      <svg class="progress-ring">
+        <circle class="progress-ring__background" cx="60" cy="60" r="50"/>
+        <circle id="cpu-ring" class="progress-ring__circle" cx="60" cy="60" r="50"/>
+      </svg>
+      <h3>CPU</h3>
+      <div id="cpu" class="usage-text">CPU</div>
+    </div>
+
+    <div class="monitor">
+      <svg class="progress-ring">
+        <circle class="progress-ring__background" cx="60" cy="60" r="50"/>
+        <circle id="memory-ring" class="progress-ring__circle" cx="60" cy="60" r="50"/>
+      </svg>
+      <h3>Memory</h3>
+      <div id="memory" class="usage-text">Memory</div>
+    </div>
+
+    <div class="monitor">
+      <svg class="progress-ring">
+        <circle class="progress-ring__background" cx="60" cy="60" r="50"/>
+        <circle id="disk-ring" class="progress-ring__circle" cx="60" cy="60" r="50"/>
+      </svg>
+      <h3>Disk</h3>
+      <div id="disk" class="usage-text">Disk</div>
+    </div>
+
+    <div class="monitor">
+      <svg class="progress-ring">
+        <circle class="progress-ring__background" cx="60" cy="60" r="50"/>
+        <circle id="gpu-ring" class="progress-ring__circle" cx="60" cy="60" r="50"/>
+      </svg>
+      <h3>GPU</h3>
+      <div id="gpu" class="usage-text">GPU</div>
+    </div>
+  </div>
+  <script src="/src/web/assets/js/monitoring.js"></script>
+</body>
+</html>
