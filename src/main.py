@@ -11,12 +11,13 @@ from src.logs import log_debug, log_error, log_info
 from routes import (
     hello_routes, upload_route, to_chunks_route, llm_settings_route,
     generate_routes, chat_manage_routes, chunks_to_embedding_routes,
+    monitor_router
 )
 
 # === DB and LLM Initialization ===
 from dbs import (
     create_sqlite_engine, create_chunks_table, create_embeddings_table,
-    create_query_responses_table, create_cache_table,
+    create_query_responses_table
 )
 from embedding import EmbeddingModel
 from utils import load_last_yaml
@@ -79,3 +80,5 @@ app.include_router(chunks_to_embedding_routes, prefix="/api", tags=["Embedding"]
 app.include_router(llm_settings_route, prefix="/api", tags=["LLM Config"])
 app.include_router(generate_routes, prefix="/api", tags=["Chat Generation"])
 app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
+app.include_router(monitor_router, prefix="/api", tags=["Monitroy System"])
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rami ChatBot Dashboard</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Rami ChatBot Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="loadPage('hello')"><i class="fas fa-home"></i> Hello</a></li>
+                    <li><a href="#" onclick="loadPage('upload')"><i class="fas fa-upload"></i> Upload File</a></li>
+                    <li><a href="#" onclick="loadPage('to_chunks')"><i class="fas fa-cogs"></i> Convert to Chunks</a></li>
+                    <li><a href="#" onclick="loadPage('chunks_to_embedding')"><i class="fas fa-puzzle-piece"></i> Convert Chunks to Embeddings</a></li>
+                    <li><a href="#" onclick="loadPage('llms_config')"><i class="fas fa-cogs"></i> LLMs Settings</a></li>
+                    <li><a href="#" onclick="loadPage('chat_manager')"><i class="fas fa-brain"></i> Manage Chat Memory</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="content-container">
+            <p>Welcome to the Rami ChatBot Dashboard. Select a page from the menu above.</p>
+        </main>
+
+        <footer>
+            <p>Rami ChatBot - ©2025</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

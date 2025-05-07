@@ -26,6 +26,8 @@ class Settings(BaseSettings):
     FILE_DEFAULT_CHUNK_SIZE: int
     CHUNKS_OVERLAP: int
 
+    GPU_AVAILABLE: bool
+
     # ✅ Logging Settings
     LOG_LEVEL: str
 
@@ -34,6 +36,7 @@ class Settings(BaseSettings):
     MEMORY_THRESHOLD: int
     MONITOR_INTERVAL: int
     DISK_THRESHOLD: int
+    GPUs_THRESHOLD: int
 
     # ✅ Alert Settings (Telegram Bot)
     TELEGRAM_BOT_TOKEN: str
