@@ -16,7 +16,7 @@ except ImportError as ie:
     raise ImportError(f"ImportError in {__file__}: {ie}")
 
 
-class LlamaCPP(AstracrtLLMs):
+class CPPLlaMa(AstracrtLLMs):
     """
     Implementation of LLMsInterface for Llama models using llama-cpp-python.
     """
@@ -25,7 +25,7 @@ class LlamaCPP(AstracrtLLMs):
         self.llm = None
         self.generate_kwargs: Dict[str, Any] = {}
 
-    def init_llm(
+    def initilize_llm(
         self,
         repo_id: str = "TheBloke/Llama-2-7B-Chat-GGUF",
         filename: str = "llama-2-7b-chat.Q2_K.gguf",
@@ -93,7 +93,7 @@ class LlamaCPP(AstracrtLLMs):
 
 
 if __name__ == "__main__":
-    llama_cpp = LlamaCPP()
+    llama_cpp = CPPLlaMa()
     llama_cpp.init_llm()
     while True:
         query: str = str(input("Enter Your query or exit for quite: "))
