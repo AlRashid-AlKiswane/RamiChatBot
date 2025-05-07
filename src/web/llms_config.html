@@ -1,102 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM Configuration</title>
-    <link rel="stylesheet" href="llms_config.css">
+  <meta charset="UTF-8" />
+  <title>Apply Model Configuration</title>
+  <link rel="stylesheet" href="llms_config.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Configure LLM Models</h1>
+  <div class="container">
+    <h2>Apply Model Configuration</h2>
 
-        <form id="llmConfigForm">
-            <!-- Select model type -->
-            <div class="form-group">
-                <label for="modelType">Select Model Type</label>
-                <select id="modelType" name="modelType" required>
-                    <option value="huggingface">HuggingFace Model</option>
-                    <option value="llama_cpp">LLaMA.cpp Model</option>
-                </select>
-            </div>
+    <label for="load_type">Load Type:</label>
+    <select id="load_type">
+      <option value="HF">HF</option>
+      <option value="lCPP">lCPP</option>
+    </select>
 
-            <!-- HuggingFace Configuration -->
-            <div id="huggingfaceConfig" class="modelConfig">
-                <h2>HuggingFace Model Configuration</h2>
-                <div class="form-group">
-                    <label for="huggingfaceModelName">Model Name</label>
-                    <input type="text" id="huggingfaceModelName" name="huggingfaceModelName" required>
-                </div>
-                <div class="form-group">
-                    <label for="huggingfaceMaxNewTokens">Max New Tokens</label>
-                    <input type="number" id="huggingfaceMaxNewTokens" name="huggingfaceMaxNewTokens" value="16" required>
-                </div>
-                <div class="form-group">
-                    <label for="huggingfaceTemperature">Temperature</label>
-                    <input type="number" step="0.1" id="huggingfaceTemperature" name="huggingfaceTemperature" value="0.4" required>
-                </div>
-                <div class="form-group">
-                    <label for="huggingfaceTopK">Top K</label>
-                    <input type="number" id="huggingfaceTopK" name="huggingfaceTopK" value="50" required>
-                </div>
-                <div class="form-group">
-                    <label for="huggingfaceTopK">Top P</label>
-                    <input type="number" step="0.1" id="huggingfaceTopP" name="huggingfaceTopP" value="0.95" required>
-                </div>
-                <div class="form-group">
-                    <label for="huggingfaceTrustRemoteCode">Trust Remote Code</label>
-                    <select id="huggingfaceTrustRemoteCode" name="huggingfaceTrustRemoteCode">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                    <label for="huggingfaceTrustDoSample">Do Sample</label>
-                    <select id="huggingfaceTrustDoSample" name="huggingfaceTrustDoSample">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                    <label for="huggingfaceTrustQuantization">Quantization</label>
-                    <select id="huggingfaceTrustQuantization" name="huggingfaceTrustQuantization">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </div>
-            </div>
-            <!-- LLaMA Configuration -->
-            <div id="llamaConfig" class="modelConfig">
-                <h2>LLaMA.cpp Model Configuration</h2>
-                <div class="form-group">
-                    <label for="llamaFilename">Filename</label>
-                    <input type="text" id="llamaFilename" name="llamaFilename" value="llama-2-7b-chat.Q2_K.gguf" required>
-                </div>
-                <div class="form-group">
-                    <label for="llamaMaxNewTokens">Max New Tokens</label>
-                    <input type="number" id="llamaMaxNewTokens" name="llamaMaxNewTokens" value="128" required>
-                </div>
-                <div class="form-group">
-                    <label for="llamaTemperature">Temperature</label>
-                    <input type="number" step="0.1" id="llamaTemperature" name="llamaTemperature" value="0.7" required>
-                </div>
-                <div class="form-group">
-                    <label for="llamaTopP">Top P</label>
-                    <input type="number" step="0.1" id="llamaTopP" name="llamaTopP" value="0.95" required>
-                </div>
-                <div class="form-group">
-                    <label for="llamaSeed">Seed</label>
-                    <input type="number" id="llamaSeed" name="llamaSeed" value="42" required>
-                </div>
-                <div class="form-group">
-                    <label for="llamaVerbose">Verbose</label>
-                    <select id="llamaVerbose" name="llamaVerbose">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </div>
-            </div>
-            <button type="submit" id="submitConfigBtn">Save Configuration</button>
-            <div id="responseMessage" style="margin-top: 20px; font-size: 16px; color: green;"></div>
-        </form>
+    <form id="modelForm">
+      <!-- HF Model Fields -->
+      <div id="hf-fields">
+        <label for="model_name">Model Name:</label>
+        <select name="model_name" id="model_name">
+          <option value="meta-llama/Llama-3.2-1B">meta-llama/Llama-3.2-1B</option>
+        </select>
+
+        <label for="max_new_tokens">Max New Tokens:</label>
+        <input type="number" name="max_new_tokens" value="128" />
+
+        <label for="temperature">Temperature:</label>
+        <input type="number" name="temperature" step="0.1" value="0.7" />
+
+        <label for="top_p">Top P:</label>
+        <input type="number" name="top_p" step="0.01" value="0.95" />
+
+        <label for="top_k">Top K:</label>
+        <input type="number" name="top_k" value="50" />
+
+        <label><input type="checkbox" id="trust_remote_code" /> Trust Remote Code</label>
+        <label><input type="checkbox" id="do_sample" /> Do Sample</label>
+        <label><input type="checkbox" id="quantization_toggle" /> Quantization</label>
+
+        <label for="quantization_type">Quantization Type:</label>
+        <input type="text" id="quantization_type" value="dynamic" />
+
+        <label><input type="checkbox" id="chunking" /> Enable Chunking</label>
+      </div>
+
+      <!-- lCPP Model Fields -->
+      <div id="cpp-fields" style="display: none;">
+        <label for="repo_id">Repo ID:</label>
+        <input type="text" id="repo_id" value="TheBloke/Llama-2-7B-Chat-GGUF" />
+
+        <label for="filename">Filename:</label>
+        <input type="text" id="filename" value="llama-2-7b-chat.Q2_K.gguf" />
+
+        <label for="n_ctx">Context Size:</label>
+        <input type="number" id="n_ctx" value="128" />
+
+        <label for="n_threads">Threads:</label>
+        <input type="number" id="n_threads" value="4" />
+
+        <label for="seed">Seed:</label>
+        <input type="number" id="seed" value="42" />
+
+        <label for="n_gpus">GPUs:</label>
+        <input type="number" id="n_gpus" value="-1" />
+
+        <label><input type="checkbox" id="verbose" checked /> Verbose</label>
+
+        <label for="max_tokens">Max Tokens:</label>
+        <input type="number" id="max_tokens" value="128" />
+
+        <label for="cpp_temperature">Temperature:</label>
+        <input type="number" id="cpp_temperature" step="0.1" value="0.7" />
+
+        <label for="cpp_top_p">Top P:</label>
+        <input type="number" id="cpp_top_p" step="0.01" value="0.95" />
+
+        <label><input type="checkbox" id="echo" /> Echo</label>
+
+        <label for="stop">Stop Sequences (comma-separated):</label>
+        <input type="text" id="stop" placeholder="e.g. </s>,<pad>" />
+      </div>
+
+      <button type="submit">Apply</button>
+    </form>
+
+    <div id="successMessage" class="success-message" style="display:none;"></div>
     </div>
 
-    <script src="llms_config.js"></script>
+  <script src="llms_config.js"></script>
 </body>
 </html>
