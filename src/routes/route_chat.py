@@ -99,20 +99,21 @@ async def generate_response(
         if not all([chat_history, llm, conn, embedd]):
             raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail="Application is not properly initialized.")
 
-        cached = cached_response = pull_from_table(conn=conn,
+        cached_response = pull_from_table(conn=conn,
                                                    table_name="query_responses",
                                                    columns=[],  # Not used in cache mode
                                                    cach=(user_id, query)
         )
         if cached_response:
             # Use cached_response directly (it's a string)
+                single_response = extract_assistant_response(text=cached_response)
 
-                if cached:
+                if single_response:
                     log_info(f"[CACHED HIT] Returning cached response for query: {query}")
                     return JSONResponse(
                         content={
                             "status": "success",
-                            "response": cached
+                            "response": single_response
                         },
                         status_code=HTTP_200_OK
                     )
@@ -141,7 +142,7 @@ async def generate_response(
             # Store the query and response in the database
             insert_query_response(
                 conn=conn,
-                query=formatted_prompt,
+                query=query,
                 response=raw_response,
                 user_id=user_id
             )        
