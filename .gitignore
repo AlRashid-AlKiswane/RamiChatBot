@@ -90,6 +90,5 @@ results/
 .env
 .env.*
 secrets.*
-config.*
 *.yaml
 *.yml

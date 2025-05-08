@@ -1,4 +1,4 @@
-/* Base Reset */
+/* Reset styles */
 body {
     margin: 0;
     padding: 0;
@@ -11,17 +11,17 @@ body {
     height: 100vh;
 }
 
-/* Container */
-.result-container {
+/* Main container */
+.container {
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Button */
-.result-container__button {
+/* Button styling */
+button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #3498db;
@@ -32,15 +32,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.result-container__button:hover {
+button:hover {
     background-color: #2980b9;
 }
 
-/* Result Box */
-.result-container__box {
+/* Result box */
+.result-box {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
+    white-space: pre-wrap;
+    text-align: left;
 }

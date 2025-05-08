@@ -1,10 +1,13 @@
 import os
-import threading
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+import sys
+from fastapi import FastAPI, APIRouter, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from starlette.status import HTTP_200_OK
+
+MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+sys.path.append(MAIN_DIR)
 
 from src.logs import log_debug, log_error, log_info
 
@@ -87,5 +90,11 @@ app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
 app.include_router(monitor_router, prefix="/api", tags=["Monitoring"])
 app.include_router(logers_router, prefix="/api", tags=["Logging"])
 
+# Add the template rendere 
+templates = Jinja2Templates(directory=f"{MAIN_DIR}/src/web")
 
+# Define the route for the main page (dashboard)
+@app.get("/", response_class=HTMLResponse)
+async def dashboard(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 

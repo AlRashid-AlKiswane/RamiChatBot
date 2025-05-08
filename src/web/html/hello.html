@@ -2,15 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello API Interface</title>
-    <link rel="stylesheet" href="/src/web/assets/css/hello.css">
-</head> 
+    <title>Hello API Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4a5568;
+        }
+
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
 <body>
     <div class="container">
-        <h1>Hello FastAPI App</h1>
-        <button onclick="fetchAppInfo()">Get App Info</button>
-        <div id="result" class="result-box"></div>
+        <h1>Fetch App Info</h1>
+        <button onclick="fetchAppInfo()">Get Info</button>
+        <div class="response" id="response"></div>
     </div>
-    <script src="/src/web/assets/js/hello.js"></script>
+
+    <script>
+        async function fetchAppInfo() {
+            try {
+                const response = await fetch('http://192.168.100.55:5000/api/hello');
+                const data = await response.json();
+                document.getElementById('response').innerHTML = `
+                    <strong>App Name:</strong> ${data["App Name"]}<br>
+                    <strong>Version:</strong> ${data["Version"]}<br>
+                    <strong>Message:</strong> ${data["Message"]}
+                `;
+            } catch (error) {
+                document.getElementById('response').innerHTML = `<span style="color: red;">Error fetching data</span>`;
+                console.error("Fetch error:", error);
+            }
+        }
+    </script>
 </body>
 </html>

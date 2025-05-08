@@ -4,23 +4,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const cppFields = document.getElementById("cpp-fields");
     const form = document.getElementById("modelForm");
     const successMessage = document.getElementById("successMessage");
-  
+
     loadTypeSelector.addEventListener("change", () => {
       const selected = loadTypeSelector.value;
       hfFields.style.display = selected === "HF" ? "block" : "none";
       cppFields.style.display = selected === "lCPP" ? "block" : "none";
     });
-  
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const loadType = loadTypeSelector.value;
       const endpoint = "http://192.168.100.55:5000/api/application";
-  
+
       let payload = {
         body: null,
         cpp_body: null
       };
-  
+
+      let quantization = false;
+      let quantization_type = "";
+
+      // Check if quantization is enabled
+      const selectedQuantization = document.querySelector('input[name="quantization"]:checked');
+      if (selectedQuantization) {
+        quantization = true;
+        quantization_type = selectedQuantization.value; // either '4-bit' or '8-bit'
+      }
+
       if (loadType === "HF") {
         payload.body = {
           model_name: document.getElementById("model_name").value,
@@ -30,11 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
           top_k: parseInt(document.querySelector("[name='top_k']").value),
           trust_remote_code: document.getElementById("trust_remote_code").checked,
           do_sample: document.getElementById("do_sample").checked,
-          quantization: document.getElementById("quantization_toggle").checked,
-          quantization_type: document.getElementById("quantization_type").value
+          quantization: quantization, // set the quantization flag
+          quantization_type: quantization_type // pass the quantization type (if any)
         };
       }
-  
+
       if (loadType === "lCPP") {
         payload.cpp_body = {
           repo_id: document.getElementById("repo_id").value,
@@ -54,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .filter(s => s !== "")
         };
       }
-  
+
       try {
         const response = await fetch(`${endpoint}?load_type=${loadType}`, {
           method: "POST",
@@ -63,9 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           body: JSON.stringify(payload)
         });
-  
+
         const data = await response.json();
-  
+
         successMessage.style.display = "block";
         if (response.ok) {
           successMessage.textContent = data.message || "Model initialized successfully.";
@@ -81,4 +91,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  

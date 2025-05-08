@@ -1,15 +1,13 @@
-/* General Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8fafc;
   color: #1e293b;
   margin: 0;
   padding: 20px;
-  line-height: 1.6;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   background-color: white;
   padding: 30px;
@@ -24,11 +22,6 @@ h2 {
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* Form Styles */
-form {
-  margin-top: 20px;
-}
-
 label {
   display: block;
   margin: 15px 0 5px;
@@ -38,23 +31,15 @@ label {
 
 input[type="text"],
 input[type="number"],
-select {
+select,
+input[type="range"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
   font-size: 16px;
-  box-sizing: border-box;
   background-color: #ffffff;
-  transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  box-sizing: border-box;
 }
 
 input[type="checkbox"] {
@@ -62,7 +47,10 @@ input[type="checkbox"] {
   accent-color: #2563eb;
 }
 
-/* Button Styles */
+input[type="range"] {
+  height: 26px;
+}
+
 button {
   background-color: #2563eb;
   color: white;
@@ -72,16 +60,14 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s;
   width: 100%;
+  transition: background-color 0.3s;
 }
 
 button:hover {
   background-color: #1d4ed8;
 }
 
-/* Success Message */
 .success-message {
   margin-top: 20px;
   padding: 15px;
@@ -92,18 +78,17 @@ button:hover {
   display: none;
 }
 
-/* Toggle between HF and lCPP fields */
-#hf-fields, #cpp-fields {
-  padding: 15px 0;
+.two-column {
+  display: flex;
+  gap: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-  
-  input, select, button {
-    padding: 8px 12px;
+.column {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .two-column {
+    flex-direction: column;
   }
 }

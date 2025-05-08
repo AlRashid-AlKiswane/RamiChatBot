@@ -3,7 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>Chunks to Embedding</title>
-    <link rel="stylesheet" href="/src/web/assets/css/chunks_to_embedding.css">
+    <!-- <link rel="stylesheet" href="/src/web/assets/css/chunks_to_embedding.css"> -->
+     <style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eaf4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.embedding-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    text-align: center;
+    border: 2px solid #2196f3;
+}
+
+h1 {
+    color: #0d47a1;
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1976d2;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border: 1px solid #90caf9;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    display: none;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-ring {
+    margin: 20px auto;
+    border: 6px solid #e3f2fd;
+    border-top: 6px solid #2196f3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Read More Button */
+#readMoreBtn {
+    background: none;
+    color: #2196f3;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+    padding: 0;
+}
+
+/* Show full result when expanded */
+.result-box.expanded {
+    max-height: none;
+    overflow: auto;
+}
+        
+     </style>
 </head>
 <body>
     <div class="embedding-container">
@@ -12,6 +106,55 @@
         <div id="embeddingResult" class="result-box"></div>
     </div>
 
-    <script src="/src/web/assets/js/chunks_to_embedding.js"></script>
+    <script>
+        document.getElementById("convertButton").addEventListener("click", async function () {
+    const resultBox = document.getElementById("embeddingResult");
+
+    // Create and show loader
+    let loader = document.querySelector(".loading-ring");
+    if (!loader) {
+        loader = document.createElement("div");
+        loader.className = "loading-ring";
+        document.querySelector(".embedding-container").appendChild(loader);
+    }
+    loader.style.display = "block";
+    resultBox.style.display = "none";
+    resultBox.classList.remove("expanded");
+
+    try {
+        const response = await fetch("http://192.168.100.55:5000/api/chunks_to_embedding", {
+            method: "POST"
+        });
+
+        const data = await response.json();
+        loader.style.display = "none";
+
+        if (response.ok) {
+            const content = `✅ <strong>${data.embedded_chunks}</strong> chunks embedded.<br><br>📦 <strong>Embedding Details:</strong><br><pre>${JSON.stringify(data.details, null, 2)}</pre>`;
+            resultBox.innerHTML = content;
+
+            if (content.length > 500) {
+                const readMoreBtn = document.createElement("button");
+                readMoreBtn.id = "readMoreBtn";
+                readMoreBtn.textContent = "Read More ▼";
+                readMoreBtn.onclick = function () {
+                    const isExpanded = resultBox.classList.toggle("expanded");
+                    readMoreBtn.textContent = isExpanded ? "Show Less ▲" : "Read More ▼";
+                };
+                resultBox.appendChild(readMoreBtn);
+            }
+        } else {
+            resultBox.innerHTML = `❌ Error: ${data.message}`;
+        }
+    } catch (error) {
+        loader.style.display = "none";
+        resultBox.innerHTML = "❌ Failed to connect to the server.";
+        console.error("Error:", error);
+    }
+
+    resultBox.style.display = "block";
+});
+
+    </script>
 </body>
 </html>
