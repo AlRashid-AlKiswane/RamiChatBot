@@ -79,7 +79,6 @@ async def shutdown_event():
         log_error("[DB] No active DB connection found.")
 
 # === Include Routers ===
-# === Include Routers ===
 app.include_router(hello_routes, prefix="/api", tags=["Hello"])
 app.include_router(upload_route, prefix="/api", tags=["File Upload"])
 app.include_router(to_chunks_route, prefix="/api", tags=["Text Chunking"])
@@ -93,8 +92,26 @@ app.include_router(logers_router, prefix="/api", tags=["Logging"])
 # Add the template rendere 
 templates = Jinja2Templates(directory=f"{MAIN_DIR}/src/web")
 
-# Define the route for the main page (dashboard)
+# Serve all HTML pages
 @app.get("/", response_class=HTMLResponse)
 async def dashboard(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/pages/{page_name}", response_class=HTMLResponse)
+async def get_page(request: Request, page_name: str):
+    # List of allowed pages for security
+    allowed_pages = {
+        "hello": "hello.html",
+        "upload": "upload.html",
+        "to_chunks": "to_chunks.html",
+        "chunks_to_embedding": "chunks_to_embedding.html",
+        "llms_config": "llms_config.html",
+        "chat_manager": "chat_manager.html",
+        "monitoring": "monitoring.html"
+    }
+    
+    if page_name not in allowed_pages:
+        return templates.TemplateResponse("404.html", {"request": request})
+    
+    return templates.TemplateResponse(f"html/{allowed_pages[page_name]}", {"request": request})
 

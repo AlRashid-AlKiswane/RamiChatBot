@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Chunking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .form-container {
+            background-color: #f4f4f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="file"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .loading-container {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loading-ring {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007BFF;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .message {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Document Chunking</h1>
+</header>
+
+<main>
+    <div class="form-container">
+        <h2>Convert Documents to Chunks</h2>
+        <form id="chunkingForm">
+            <label for="file_path">File Path (optional):</label>
+            <input type="text" id="file_path" name="file_path" placeholder="Enter file path (optional)">
+            
+            <label for="do_reset">Reset Tables:</label>
+            <select id="do_reset" name="do_reset">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <button type="submit" class="submit-btn">Start Chunking</button>
+        </form>
+
+        <div class="loading-container">
+            <div class="loading-ring"></div>
+            <p>Processing... Please wait.</p>
+        </div>
+
+        <div class="message success"></div>
+        <div class="message error"></div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("chunkingForm");
+        const loadingContainer = document.querySelector(".loading-container");
+        const successMessage = document.querySelector(".message.success");
+        const errorMessage = document.querySelector(".message.error");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const filePath = document.getElementById("file_path").value;
+            const doReset = document.getElementById("do_reset").value;
+
+            loadingContainer.style.display = "block"; // Show loading ring
+            successMessage.style.display = "none";  // Hide success message
+            errorMessage.style.display = "none";    // Hide error message
+
+            try {
+                const response = await fetch("http://192.168.100.55:5000/api/to_chunks", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ file_path: filePath, do_reset: parseInt(doReset) })
+                });
+
+                const result = await response.json();
+
+                loadingContainer.style.display = "none"; // Hide loading ring
+
+                if (response.ok) {
+                    successMessage.textContent = `${result.inserted_chunks} chunks inserted successfully.`;
+                    successMessage.style.display = "block";
+                } else {
+                    errorMessage.textContent = result.message || "Error during chunking.";
+                    errorMessage.style.display = "block";
+                }
+            } catch (error) {
+                loadingContainer.style.display = "none"; // Hide loading ring
+                errorMessage.textContent = "An error occurred during the request.";
+                errorMessage.style.display = "block";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

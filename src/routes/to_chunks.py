@@ -49,9 +49,7 @@ async def to_chunks(
         # Reset DB if requested (expected as int: 0 or 1)
         if do_reset == 1:
             clear_table(conn=conn, table_name="chunks")
-            clear_table(conn=conn, table_name="embeddings")
             log_info("Chunks table cleared.")
-            log_info("Embeddings table cleared.")
 
 
         # Process files to DataFrame

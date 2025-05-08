@@ -3,7 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <title>Apply Model Configuration</title>
-  <link rel="stylesheet" href="/src/web/assets/css/llms_config.css" />
+  <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  h2 {
+    color: #1d4ed8;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+    color: #334155;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #2563eb;
+  }
+
+  input[type="range"] {
+    height: 26px;
+  }
+
+  button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #1d4ed8;
+  }
+
+  .success-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #dbeafe;
+    color: #1e40af;
+    border-radius: 4px;
+    border-left: 4px solid #3b82f6;
+    display: none;
+  }
+
+  .two-column {
+    display: flex;
+    gap: 20px;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  @media (max-width: 700px) {
+    .two-column {
+      flex-direction: column;
+    }
+  }
+  .spinner {
+  border: 4px solid #e0e7ff;
+  border-top: 4px solid #1d4ed8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+  </style>
 </head>
 <body>
   <div class="container">
@@ -95,8 +205,124 @@
     </form>
 
     <div id="successMessage" class="success-message"></div>
+    <div id="loadingRing" style="display: none; text-align: center; margin-bottom: 20px;">
+      <div class="spinner"></div>
+    </div>
+    
   </div>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loadTypeSelector = document.getElementById("load_type");
+  const hfFields = document.getElementById("hf-fields");
+  const cppFields = document.getElementById("cpp-fields");
+  const form = document.getElementById("modelForm");
+  const successMessage = document.getElementById("successMessage");
+  const loadingRing = document.getElementById("loadingRing");
+  const submitButton = form.querySelector("button[type='submit']");
 
-  <script src="/src/web/assets/js/llms_config.js"></script>
+  // Hide loading ring and success message by default
+  loadingRing.style.display = "none";
+  successMessage.style.display = "none";
+
+  // Show/Hide fields based on load type
+  loadTypeSelector.addEventListener("change", () => {
+    const selected = loadTypeSelector.value;
+    hfFields.style.display = selected === "HF" ? "block" : "none";
+    cppFields.style.display = selected === "lCPP" ? "block" : "none";
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Show loading ring, disable submit button
+    loadingRing.style.display = "block";
+    submitButton.disabled = true;
+    successMessage.style.display = "none";
+
+    const loadType = loadTypeSelector.value;
+    const endpoint = "http://192.168.100.55:5000/api/application";
+
+    let payload = {
+      body: null,
+      cpp_body: null
+    };
+
+    let quantization = false;
+    let quantization_type = "";
+
+    // Quantization check
+    const selectedQuantization = document.querySelector('input[name="quantization"]:checked');
+    if (selectedQuantization && selectedQuantization.value !== "None") {
+      quantization = true;
+      quantization_type = selectedQuantization.value;
+    }
+
+    // Hugging Face payload
+    if (loadType === "HF") {
+      payload.body = {
+        model_name: document.getElementById("model_name").value,
+        max_new_tokens: parseInt(document.querySelector("[name='max_new_tokens']").value),
+        temperature: parseFloat(document.querySelector("[name='temperature']").value),
+        top_p: parseFloat(document.querySelector("[name='top_p']").value),
+        top_k: parseInt(document.querySelector("[name='top_k']").value),
+        trust_remote_code: document.getElementById("trust_remote_code").checked,
+        do_sample: document.getElementById("do_sample").checked,
+        quantization,
+        quantization_type
+      };
+    }
+
+    // C++ payload
+    if (loadType === "lCPP") {
+      payload.cpp_body = {
+        repo_id: document.getElementById("repo_id").value,
+        filename: document.getElementById("filename").value,
+        n_ctx: parseInt(document.getElementById("n_ctx").value),
+        n_threads: parseInt(document.getElementById("n_threads").value),
+        seed: parseInt(document.getElementById("seed").value),
+        n_gpus: parseInt(document.getElementById("n_gpus").value),
+        verbose: document.getElementById("verbose").checked,
+        max_tokens: parseInt(document.getElementById("max_tokens").value),
+        temperature: parseFloat(document.getElementById("cpp_temperature").value),
+        top_p: parseFloat(document.getElementById("cpp_top_p").value),
+        echo: document.getElementById("echo").checked,
+        stop: document.getElementById("stop").value
+          .split(",")
+          .map(s => s.trim())
+          .filter(s => s !== "")
+      };
+    }
+
+    try {
+      const response = await fetch(`${endpoint}?load_type=${loadType}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      successMessage.style.display = "block";
+      if (response.ok) {
+        successMessage.textContent = data.message || "Model initialized successfully.";
+        successMessage.style.color = "green";
+      } else {
+        successMessage.textContent = data.detail || "Error applying model settings.";
+        successMessage.style.color = "red";
+      }
+    } catch (err) {
+      successMessage.style.display = "block";
+      successMessage.textContent = "Network or parsing error: " + err.message;
+      successMessage.style.color = "red";
+    } finally {
+      loadingRing.style.display = "none";
+      submitButton.disabled = false;
+    }
+  });
+});
+
+  </script>
 </body>
 </html>

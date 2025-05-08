@@ -3,7 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <title>Chat Memory Manager</title>
-  <link rel="stylesheet" href="/src/web/assets/css/chat_manager.css">
+  <style>
+    /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    padding: 0 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  fieldset label {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  #responseBox {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    display: none;
+  }
+  
+  .response-box.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+  }
+  
+  .response-box.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    button {
+      padding: 10px;
+    }
+  }
+  
+  </style>
 </head>
 <body>
   <div class="container">
@@ -32,6 +155,54 @@
     <div id="responseBox" class="response-box"></div>
   </div>
 
-  <script src="/src/web/assets/js/chat_manager.js"></script>
+  <script>
+    document.getElementById('manageForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+  
+    const user_id = document.getElementById('user_id').value.trim();
+    const reset_memory = document.getElementById('reset_memory').checked;
+    const clear_chat = document.getElementById('clear_chat').checked;
+    const remove_chunks = document.getElementById('remove_chunks').checked;
+    const remove_embeddings = document.getElementById('remove_embeddings').checked;
+    const remove_query_response = document.getElementById('remove_query_response').checked;
+    const reseting = document.getElementById('reseting').checked;
+  
+    const bodyData = {
+      reset_memory,
+      clear_chat
+    };
+  
+    const params = new URLSearchParams({
+      user_id,
+      remove_chunks: String(remove_chunks),
+      remove_embeddings: String(remove_embeddings),
+      remove_query_response: String(remove_query_response),
+      reseting: String(reseting)
+    });
+  
+    const responseBox = document.getElementById('responseBox');
+    responseBox.style.display = 'none';
+  
+    try {
+      const response = await fetch(`http://192.168.100.55:5000/api/chat/manage?${params.toString()}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bodyData)
+      });
+  
+      const result = await response.json();
+  
+      responseBox.className = 'response-box';
+      responseBox.classList.add(response.ok ? 'success' : 'error');
+      responseBox.innerText = result.message || 'Unknown response.';
+      responseBox.style.display = 'block';
+  
+    } catch (err) {
+      responseBox.className = 'response-box error';
+      responseBox.innerText = 'Failed to submit request.';
+      responseBox.style.display = 'block';
+    }
+  });
+  </script>
 </body>
 </html>

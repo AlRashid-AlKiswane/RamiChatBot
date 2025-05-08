@@ -72,7 +72,6 @@ def gpu_usage():
             raise NotImplementedError("GPU monitoring not supported or unavailable")
         return usage  # Return int directly
     except NotImplementedError as e:
-        log_info(f"GPU not implemented: {e}")
         return JSONResponse(
             status_code=HTTP_200_OK,
             content={"message": "GPU monitoring not supported on this system"}
