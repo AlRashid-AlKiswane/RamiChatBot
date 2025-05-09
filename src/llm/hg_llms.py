@@ -106,7 +106,7 @@ class HuggingFaceLLMs(AstracrtLLMs):
             return "Error: Model is not initialized."
 
         try:
-            log_debug(f"Generating response for prompt (preview): {prompt[:60]}...")
+            log_debug(f"Generating response for prompt (preview): {prompt}...")
 
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
 
@@ -119,5 +119,5 @@ class HuggingFaceLLMs(AstracrtLLMs):
             return response
 
         except Exception as e:
-            log_error(f"Generation failed for prompt: {prompt[:60]}... Error: {e}")
+            log_error(f"Generation failed for prompt: {prompt}... Error: {e}")
             return "Error: Internal error during response generation."

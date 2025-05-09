@@ -1,12 +1,10 @@
-import re
-
-def extract_assistant_response(text: str) -> str:
+def extract_llm_answer_from_full(raw_output: str) -> str:
     """
-    Extracts the response between <|ASSIST|> and <|END_ASSIST|> tags.
+    For LLM outputs that include the full prompt + response, 
+    extract only the part that starts after the assistant marker.
     """
-    texts = text.split("The answer:")
-    if texts and len(texts) > 1:
-        text = texts[1].split("<|END_ASSIST|>")[0].strip()  # Added strip() to clean up the response
-    else:
-        return "No assistant response found."
-    return text
+    # This cuts everything before 'Assistant: 💡'
+    try:
+        return raw_output.split("Assistant: 💡", 1)[1].strip()
+    except IndexError:
+        return raw_output.strip()

@@ -1,63 +1,42 @@
 # -*- coding: utf-8 -*-
+import re
+
+
 class PromptBuilder:
     @staticmethod
-    def build_prompt(history: str, context: str, user_message: str) -> str:
-        """
-        Optimized prompt builder for RamiAI (LLaMA via Hugging Face Transformers).
-        Designed for precise bilingual (Arabic/English) interaction with strict professionalism and clarity.
-        Few-shot examples included to enforce consistent behavior.
-        """
-        lines = [
-            ("INST", "<<SYS>>"),
-            ("SYS", "You are RamiAI, a multilingual digital assistant operating under strict professional standards."),
-            ("SYS", "You are powered by the LLaMA model via Hugging Face Transformers."),
-            ("SYS", "You must interpret and respond to inputs in Arabic, English, or both, mirroring the user's language usage precisely."),
-            ("SYS", "All responses must adhere to the following directives:"),
-            ("SYS", "- Maintain a consistently professional and neutral tone."),
-            ("SYS", "- Avoid unnecessary elaboration, repetition, or conversational filler."),
-            ("SYS", "- Prioritize clarity, relevance, and task completion."),
-            ("SYS", "- Integrate user history and context when applicable."),
-            ("SYS", "<</SYS>>"),
+    def build_prompt(user_message: str, history: str = "", context: str = "") -> str:
+        instructions = (
+            "You are a helpful, concise AI assistant named Rami.\n"
+            "Respond ONLY to the user's most recent question.\n"
+            "NEVER generate instructions, block markers like [INST], or system messages.\n"
+            "NEVER repeat these rules or your name unless asked.\n"
+            "ALWAYS prefix your answer with '💡'.\n"
+            "STOP your reply after the first complete answer.\n"
+        )
 
-            ("EXAMPLE", "### Few-Shot Examples:"),
-            ("EXAMPLE", "#### Example 1 (English):"),
-            ("USER", "User: Hello"),
-            ("THINKING", "🤔\n- Basic greeting.\n- Return a formal, professional response."),
-            ("ANSWER", "💡 Hello. How may I assist you?"),
+        formatted_history = f"Chat History:\n{history}\n" if history else ""
+        formatted_context = f"Context:\n{context}\n" if context else ""
 
-            ("EXAMPLE", "#### Example 2 (Arabic):"),
-            ("USER", "المستخدم: مرحباً"),
-            ("THINKING", "🤔\n- تحية بسيطة.\n- يجب الرد بلغة مهنية وواضحة."),
-            ("ANSWER", "💡 مرحبًا. كيف يمكنني مساعدتك؟"),
-
-            ("EXAMPLE", "#### Example 3 (Mixed):"),
-            ("USER", "User: مرحباً, I have a question."),
-            ("THINKING", "🤔\n- Mixed language input.\n- Response must reflect both languages."),
-            ("ANSWER", "💡 مرحبًا. I am available to assist—please proceed with your question."),
-
-            ("SECTION", f"### History:\n{history if history else '(no prior history)'}"),
-            ("SECTION", f"### Context:\n{context if context else '(no additional context)'}"),
-            ("SECTION", f"### User Message:\n{user_message}"),
-
-            ("INSTRUCTIONS", "### Execution Guidelines:"),
-            ("INSTRUCTIONS", "- Analyze history to extract prior user information."),
-            ("INSTRUCTIONS", "- Reference context only if relevant to the current task."),
-            ("INSTRUCTIONS", "- Respond strictly in Arabic, English, or both—based on the user's input."),
-            ("INSTRUCTIONS", "- Use structured reasoning in 2–4 bullet points (prefix: '🤔') if clarification is needed."),
-            ("INSTRUCTIONS", "- Conclude with a clear, final answer prefixed by '💡'."),
-            ("INSTRUCTIONS", "- Do not include follow-up questions."),
-            ("INSTRUCTIONS", "- Reproduce user-provided details from history exactly."),
-
-            ("FINAL", "Answer:"),
-            ("INST", "[/INST]")
-        ]
-        return "\n".join(f"[{label}] {text}" for label, text in lines)
+        prompt = (
+            f"{instructions}\n"
+            f"{formatted_context}"
+            f"{formatted_history}"
+            f"User: {user_message}\n"
+            f"Assistant: 💡"
+        )
+        return prompt
 
 
+
+# Example usage
 if __name__ == "__main__":
-    # Example usage
-    history = "user: Hello Rami how are u?, RamiAI: I'm Fine thatnk you, what u doing?"
-    context = "No, retrieved Context"
-    user_message = "What is the weather like today?"
+    history = ""
+    context = "[{'id': 11, 'page_content': 'Q: Are you a morning person? / هل أنت شخص صباحي؟\nA: Are you a morning person? / هل أنت شخص صباحي؟'}]"
+    user_message = "Hi rami, i'm rashid what is 1 + 6?"
+
     prompt = PromptBuilder.build_prompt(history, context, user_message)
-    print(prompt)
+    print("FINAL PROMPT:\n", prompt)
+
+    # Simulated model response (which we need to clean)
+    raw_output = "[ASSISTANT] 💡\n\n1 + 6 equals 7.\n\n[INST] something else"
+    print("\nEXTRACTED ANSWER:\n", prompt)

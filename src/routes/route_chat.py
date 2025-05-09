@@ -21,7 +21,7 @@ try:
     from embedding import EmbeddingModel
     from historys import ChatHistoryManager
     
-    from utils import extract_assistant_response
+    from utils import extract_llm_answer_from_full
     from rag import search
 
 except ImportError as e:
@@ -106,7 +106,7 @@ async def generate_response(
         )
         if cached_response:
             # Use cached_response directly (it's a string)
-                single_response = extract_assistant_response(text=cached_response)
+                single_response = extract_llm_answer_from_full(cached_response)
 
                 if single_response:
                     log_info(f"[CACHED HIT] Returning cached response for query: {query}")
@@ -137,7 +137,7 @@ async def generate_response(
 
             # Generate model response
             raw_response = llm.generate_response(prompt=formatted_prompt)
-            single_response = extract_assistant_response(text=raw_response)
+            single_response = extract_llm_answer_from_full(raw_response)
 
             # Store the query and response in the database
             insert_query_response(
