@@ -203,6 +203,14 @@
       chatWindow.scrollTop = chatWindow.scrollHeight;
       return msg;
     }
+    // Listen for Enter key
+    chatInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault(); // Prevent newline
+        sendMessage();
+      }
+    });
+
   </script>
 </body>
 </html>

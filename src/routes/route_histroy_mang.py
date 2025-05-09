@@ -88,7 +88,7 @@ async def manage_chat_history(
 
         # Individual controls
         if body.reset_memory and user_id:
-            request.app.chat_manager.reset_memory(user_id)
+            chat_manager.reset_memory(user_id)
             log_info("Memory reset.")
             return JSONResponse(
                 content={"message": "Memory reset successfully."},
@@ -96,7 +96,7 @@ async def manage_chat_history(
             )
 
         if body.clear_chat and user_id:
-            request.app.chat_manager.clear_chat_history(user_id)
+            chat_manager.clear_chat_history(user_id)
             log_info("Chat history cleared.")
             return JSONResponse(
                 content={"message": "Chat history cleared successfully."},

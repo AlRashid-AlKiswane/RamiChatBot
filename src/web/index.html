@@ -1,166 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rami ChatBot Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Reset some basics */
     * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #81b4e7;
-    color: #1a1a1a;
-    line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #81b4e7;
+      color: #1a1a1a;
+      line-height: 1.6;
     }
 
     .layout {
-    display: flex;
-    min-height: 100vh;
+      display: flex;
+      min-height: 100vh;
     }
 
-    /* Sidebar */
     .sidebar {
-    width: 250px;
-    background-color: #1e3a8a; /* Deep blue */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+      width: 250px;
+      background-color: #1e3a8a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
     }
 
     .sidebar-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #fff;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
     .nav {
-    list-style: none;
-    padding: 0;
+      list-style: none;
     }
 
     .nav li {
-    margin: 0.8rem 0;
+      margin: 0.8rem 0;
     }
 
     .nav a {
-    text-decoration: none;
-    color: #e0e7ff;
-    padding: 0.6rem 1rem;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    transition: background 0.3s;
+      text-decoration: none;
+      color: #e0e7ff;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
     .nav a i {
-    margin-right: 0.8rem;
-    font-size: 1.2rem;
+      margin-right: 0.8rem;
+      font-size: 1.2rem;
     }
 
     .nav a:hover {
-    background-color: #3b82f6;
-    color: #fff;
+      background-color: #3b82f6;
+      color: #fff;
     }
 
-    /* Main Content */
     .main-content {
-    flex: 1;
-    padding: 2rem;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+      flex: 1;
+      padding: 2rem;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
     }
 
     .main-header h1 {
-    font-size: 2rem;
-    color: #1e3a8a;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #3b82f6;
-    padding-bottom: 0.5rem;
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 0.5rem;
     }
 
     .dashboard-content {
-    flex-grow: 1;
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      flex-grow: 1;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
-    /* Footer */
     .main-footer {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #64748b;
-    border-top: 1px solid #e5e7eb;
-    padding-top: 1rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 1rem;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-    .layout {
+      .layout {
         flex-direction: column;
-    }
+      }
 
-    .sidebar {
+      .sidebar {
         width: 100%;
         flex-direction: row;
         overflow-x: auto;
         justify-content: space-around;
-    }
+      }
 
-    .nav {
+      .nav {
         display: flex;
         gap: 1rem;
-    }
+      }
 
-    .main-content {
+      .main-content {
         padding: 1rem;
-    }
+      }
 
-    .main-header h1 {
+      .main-header h1 {
         font-size: 1.5rem;
-    }
+      }
     }
   </style>
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
-      <h2 class="sidebar-title">Rami Bot</h2>
+      <h2 class="sidebar-title">🤖 Rami Bot</h2>
       <ul class="nav">
-        <li><a href="/pages/hello"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="/pages/upload"><i class="fas fa-upload"></i> Upload Document</a></li>
-        <li><a href="/pages/to_chunks"><i class="fas fa-cogs"></i> Chunk Generator</a></li>
-        <li><a href="/pages/chunks_to_embedding"><i class="fas fa-puzzle-piece"></i> Embed Chunks</a></li>
-        <li><a href="/pages/llms_config"><i class="fas fa-sliders-h"></i> LLM Configuration</a></li>
-        <li><a href="/pages/chat_manager"><i class="fas fa-brain"></i> Chat Memory</a></li>
-        <li><a href="/pages/monitoring"><i class="fas fa-chart-line"></i> System Monitoring & Logs</a></li>
-        <li><a href="/pages/chat"><i class="fas fa-chart-line"></i> Chating</a></li>
+        <li><a href="/pages/hello"><i class="fas fa-house-user"></i> Dashboard</a></li>
+        <li><a href="/pages/upload"><i class="fas fa-file-upload"></i> DocDrop Central</a></li>
+        <li><a href="/pages/to_chunks"><i class="fas fa-cut"></i> Chunksmith</a></li>
+        <li><a href="/pages/chunks_to_embedding"><i class="fas fa-brain"></i> EmbedForge</a></li>
+        <li><a href="/pages/llms_config"><i class="fas fa-gears"></i> LLM Settings</a></li>
+        <li><a href="/pages/chat_manager"><i class="fas fa-memory"></i> Memory Vault</a></li>
+        <li><a href="/pages/monitoring"><i class="fas fa-server"></i> System Pulse</a></li>
+        <li><a href="/pages/chat"><i class="fas fa-robot"></i> Live Chat</a></li>
       </ul>
     </aside>
+
     <main class="main-content">
       <header class="main-header">
-        <h1>Rami ChatBot Dashboard</h1>
+        <h1>Welcome to Rami's Brain 🧠</h1>
       </header>
       <section class="dashboard-content" id="content">
-        <p>Welcome to the Rami ChatBot Dashboard. Use the sidebar to navigate through the tools.</p>
+        <p>This is your control center. Use the sidebar to train, monitor, and chat with Rami.</p>
       </section>
       <footer class="main-footer">
-        <p>NeurChat - ©2025</p>
+        <p>NeurChat by AlRashid – ©2025</p>
       </footer>
     </main>
   </div>
