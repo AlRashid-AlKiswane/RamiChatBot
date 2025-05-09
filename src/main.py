@@ -107,7 +107,8 @@ async def get_page(request: Request, page_name: str):
         "chunks_to_embedding": "chunks_to_embedding.html",
         "llms_config": "llms_config.html",
         "chat_manager": "chat_manager.html",
-        "monitoring": "monitoring.html"
+        "monitoring": "monitoring.html",
+        "chat": "chat.html"
     }
     
     if page_name not in allowed_pages:
