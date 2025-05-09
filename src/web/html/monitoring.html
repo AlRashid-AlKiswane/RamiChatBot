@@ -227,7 +227,7 @@
 
     async function fetchUsage(endpoint, elementId) {
       try {
-        const res = await fetch(`http://192.168.100.55:12000/api/health/${endpoint}`);
+        const res = await fetch(`/api/health/${endpoint}`);
         const data = await res.json();
 
         let value = typeof data === 'number' ? data
@@ -254,7 +254,7 @@
     // Function to fetch and display logs
     async function fetchLogs() {
       try {
-        const response = await fetch("http://192.168.100.55:12000/api/logs");
+        const response = await fetch("/api/logs");
         const logs = await response.text();
         document.getElementById("log-output").innerHTML = processLogs(logs);
         document.getElementById("last-updated").textContent =

@@ -77,7 +77,7 @@ document.getElementById("uploadForm").addEventListener("submit", async function 
     resultBox.innerHTML = "Uploading...";
 
     try {
-        const response = await fetch("http://192.168.100.55:5000/api/upload/", {
+        const response = await fetch("/api/upload/", {
             method: "POST",
             body: formData
         });

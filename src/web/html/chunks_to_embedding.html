@@ -122,7 +122,7 @@ button:hover {
     resultBox.classList.remove("expanded");
 
     try {
-        const response = await fetch("http://192.168.100.55:5000/api/chunks_to_embedding", {
+        const response = await fetch("/api/chunks_to_embedding", {
             method: "POST"
         });
 

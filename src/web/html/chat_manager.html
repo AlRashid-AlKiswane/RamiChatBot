@@ -184,7 +184,7 @@
     responseBox.style.display = 'none';
   
     try {
-      const response = await fetch(`http://192.168.100.55:5000/api/chat/manage?${params.toString()}`, {
+      const response = await fetch(`/api/chat/manage?${params.toString()}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bodyData)
