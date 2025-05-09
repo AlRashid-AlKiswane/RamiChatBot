@@ -1,7 +1,7 @@
 import os
 import sys
 import sqlite3 as sql3
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Body, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
 from starlette.status import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR, HTTP_404_NOT_FOUND
 
@@ -14,6 +14,7 @@ try:
     from dbs import pull_from_table
     from embedding import EmbeddingModel
     from rag import search
+    from schemes import LiveRAG
 
 except ImportError as e:
     log_error(f"[IMPORT ERROR] {__file__}: {e}")
@@ -44,11 +45,11 @@ def get_embedd(request: Request):
     return embedding
 
 @live_rag_route.post("/live_rag")
-async def live_rag(query: str,
-                   top_k: int,
-                   embedd: EmbeddingModel = Depends(get_embedd),
-                   conn: sql3.Connection = Depends(get_db_conn)):
+async def live_rag(request: LiveRAG, embedd: EmbeddingModel = Depends(get_embedd), conn: sql3.Connection = Depends(get_db_conn)):
     """Handle live RAG query."""
+    query, top_k = request.query, request.top_k
+    
+    # Validate query parameter
     if not query or len(query.strip()) == 0:
         log_error("Query parameter is empty.")
         raise HTTPException(
@@ -56,6 +57,7 @@ async def live_rag(query: str,
             detail="Query cannot be empty."
         )
 
+    # Validate top_k value
     if top_k <= 0:
         log_error(f"Invalid value for top_k: {top_k}. It must be greater than zero.")
         raise HTTPException(
@@ -64,28 +66,32 @@ async def live_rag(query: str,
         )
     
     try:
-        retrieverl = search(query=query,
-                            embedder=embedd,
-                            conn=conn,
-                            top_k=top_k)
-        if not retrieverl:
-            log_info("No results found for the given query.")
+        # Perform the search operation
+        retriever_result = search(query=query, embedder=embedd, conn=conn, top_k=top_k)
+        log_info(retriever_result)
+        # Check if no results found
+        if not retriever_result:
+            log_info(f"No results found for query: {query}")
             return JSONResponse(
                 status_code=HTTP_404_NOT_FOUND,
-                content={
-                    "message": "No results found for the query."
-                }
+                content={"message": "No results found for the query."}
             )
 
+        # Return results if found
         return JSONResponse(
             status_code=HTTP_200_OK,
-            content={
-                "Retrieverl": "\n".join(retrieverl)
-            }
+            content={"Retriever Results": [one_ret["page_content"] for one_ret in retriever_result]}
         )
 
+
+    except sql3.DatabaseError as e:
+        log_error(f"Database error while processing the RAG query: {e}")
+        raise HTTPException(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Database error occurred while processing the query."
+        )
     except Exception as e:
-        log_error(f"An error occurred while processing the RAG query: {e}")
+        log_error(f"An unexpected error occurred while processing the RAG query: {e}")
         raise HTTPException(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
             detail="An unexpected error occurred while processing the query."
