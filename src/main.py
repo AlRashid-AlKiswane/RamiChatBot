@@ -15,7 +15,7 @@ from src.logs import log_debug, log_error, log_info
 from routes import (
     hello_routes, upload_route, to_chunks_route, llm_settings_route,
     generate_routes, chat_manage_routes, chunks_to_embedding_routes,
-    monitor_router, logers_router, crawler_route
+    monitor_router, logers_router, crawler_route, live_rag_route
 )
 
 # === DB and LLM Initialization ===
@@ -89,6 +89,8 @@ app.include_router(chat_manage_routes, prefix="/api", tags=["Chat Management"])
 app.include_router(monitor_router, prefix="/api", tags=["Monitoring"])
 app.include_router(logers_router, prefix="/api", tags=["Logging"])
 app.include_router(crawler_route, prefix="/api", tags=["Crawler in Web Pages"])
+app.include_router(live_rag_route, prefix="/api", tags=["Live RAG"])
+
 
 # Add the template rendere 
 templates = Jinja2Templates(directory=f"{MAIN_DIR}/src/web")
@@ -110,7 +112,8 @@ async def get_page(request: Request, page_name: str):
         "chat_manager": "chat_manager.html",
         "monitoring": "monitoring.html",
         "chat": "chat.html",
-        "crawl": "crawl.html"
+        "crawl": "crawl.html",
+        "rag": "rag.html"
     }
     
     if page_name not in allowed_pages:
