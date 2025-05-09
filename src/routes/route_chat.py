@@ -120,7 +120,7 @@ async def generate_response(
         else:
             log_info(f"[CACHED MISS] No cached response found for query: {query}")
             # Retrieve context
-            context = search(query=query, conn=conn, embedder=embedd, top_k=1)
+            context = search(query=query, conn=conn, embedder=embedd, top_k=5)
             if not context:
                 log_debug(f"[LLM GENERATION] No context found for query: {query}")
                 context = "Empty"

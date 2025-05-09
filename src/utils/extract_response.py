@@ -5,6 +5,6 @@ def extract_llm_answer_from_full(raw_output: str) -> str:
     """
     # This cuts everything before 'Assistant: 💡'
     try:
-        return raw_output.split("Assistant: 💡", 1)[1].strip()
+        return raw_output.split("Answer:")[-1].strip()
     except IndexError:
         return raw_output.strip()
