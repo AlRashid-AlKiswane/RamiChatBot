@@ -2,96 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RAG Chat</title>
   <style>
     body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #e5e5e5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e5e5e5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-.chat-container {
-  width: 400px;
-  max-width: 95%;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
+    .chat-container {
+      width: 400px;
+      max-width: 95%;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-.chat-header {
-  background-color: #007bff;
-  color: white;
-  padding: 1rem;
-  font-weight: bold;
-  text-align: center;
-}
+    .chat-header {
+      background-color: #007bff;
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
 
-.chat-window {
-  padding: 1rem;
-  flex: 1;
-  overflow-y: auto;
-  background-color: #f4f7f9;
-}
+    .chat-window {
+      padding: 1rem;
+      flex: 1;
+      overflow-y: auto;
+      background-color: #f4f7f9;
+    }
 
-.message {
-  margin: 0.5rem 0;
-  max-width: 80%;
-  padding: 0.6rem 1rem;
-  border-radius: 18px;
-  line-height: 1.4;
-  word-wrap: break-word;
-}
+    .message {
+      margin: 0.5rem 0;
+      max-width: 80%;
+      padding: 0.6rem 1rem;
+      border-radius: 18px;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
 
-.user {
-  align-self: flex-end;
-  background-color: #007bff;
-  color: white;
-  margin-left: auto;
-}
+    .user {
+      align-self: flex-end;
+      background-color: #007bff;
+      color: white;
+      margin-left: auto;
+    }
 
-.bot {
-  align-self: flex-start;
-  background-color: #dee2e6;
-  color: black;
-  margin-right: auto;
-}
+    .bot {
+      align-self: flex-start;
+      background-color: #dee2e6;
+      color: black;
+      margin-right: auto;
+    }
 
-.chat-input-container {
-  display: flex;
-  border-top: 1px solid #ccc;
-  padding: 0.5rem;
-}
+    .chat-input-container {
+      display: flex;
+      border-top: 1px solid #ccc;
+      padding: 0.5rem;
+    }
 
-#chat-input {
-  flex: 1;
-  padding: 0.5rem;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 1rem;
-}
+    #chat-input {
+      flex: 1;
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+    }
 
-button {
-  margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
+    button {
+      margin-left: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
 
-button:hover {
-  background-color: #0056b3;
-}
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Chat window styles */
+    .typing .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
+      border-radius: 50%;
+      background-color: #007bff;
+      animation: typing 1.5s infinite;
+    }
+
+    .typing .dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .typing .dot:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .typing .dot:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes typing {
+      0%, 100% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,53 +135,74 @@ button:hover {
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
+
   <script>
-const chatWindow = document.getElementById('chat-window');
-const chatInput = document.getElementById('chat-input');
-const userId = "test-user-123";  // Static for now, replace with dynamic ID later
+    const chatWindow = document.getElementById('chat-window');
+    const chatInput = document.getElementById('chat-input');
+    const userId = "test-user-123"; // Static for now, replace with dynamic ID later
 
-async function sendMessage() {
-  const text = chatInput.value.trim();
-  if (!text) return;
+    // Send message handler
+    async function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
 
-  // Show user message
-  appendMessage(text, 'user');
-  chatInput.value = '';
+      // Show user message
+      appendMessage(text, 'user');
+      chatInput.value = '';
 
-  // Show loading placeholder
-  const loading = appendMessage("...", 'bot');
+      // Show typing indicator
+      const loadingIndicator = appendTypingIndicator();
 
-  try {
-    const response = await fetch('/chat?user_id=' + userId, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ query: text })
-    });
+      try {
+        const response = await fetch(`/api/chat?user_id=${userId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ query: text })
+        });
 
-    const data = await response.json();
-    loading.remove(); // Remove loading
+        const data = await response.json();
+        loadingIndicator.remove(); // Remove typing indicator
 
-    if (response.ok && data.response) {
-      appendMessage(data.response, 'bot');
-    } else {
-      appendMessage("Sorry, something went wrong.", 'bot');
+        // Handle response
+        if (response.ok && data.response) {
+          appendMessage(data.response, 'bot');
+        } else {
+          appendMessage("Sorry, something went wrong.", 'bot');
+        }
+      } catch (err) {
+        loadingIndicator.remove();
+        appendMessage("Server error, try again later.", 'bot');
+      }
     }
-  } catch (err) {
-    loading.remove();
-    appendMessage("Server error, try again later.", 'bot');
-  }
-}
 
-function appendMessage(text, sender) {
-  const msg = document.createElement('div');
-  msg.classList.add('message', sender);
-  msg.textContent = text;
-  chatWindow.appendChild(msg);
-  chatWindow.scrollTop = chatWindow.scrollHeight;
-  return msg;
-}
+    // Append message to chat
+    function appendMessage(text, sender) {
+      const msg = document.createElement('div');
+      msg.classList.add('message', sender);
+      msg.textContent = text;
+      chatWindow.appendChild(msg);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    // Append typing indicator (three dots animation)
+    function appendTypingIndicator() {
+      const msg = document.createElement('div');
+      msg.classList.add('message', 'bot', 'typing');
+
+      // Create the three dots
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        msg.appendChild(dot);
+      }
+
+      chatWindow.appendChild(msg);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+      return msg;
+    }
   </script>
 </body>
 </html>
