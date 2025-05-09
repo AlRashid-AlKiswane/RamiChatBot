@@ -51,3 +51,7 @@ from functools import lru_cache
 @lru_cache()
 def get_settings() -> Settings:
     return Settings()
+
+if __name__ == "__main__":
+    app_setting: Settings = get_settings()
+    print(app_setting.DATABASE_URL)
