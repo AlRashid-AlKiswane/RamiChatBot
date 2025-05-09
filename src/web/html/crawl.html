@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Crawler</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .container {
+        background: #ffffff;
+        border: 2px solid #0077cc;
+        border-radius: 12px;
+        padding: 2rem;
+        width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 119, 204, 0.2);
+    }
+
+    h1 {
+        color: #0077cc;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+        color: #003366;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    button {
+        margin-top: 1.5rem;
+        padding: 0.7rem;
+        width: 100%;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    button:hover {
+        background-color: #005fa3;
+    }
+
+    .loader {
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #0077cc;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 1.5rem auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .result {
+        margin-top: 1rem;
+        text-align: center;
+        color: #004466;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Website Crawler</h1>
+        <form id="crawlForm">
+            <label for="startUrl">Start URL:</label>
+            <input type="url" id="startUrl" name="startUrl" placeholder="https://example.com" required>
+
+            <label for="maxPages">Max Pages:</label>
+            <input type="number" id="maxPages" name="maxPages" min="1" value="10" required>
+
+            <button type="submit">Start Crawling</button>
+        </form>
+
+        <div id="loader" class="loader hidden"></div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('crawlForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const startUrl = document.getElementById('startUrl').value.trim();
+        const maxPages = parseInt(document.getElementById('maxPages').value.trim());
+        const loader = document.getElementById('loader');
+        const result = document.getElementById('result');
+
+        result.textContent = '';
+        loader.classList.remove('hidden');
+
+        try {
+            const response = await fetch('/api/crawl', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ start_url: startUrl, max_pages: maxPages })
+            });
+
+            loader.classList.add('hidden');
+
+            if (!response.ok) {
+                const err = await response.json();
+                result.textContent = `❌ Error: ${err.detail}`;
+                result.style.color = 'crimson';
+                return;
+            }
+
+            const data = await response.json();
+            result.textContent = `✅ Crawling complete! File saved at: ${data.file_path}`;
+            result.style.color = '#0077cc';
+        } catch (err) {
+            loader.classList.add('hidden');
+            result.textContent = '⚠️ Unexpected error occurred';
+            result.style.color = 'crimson';
+        }
+    });
+    </script>
+</body>
+</html>
