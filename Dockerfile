@@ -3,7 +3,7 @@ FROM archlinux:latest
 WORKDIR /app
 
 # Install system dependencies
-RUN pacman -Syu --noconfirm \
+RUN pacman -Syu --noconfirm --needed \
     base-devel \
     gcc \
     libffi \
@@ -13,7 +13,7 @@ RUN pacman -Syu --noconfirm \
     git \
  && pacman -Scc --noconfirm
 
-# Create virtual environment
+# Create a virtual environment
 RUN python -m venv /app/ENV
 
 # Install Python requirements
@@ -26,5 +26,5 @@ COPY . .
 # Make start script executable
 RUN chmod +x start.sh
 
-# Use shell form to ensure it's executed correctly
-CMD ["/bin/bash", "start.sh"]
+# Use a shell form to start both FastAPI apps and handle signals
+ENTRYPOINT ["bash", "./start.sh"]
