@@ -23,9 +23,9 @@ jobs:
       run: |
         echo "APP_NAME=RamiAI" >> .env
         echo "APP_VERSION=1.0.0" >> .env
-        echo "DATABASE_URL=/app/database/db.sqlite3" >> .env
-        echo "CONFIG_DIR=/app/.configs" >> .env
-        echo "DOC_LOCATION_SAVE=/app/assets/documents" >> .env
+        echo "DATABASE_URL=/database/db.sqlite3" >> .env
+        echo "CONFIG_DIR=/.configs" >> .env
+        echo "DOC_LOCATION_SAVE=/assets/documents" >> .env
         echo "ENABLE_MEMORY=True" >> .env
         echo "EMBEDDING_MODEL=all-MiniLM-L6-v2" >> .env
         echo "HUGGINGFACE_TOKIENS=${{ secrets.HUGGINGFACE_TOKIENS }}" >> .env
