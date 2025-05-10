@@ -19,6 +19,31 @@ jobs:
       with:
         python-version: '3.11'
 
+    - name: 🔧 Create .env file
+      run: |
+        echo "APP_NAME=RamiAI" >> .env
+        echo "APP_VERSION=1.0.0" >> .env
+        echo "DATABASE_URL=/app/database/db.sqlite3" >> .env
+        echo "CONFIG_DIR=/app/.configs" >> .env
+        echo "DOC_LOCATION_SAVE=/app/assets/documents" >> .env
+        echo "ENABLE_MEMORY=True" >> .env
+        echo "EMBEDDING_MODEL=all-MiniLM-L6-v2" >> .env
+        echo "HUGGINGFACE_TOKIENS=${{ secrets.HUGGINGFACE_TOKIENS }}" >> .env
+        echo "FILE_ALLOWED_TYPES=[\".txt\", \".pdf\"]" >> .env
+        echo "FILE_MAX_SIZE=512000" >> .env
+        echo "FILE_DEFAULT_CHUNK_SIZE=500" >> .env
+        echo "CHUNKS_OVERLAP=20" >> .env
+        echo "LOG_LEVEL=info" >> .env
+        echo "CPU_THRESHOLD=75" >> .env
+        echo "MEMORY_THRESHOLD=90" >> .env
+        echo "MONITOR_INTERVAL=60" >> .env
+        echo "DISK_THRESHOLD=80" >> .env
+        echo "GPUs_THRESHOLD=98" >> .env
+        echo "TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}" >> .env
+        echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> .env
+        echo "GPU_AVAILABLE=False" >> .env
+        echo "DEFAULT_SYSTEM_PROMPT=You are a helpful assistant." >> .env
+
     - name: 📦 Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -31,7 +56,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     needs: test  # Don't build unless tests pass
-    if: github.ref == 'refs/heads/main'  # Only build & push on `main`
+    if: github.ref == 'refs/heads/main'
 
     steps:
     - name: 🧾 Checkout code
