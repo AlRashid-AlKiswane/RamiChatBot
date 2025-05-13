@@ -41,6 +41,9 @@ def log_debug(message: str) -> None:
     """Logs debug messages."""
     logger.debug(message)
 
+def log_warning(message: str) -> None:
+    """Logs warning messages."""
+    logger.warning(message)
 
 def log_error(message: str) -> None:
     """Logs error messages and sends alert via AlertManager."""
