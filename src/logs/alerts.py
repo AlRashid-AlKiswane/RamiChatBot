@@ -1,22 +1,27 @@
-import requests
-import os, sys
+"""AlertManager for sending alerts via Telegram bot."""
 
+import os
+import sys
+
+import requests
+from src.config.setting import get_settings, Settings
+
+# Setup project root path
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(root_dir)
 
-from src.config.setting import get_settings, Settings
 
-class AlertManager:
+
+class AlertManager:  # pylint: disable=too-few-public-methods
+    """Sends error alerts to a configured Telegram chat using a bot."""
+
     def __init__(self):
-        # Get settings from the environment
         self.app_settings: Settings = get_settings()
-        
-        # Access Telegram bot settings from app_settings
         self.telegram_bot_token = self.app_settings.TELEGRAM_BOT_TOKEN
         self.telegram_chat_id = self.app_settings.TELEGRAM_CHAT_ID
-    
-    def send_telegram_alert(self, subject, message):
-        """Sends a Telegram message when an error occurs."""
+
+    def send_telegram_alert(self, subject: str, message: str) -> None:
+        """Sends a formatted alert message to the configured Telegram chat."""
         url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
         data = {
             "chat_id": self.telegram_chat_id,
@@ -24,14 +29,14 @@ class AlertManager:
         }
 
         try:
-            response = requests.post(url, data=data)
+            response = requests.post(url, data=data, timeout=10)
             response.raise_for_status()
             print(f"Alert sent to Telegram: {subject}")
-        except Exception as e:
-            print(f"Failed to send alert to Telegram: {e}")
+        except requests.RequestException as exc:
+            print(f"Failed to send alert to Telegram: {exc}")
+
 
 # Example usage
 if __name__ == "__main__":
-
     alert = AlertManager()
     alert.send_telegram_alert("Test Alert", "This is a test alert from the monitoring system.")

@@ -1,38 +1,42 @@
 import os
 import sys
-from fastapi import FastAPI, APIRouter, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
 
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+from src.logs import log_error, log_info
+from routes import (
+    chat_manage_routes,
+    chunks_to_embedding_routes,
+    crawler_route,
+    generate_routes,
+    hello_routes,
+    live_rag_route,
+    llm_settings_route,
+    logers_router,
+    monitor_router,
+    to_chunks_route,
+    upload_route,
+)
+from historys import ChatHistoryManager
+from embedding import EmbeddingModel
+from dbs import (
+    create_chunks_table,
+    create_embeddings_table,
+    create_query_responses_table,
+    create_sqlite_engine,
+)
+
+# === Path Setup ===
 MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
 sys.path.append(MAIN_DIR)
 
-from src.logs import log_debug, log_error, log_info
-
-# === Import Routes ===
-from routes import (
-    hello_routes, upload_route, to_chunks_route, llm_settings_route,
-    generate_routes, chat_manage_routes, chunks_to_embedding_routes,
-    monitor_router, logers_router, crawler_route, live_rag_route
-)
-
-# === DB and LLM Initialization ===
-from dbs import (
-    create_sqlite_engine, create_chunks_table, create_embeddings_table,
-    create_query_responses_table
-)
-from embedding import EmbeddingModel
-from utils import load_last_yaml
-from historys import ChatHistoryManager
-
-# === FastAPI App ===
-
-
+# === FastAPI App Initialization ===
 app = FastAPI()
 
-# === Middleware ===
+# === Middleware Configuration ===
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # TODO: Restrict in production
@@ -44,6 +48,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
+    """Initialize application resources on startup."""
     log_info("[STARTUP] Initializing FastAPI app and components...")
 
     try:
@@ -78,7 +83,8 @@ async def shutdown_event():
     else:
         log_error("[DB] No active DB connection found.")
 
-# === Include Routers ===
+
+# === Include API Routers ===
 app.include_router(hello_routes, prefix="/api", tags=["Hello"])
 app.include_router(upload_route, prefix="/api", tags=["File Upload"])
 app.include_router(to_chunks_route, prefix="/api", tags=["Text Chunking"])
@@ -91,18 +97,19 @@ app.include_router(logers_router, prefix="/api", tags=["Logging"])
 app.include_router(crawler_route, prefix="/api", tags=["Crawler in Web Pages"])
 app.include_router(live_rag_route, prefix="/api", tags=["Live RAG"])
 
-
-# Add the template rendere 
+# === Template Configuration ===
 templates = Jinja2Templates(directory=f"{MAIN_DIR}/src/web")
 
-# Serve all HTML pages
+
 @app.get("/", response_class=HTMLResponse)
 async def dashboard(request: Request):
+    """Render the main dashboard page."""
     return templates.TemplateResponse("index.html", {"request": request})
+
 
 @app.get("/pages/{page_name}", response_class=HTMLResponse)
 async def get_page(request: Request, page_name: str):
-    # List of allowed pages for security
+    """Serve one of the predefined HTML pages."""
     allowed_pages = {
         "hello": "hello.html",
         "upload": "upload.html",
@@ -113,11 +120,12 @@ async def get_page(request: Request, page_name: str):
         "monitoring": "monitoring.html",
         "chat": "chat.html",
         "crawl": "crawl.html",
-        "rag": "rag.html"
+        "rag": "rag.html",
     }
-    
+
     if page_name not in allowed_pages:
         return templates.TemplateResponse("404.html", {"request": request})
-    
-    return templates.TemplateResponse(f"html/{allowed_pages[page_name]}", {"request": request})
 
+    return templates.TemplateResponse(
+        f"html/{allowed_pages[page_name]}", {"request": request}
+    )
