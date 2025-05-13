@@ -12,7 +12,7 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_error, log_info, log_debug
-    from config import get_settings, Settings
+    from helpers import get_settings, Settings
     from .abstract_llms import AstracrtLLMs
 except ImportError as ie:
     raise ImportError(f"ImportError in {__file__}: {ie}")

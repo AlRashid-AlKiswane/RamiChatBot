@@ -3,7 +3,7 @@ import os
 import sqlite3
 from unittest.mock import patch, MagicMock
 from src.dbs import create_sqlite_engine
-from src.config import get_settings, Settings
+from src.helpers import get_settings, Settings
 app_setting: Settings = get_settings()
 
 class TestCreateSQLiteEngine(unittest.TestCase):

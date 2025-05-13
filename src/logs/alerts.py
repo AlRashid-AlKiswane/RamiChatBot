@@ -4,7 +4,7 @@ import os
 import sys
 
 import requests
-from src.config.setting import get_settings, Settings
+from src.helpers.setting import get_settings, Settings
 
 # Setup project root path
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))

@@ -12,7 +12,7 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_debug, log_error, log_info
-    from config import get_settings, Settings
+    from helpers import get_settings, Settings
     from controllers import get_clean_file_name
 except Exception as e:
     msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"

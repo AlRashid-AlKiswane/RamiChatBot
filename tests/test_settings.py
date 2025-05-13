@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from src.config.setting import get_settings, Settings
+from src.helpers.setting import get_settings, Settings
 
 
 class TestSettings(unittest.TestCase):

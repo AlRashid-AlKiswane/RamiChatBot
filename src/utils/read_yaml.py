@@ -9,7 +9,7 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_error, log_info, log_debug
-    from config import Settings, get_settings
+    from helpers import Settings, get_settings
     from enums import YMLFileEnums
 except Exception as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")

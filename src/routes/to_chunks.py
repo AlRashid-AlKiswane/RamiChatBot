@@ -10,7 +10,7 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_error, log_info
-    from config import get_settings, Settings
+    from helpers import get_settings, Settings
     from controllers import load_and_chunk, clear_table
     from schemes import ChunkRequest
     from dbs import insert_chunk

@@ -15,7 +15,7 @@ root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 sys.path.append(root_dir)
 
 try:
-    from src.config.setting import get_settings, Settings
+    from src.helpers.setting import get_settings, Settings
     from src.logs.alerts import AlertManager
     from src.logs.logger import log_error, log_debug
 except ImportError as e:

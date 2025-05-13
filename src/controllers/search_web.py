@@ -15,7 +15,7 @@ try:
     sys.path.append(MAIN_DIR)
 
     from logs import log_debug, log_error, log_info
-    from config import get_settings, Settings
+    from helpers import get_settings, Settings
 except Exception as e:
     msg = f"Import Error in: {os.path.dirname(__file__)}, Error: {e}"
     raise ImportError(msg)

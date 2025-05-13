@@ -8,7 +8,7 @@ try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
     sys.path.append(MAIN_DIR)
 
-    from src.config import get_settings, Settings
+    from src.helpers import get_settings, Settings
     from src.logs import log_debug, log_error, log_info
     from src.llm.abstract_llms import AstracrtLLMs
 
