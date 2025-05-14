@@ -1,0 +1,10 @@
+name: "short_summary"
+description: "Prompt to generate short summaries."
+
+prompt: |
+  Summarize the following content into 2–3 concise sentences.
+
+  Content:
+  {{ context }}
+
+  Short Summary:

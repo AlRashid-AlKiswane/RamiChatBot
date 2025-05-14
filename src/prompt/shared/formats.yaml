@@ -1,0 +1,28 @@
+formats:
+  default:
+    structure: |
+      Context:
+      {{ context }}
+
+      User Message:
+      {{ user_message }}
+
+      Response:
+  customer_support:
+    structure: |
+      Ticket:
+      {{ context }}
+
+      Customer Query:
+      {{ user_message }}
+
+      Support Response:
+  chat:
+    structure: |
+      Conversation:
+      {{ history }}
+
+      Message:
+      {{ user_message }}
+
+      Reply:

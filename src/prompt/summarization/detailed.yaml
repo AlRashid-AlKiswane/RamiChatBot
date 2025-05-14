@@ -1,0 +1,10 @@
+name: "detailed_summary"
+description: "Prompt for generating detailed summaries with structured formatting."
+
+prompt: |
+  Create a detailed summary of the content below. Include key points, insights, and any numerical/statistical data.
+
+  Content:
+  {{ context }}
+
+  Detailed Summary:
