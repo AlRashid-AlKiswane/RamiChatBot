@@ -4,14 +4,21 @@ import logging
 import os
 import sys
 import traceback
-from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from src.logs.alerts import AlertManager  # Only used during type checking
+try:
+    # Setup project root
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+    sys.path.append(root_dir)
 
-# Setup project root
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-sys.path.append(root_dir)
+    from .alerts import AlertManager
+
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 # Setup log directory and file
 LOG_DIR = os.path.join(root_dir, "log")
@@ -51,8 +58,6 @@ def log_error(message: str) -> None:
     full_message = f"{message}\nTraceback:\n{tb}" if "NoneType: None" not in tb else message
     logger.error(full_message)
 
-    # Lazy import to prevent circular dependency
-    from src.logs.alerts import AlertManager
     alert = AlertManager()
     alert.send_telegram_alert("Error Alert", full_message)
 
