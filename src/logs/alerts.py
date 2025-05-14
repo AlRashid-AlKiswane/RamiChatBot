@@ -4,11 +4,11 @@ import os
 import sys
 
 import requests
-from helpers.setting import get_settings, Settings
 
 # Setup project root path
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(root_dir)
+from src.helpers.setting import get_settings, Settings
 
 
 

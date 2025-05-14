@@ -80,7 +80,3 @@ if __name__ == "__main__":
         print("Generated Prompt:\n", prompt)
     except Exception as e:
         log_error(f"Error during prompt generation: {e}")
-
-
-# prompt/chat/rami_issa.yaml
-# prompt/chat/rami_issa.yaml

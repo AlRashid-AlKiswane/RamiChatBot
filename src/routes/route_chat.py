@@ -121,6 +121,7 @@ async def generate_response(
             log_info(f"[CACHED MISS] No cached response found for query: {query}")
             # Retrieve context
             context = search(query=query, conn=conn, embedder=embedd, top_k=5)
+            log_debug(f"Retrieveal: {context}")
             if not context:
                 log_debug(f"[LLM GENERATION] No context found for query: {query}")
                 context = "Empty"
@@ -129,9 +130,11 @@ async def generate_response(
 
             # Build the prompt
             formatted_prompt = prompt_builder.build_prompt(
+                prompt_name="rami_issa",
                 history=chat_history.get_chat_history(user_id),
                 context=context,
-                user_message=query        )
+                user_message=query)
+            
             log_debug(f"[MEASSAGE HISTORY] {chat_history.get_chat_history(user_id)}")
             log_info(f"[LLM GENERATION] Generating response for query: {query}")
 
