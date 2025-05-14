@@ -112,7 +112,7 @@ async def manage_chat_history(
             )
 
         if remove_embeddings:
-            clear_table(conn=conn, table_name="embedding")
+            clear_table(conn=conn, table_name="embeddings")
             log_info("Embedding table cleared.")
             return JSONResponse(
                 content={"message": "Embeddings cleared successfully."},

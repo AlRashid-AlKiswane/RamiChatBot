@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | RAG Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #004e92, #000428);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00c6ff;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0072ff;
+        }
+
+        .error {
+            margin-top: 10px;
+            color: #ff4d4d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>🔐 Welcome Back</h1>
+        <form id="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <p id="error-msg" class="error"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("error-msg");
+
+            const formData = new FormData();
+            formData.append("username", username);
+            formData.append("password", password);
+
+            try {
+                const response = await fetch("/api/login", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const data = await response.json();
+                    errorMsg.textContent = data.detail || "Login failed";
+                    return;
+                }
+
+                // Redirect to dashboard after login
+                window.location.href = "/pages/index";
+            } catch (error) {
+                console.error("Login error:", error);
+                errorMsg.textContent = "An unexpected error occurred.";
+            }
+        });
+    </script>
+</body>
+</html>

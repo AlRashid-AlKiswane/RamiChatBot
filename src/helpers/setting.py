@@ -44,7 +44,8 @@ class Settings(BaseSettings):
     # Application Settings
     APP_NAME: str
     APP_VERSION: str
-
+    SECRET_KEY: str 
+    
     DOC_LOCATION_SAVE: str
     CONFIG_DIR: str
     DATABASE_URL: str

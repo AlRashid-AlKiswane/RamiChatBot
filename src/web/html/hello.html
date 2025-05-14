@@ -52,22 +52,60 @@
         <button onclick="fetchAppInfo()">Get Info</button>
         <div class="response" id="response"></div>
     </div>
-
     <script>
-        async function fetchAppInfo() {
-            try {
-                const response = await fetch('/api/hello');
-                const data = await response.json();
-                document.getElementById('response').innerHTML = `
-                    <strong>App Name:</strong> ${data["App Name"]}<br>
-                    <strong>Version:</strong> ${data["Version"]}<br>
-                    <strong>Message:</strong> ${data["Message"]}
-                `;
-            } catch (error) {
-                document.getElementById('response').innerHTML = `<span style="color: red;">Error fetching data</span>`;
-                console.error("Fetch error:", error);
-            }
+        let authToken = null;
+
+async function handleLoginSuccess(token) {
+    authToken = token;
+    await fetchAppInfo();
+}
+
+async function fetchAppInfo() {
+    try {
+        const headers = {};
+        if (authToken) {
+            headers['Authorization'] = `Bearer ${authToken}`;
         }
+
+        const response = await fetch('/api/hello', {
+            headers: headers
+        });
+
+        const output = document.getElementById('response');
+
+        if (response.status === 401) {
+            output.innerHTML = `
+                ❌ <strong>Session expired</strong>. Please log in again 🌐
+            `;
+            return;
+        }
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        output.innerHTML = `
+            🌿 <strong>App Name:</strong> ${data["App Name"]}<br>
+            🌻 <strong>Version:</strong> ${data["Version"]}<br>
+            🌼 <strong>Message:</strong> ${data["Message"]}
+        `;
+    } catch (error) {
+        document.getElementById('response').innerHTML = `
+            ❌ <strong>Error fetching data:</strong> ${error.message}
+        `;
+        console.error("Fetch error:", error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedToken = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+    if (savedToken) {
+        authToken = savedToken;
+        fetchAppInfo();
+    }
+});
     </script>
+
 </body>
 </html>
