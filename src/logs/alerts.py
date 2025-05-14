@@ -1,15 +1,25 @@
 """AlertManager for sending alerts via Telegram bot."""
 
+import logging
 import os
 import sys
-
 import requests
 
-# Setup project root path
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-sys.path.append(root_dir)
-from src.helpers.setting import get_settings, Settings
+try:
 
+    # Setup project root path
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+    sys.path.append(root_dir)
+    from helpers import (get_settings,
+                         Settings)
+
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 
 class AlertManager:  # pylint: disable=too-few-public-methods
