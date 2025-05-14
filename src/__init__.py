@@ -1,3 +1,7 @@
+"""
+This module initializes the 'src' package and suppresses loggers for various libraries.
+"""
+
 import logging
 
 # Suppress specific loggers
