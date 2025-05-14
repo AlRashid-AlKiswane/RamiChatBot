@@ -1,18 +1,22 @@
+"""
+This module provides functions for loading and parsing the most recent YAML file 
+from the configuration directory.
+"""
+
 import os
 import sys
-import yaml
 from typing import Optional, Dict, Any
-from pathlib import Path
+import yaml
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
 
     from logs import log_error, log_info, log_debug
-    from helpers import Settings, get_settings
+    from helpers import get_settings
     from enums import YMLFileEnums
-except Exception as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+except ImportError as e:
+    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}") from e
 
 DIRECTORY = get_settings().CONFIG_DIR
 
@@ -47,8 +51,7 @@ def load_last_yaml(file_path: Optional[str] = None) -> Optional[Dict[str, Any]]:
 
         log_info(f"{YMLFileEnums.YAML_LOAD_SUCCESS.value}: {target_file}")
         return data
-    
 
-    except Exception as e:
+    except (FileNotFoundError, yaml.YAMLError) as e:
         log_error(f"{YMLFileEnums.YAML_LOAD_ERROR.value}: {e}")
         return None
