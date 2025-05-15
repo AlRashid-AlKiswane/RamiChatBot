@@ -1,3 +1,9 @@
+"""Routes package initialization.
+
+This module imports and exposes all route modules for the application.
+It serves as the central point for collecting all API routes.
+"""
+
 from .route_hello import hello_routes
 from .route_doc_upload import upload_route
 from .to_chunks import to_chunks_route

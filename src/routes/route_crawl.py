@@ -1,3 +1,10 @@
+"""
+Website Crawler API Endpoint
+
+This module provides FastAPI routes for crawling websites, tracking memory usage,
+and saving crawled content to text files.
+"""
+
 import os
 import sys
 import tracemalloc

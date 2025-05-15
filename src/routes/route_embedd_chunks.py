@@ -1,3 +1,10 @@
+"""
+Chunks to Embedding Conversion API Endpoint
+
+This module provides FastAPI routes for converting text chunks to embeddings
+and storing them in the database.
+"""
+
 import os
 import sys
 from fastapi import APIRouter, Depends, HTTPException, Request

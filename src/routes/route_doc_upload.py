@@ -1,3 +1,10 @@
+"""
+File Upload API Endpoint
+
+This module provides FastAPI routes for handling file uploads,
+including file type validation and secure storage.
+"""
+
 import os
 import sys
 import shutil

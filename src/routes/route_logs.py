@@ -1,6 +1,13 @@
+"""
+Log File Access API Endpoint
+
+This module provides a FastAPI route for retrieving application log files.
+It handles asynchronous file reading and proper error handling for log file access.
+"""
+
+import logging
 import os
 import sys
-import logging
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import PlainTextResponse
 from starlette.status import HTTP_200_OK, HTTP_500_INTERNAL_SERVER_ERROR, HTTP_404_NOT_FOUND
@@ -8,30 +15,38 @@ import aiofiles
 
 # Setup import path and logging
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+    from src.utils import setup_main_path
+    MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)
 
     from src.logs import log_debug, log_error
 
-
-except ImportError as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 logers_router = APIRouter()
 
 # Define the log file path
 LOG_FILE_PATH = f"{MAIN_DIR}/log/app.log"
-print(LOG_FILE_PATH)
+
 @logers_router.get("/logs", response_class=PlainTextResponse, status_code=HTTP_200_OK)
 async def get_logs():
-    """
-    Return the content of the application log file.
+    """Retrieve and return the content of the application log file.
+    
+    Returns:
+        PlainTextResponse: The content of the log file
+        
+    Raises:
+        HTTPException: 
+            404 if log file not found
+            500 if error reading log file
     """
     # Verify that the log file exists
     if not os.path.exists(LOG_FILE_PATH):
         error_msg = "Log file not found."
         log_error(error_msg)
-        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=error_msg)
+        raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail=error_msg) from None
 
     try:
         # Use asynchronous file I/O to read the log file without blocking the event loop
@@ -42,5 +57,8 @@ async def get_logs():
 
     except Exception as e:
         error_msg = f"Error reading log file: {str(e)}"
-        log_error("Exception occurred while reading the log file.")
-        raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail=error_msg)
+        log_error(error_msg)
+        raise HTTPException(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=error_msg
+        ) from e

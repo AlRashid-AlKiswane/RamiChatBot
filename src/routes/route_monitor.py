@@ -1,4 +1,14 @@
-import os
+"""
+System Health Monitoring API Routes
+
+Provides endpoints for monitoring system resources including:
+- CPU usage
+- Memory utilization
+- Disk space
+- GPU metrics (when available)
+"""
+
+import logging
 import sys
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
@@ -6,79 +16,124 @@ from starlette.status import HTTP_200_OK, HTTP_500_INTERNAL_SERVER_ERROR
 
 # Setup import path and logging
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    from src.utils import setup_main_path
+    MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)
 
-    from logs import log_debug, log_error, log_info
-    from logs import SystemMonitor
+    from src.logs import log_error, SystemMonitor
 
-except ImportError as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 monitor_router = APIRouter()
 monitor = SystemMonitor()
 
-@monitor_router.get("/health/cpu", summary="Get CPU usage")
-def cpu_usage():
+@monitor_router.get("/health/cpu", summary="Get current CPU utilization percentage")
+def get_cpu_usage() -> float:
+    """Retrieve current CPU usage percentage.
+    
+    Returns:
+        float: Current CPU usage percentage (0-100)
+        
+    Raises:
+        JSONResponse: 500 error if monitoring fails
+    """
     try:
-        data = monitor.check_cpu_usage()
-        usage = data.get("cpu_usage", None)
-        if usage is None:
-            raise ValueError("No CPU data returned")
-        return usage  # Return float directly
-    except Exception as e:
-        log_error(f"Error getting CPU usage: {e}")
+        if (usage := monitor.check_cpu_usage().get("cpu_usage")) is None:
+            raise ValueError("CPU monitoring data unavailable")
+        return usage
+    except ValueError as e:
+        log_error(f"CPU monitoring error: {e}")
         return JSONResponse(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"error": "Failed to retrieve CPU usage"}
+            content={"error": str(e)}
         )
-
-@monitor_router.get("/health/memory", summary="Get memory usage")
-def memory_usage():
-    try:
-        data = monitor.check_memory_usage()
-        usage = data.get("memory_usage", None)
-        if usage is None:
-            raise ValueError("No memory data returned")
-        return usage  # Return float directly
-    except Exception as e:
-        log_error(f"Error getting memory usage: {e}")
+    except Exception as e:  # pylint: disable=broad-except
+        log_error(f"Unexpected CPU monitoring error: {e}")
         return JSONResponse(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"error": "Failed to retrieve memory usage"}
+            content={"error": "CPU monitoring service unavailable"}
         )
 
-@monitor_router.get("/health/disk", summary="Get disk usage")
-def disk_usage():
+@monitor_router.get("/health/memory", summary="Get current memory utilization percentage")
+def get_memory_usage() -> float:
+    """Retrieve current memory usage percentage.
+    
+    Returns:
+        float: Current memory usage percentage (0-100)
+        
+    Raises:
+        JSONResponse: 500 error if monitoring fails
+    """
     try:
-        data = monitor.check_disk_usage()
-        usage = data.get("disk_usage", None)
-        if usage is None:
-            raise ValueError("No disk data returned")
-        return usage  # Return float directly
-    except Exception as e:
-        log_error(f"Error getting disk usage: {e}")
+        if (usage := monitor.check_memory_usage().get("memory_usage")) is None:
+            raise ValueError("Memory monitoring data unavailable")
+        return usage
+    except ValueError as e:
+        log_error(f"Memory monitoring error: {e}")
         return JSONResponse(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"error": "Failed to retrieve disk usage"}
+            content={"error": str(e)}
+        )
+    except Exception as e:  # pylint: disable=broad-except
+        log_error(f"Unexpected memory monitoring error: {e}")
+        return JSONResponse(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            content={"error": "Memory monitoring service unavailable"}
         )
 
-@monitor_router.get("/health/gpu", summary="Get GPU usage")
-def gpu_usage():
+@monitor_router.get("/health/disk", summary="Get current disk utilization percentage")
+def get_disk_usage() -> float:
+    """Retrieve current disk usage percentage.
+    
+    Returns:
+        float: Current disk usage percentage (0-100)
+        
+    Raises:
+        JSONResponse: 500 error if monitoring fails
+    """
     try:
-        data = monitor.check_gpu_usage()
-        usage = data.get("gpu_usage", None)
-        if usage is None or isinstance(usage, str):  # Could be "GPU monitoring unavailable"
-            raise NotImplementedError("GPU monitoring not supported or unavailable")
-        return usage  # Return int directly
-    except NotImplementedError as e:
+        if (usage := monitor.check_disk_usage().get("disk_usage")) is None:
+            raise ValueError("Disk monitoring data unavailable")
+        return usage
+    except ValueError as e:
+        log_error(f"Disk monitoring error: {e}")
+        return JSONResponse(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            content={"error": str(e)}
+        )
+    except Exception as e:  # pylint: disable=broad-except
+        log_error(f"Unexpected disk monitoring error: {e}")
+        return JSONResponse(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            content={"error": "Disk monitoring service unavailable"}
+        )
+
+@monitor_router.get("/health/gpu", summary="Get current GPU utilization if available")
+def get_gpu_usage():
+    """Retrieve current GPU usage percentage if supported.
+    
+    Returns:
+        Union[float, JSONResponse]: 
+            - GPU usage percentage (0-100) if available
+            - JSON response if unsupported
+            
+    Raises:
+        JSONResponse: 500 error if monitoring fails
+    """
+    try:
+        if (usage := monitor.check_gpu_usage().get("gpu_usage")) is None or isinstance(usage, str):
+            raise NotImplementedError("GPU monitoring unavailable")
+        return usage
+    except NotImplementedError:
         return JSONResponse(
             status_code=HTTP_200_OK,
-            content={"message": "GPU monitoring not supported on this system"}
+            content={"message": "GPU monitoring not supported"}
         )
-    except Exception as e:
-        log_error(f"Error getting GPU usage: {e}")
+    except Exception as e:  # pylint: disable=broad-except
+        log_error(f"GPU monitoring error: {e}")
         return JSONResponse(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"error": "Failed to retrieve GPU usage"}
+            content={"error": "GPU monitoring service unavailable"}
         )

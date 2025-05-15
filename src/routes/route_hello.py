@@ -1,26 +1,42 @@
-import os
+"""
+Hello World API Endpoint
+
+This module provides a simple FastAPI endpoint that returns basic application
+information including the app name, version, and a greeting message.
+"""
+
+import logging
 import sys
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 
-FILE_LOCATION = f"{os.path.dirname(__file__)}/hello.py"
 # Add root dir and handle potential import errors
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    from src.utils import setup_main_path
+    MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)
 
-    from logs import log_debug, log_error, log_info
-    from helpers import get_settings, Settings
-    from enums import HelloResponse
+    from src.logs import log_info
+    from src.helpers import get_settings, Settings
+    from src.enums import HelloResponse
+
 except Exception as e:
-    msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"
-    raise ImportError(msg)
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 # Define the router
 hello_routes = APIRouter()
 
 @hello_routes.get("/hello")
-async def say_hello(app_settings: Settings = Depends(get_settings)):
+async def say_hello(app_settings: Settings = Depends(get_settings)) -> JSONResponse:
+    """Return basic application information and greeting.
+    
+    Args:
+        app_settings: Application settings (dependency injection)
+        
+    Returns:
+        JSONResponse: Contains app name, version, and greeting message
+    """
     try:
         name_app = app_settings.APP_NAME
         version_app = app_settings.APP_VERSION
@@ -33,8 +49,8 @@ async def say_hello(app_settings: Settings = Depends(get_settings)):
                 "Message": HelloResponse.APIRUN.value
             }
         )
-    except Exception as e:
-        log_error(f"Failed to retrieve app info: {e},Error Location: {FILE_LOCATION} ")
+
+    except Exception:  # pylint: disable=broad-except
         return JSONResponse(
             content={
                 "App Name": "Unknown",

@@ -6,7 +6,7 @@ from sqlite3 import connect, Error as SQLError
 from fastapi import Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
-from jwt import PyJWTError, ExpiredSignatureError
+from jwt import PyJWTError
 
 from src.helpers import get_settings, Settings
 from src.logs import log_info, log_warning, log_error
