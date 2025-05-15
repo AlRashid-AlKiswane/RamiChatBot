@@ -12,10 +12,9 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 
-from src.utils import setup_main_path
+from utils import setup_main_path # pylint: disable=import-error
 
 try:
-
     # Path Setup
     MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)

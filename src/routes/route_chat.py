@@ -1,183 +1,294 @@
-import os
+"""
+Route module for handling chat generation requests using a Large Language Model (LLM) integrated
+with Retrieval-Augmented Generation (RAG) context.
+
+This module defines a FastAPI router that exposes a single POST endpoint `/chat` which receives a
+user query and returns an AI-generated response. The response generation pipeline leverages
+retrieved relevant context from a vector search (RAG), a prompt builder, and a HuggingFace-based
+LLM for generating coherent and context-aware answers.
+
+Main Features and Workflow:
+---------------------------
+1. Dependency Injection:
+   Uses FastAPI's dependency injection to obtain essential components for request processing:
+   - Database connection (`sqlite3.Connection`) for querying cached responses and saving new
+     query-response pairs.
+   - Chat history manager to retrieve and update conversation history per user.
+   - Embedding model instance used to embed queries for vector search.
+   - Pre-loaded HuggingFace LLM instance for text generation.
+
+2. Request Handling:
+   - Accepts a POST request with a JSON body conforming to the `Generate` schema, including the
+     user's query.
+   - Validates the query, ensuring it is not empty.
+   - Checks for a cached response in the database to optimize latency and resource usage.
+   - If a cached response exists, it is returned immediately.
+
+3. Retrieval-Augmented Generation (RAG):
+   - When no cached response is found, it performs a similarity search over stored documents
+     (via the `search` function) to gather the most relevant context for the query.
+   - The retrieved context enriches the prompt, providing the LLM with domain-specific or
+     user-specific information to improve response quality.
+
+4. Prompt Construction:
+   - Utilizes `PromptBuilder` to create a custom prompt combining:
+     * User conversation history,
+     * Retrieved RAG context,
+     * Current user message.
+
+5. Response Generation:
+   - Calls the LLM to generate a raw text response based on the constructed prompt.
+   - Extracts the core answer from the full LLM output (using `extract_llm_answer_from_full`).
+   - Updates the chat history by recording the user query and AI-generated response.
+   - Persists the query-response pair into the database cache for future reuse.
+
+6. Monitoring and Logging:
+   - Tracks memory usage during generation using `tracemalloc`.
+   - Logs key events such as cache hits/misses, prompt details, errors, and memory stats
+     for observability and debugging.
+
+7. Error Handling:
+   - Raises appropriate HTTP exceptions (400 Bad Request for empty queries).
+   - Logs and returns 500 Internal Server Error on unexpected failures while shielding
+     internal details from the client.
+   - Catches import errors explicitly to assist with debugging missing dependencies or
+     misconfigurations at startup.
+
+Usage:
+------
+- Designed to be mounted as part of a larger FastAPI app.
+- Requires accompanying modules for logging, prompt construction, embedding, LLM, RAG search,
+  chat history management, and database operations.
+- Intended for chatbot or conversational AI systems where context-aware, cached, and efficient
+  responses are required.
+
+Example:
+--------
+POST /chat
+{
+  "query": "What are the store hours for Ramy Issa retail?"
+}
+
+Response:
+{
+  "status": "success",
+  "response": "Our Ramy Issa stores are open from 9 AM to 9 PM every day."
+}
+
+Note:
+-----
+- This module assumes the presence of SQLite-based query response caching.
+- The prompt name "rami_issa" is hardcoded and can be parameterized for different personas.
+- The system currently retrieves top 5 context chunks during search; this number can be tuned.
+
+Dependencies:
+-------------
+- FastAPI, Starlette
+- SQLite3
+- Custom modules: `logs`, `prompt`, `schemes`, `dbs`, `llm`, `embedding`, `historys`,
+  `utils`, `rag`, `dependencies`
+- HuggingFace transformers or compatible LLM backend
+- `tracemalloc` for memory profiling
+
+Author: Alrashid Issa
+Date: 2025-05-15
+"""
+
+import logging
 import sys
-import tracemalloc
 import traceback
-import sqlite3 as sql3
+import tracemalloc
+from sqlite3 import Connection
+from typing import Tuple
+
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import JSONResponse
-from starlette.status import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_500_INTERNAL_SERVER_ERROR
+from starlette.status import (
+    HTTP_200_OK,
+    HTTP_400_BAD_REQUEST,
+    HTTP_500_INTERNAL_SERVER_ERROR,
+    HTTP_507_INSUFFICIENT_STORAGE
+)
 
-# Setup import path and logging
+
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    from src.utils import setup_main_path
+    # Setup import path
+    MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)
 
-    from logs import log_debug, log_error, log_info
-    from prompt import PromptBuilder
-    from schemes import Generate
-    from dbs import (insert_query_response,
-                     pull_from_table)
-    from llm import HuggingFaceLLMs
-    from embedding import EmbeddingModel
-    from historys import ChatHistoryManager
-    
-    from utils import extract_llm_answer_from_full
-    from rag import search
+    from src.dbs import insert_query_response, pull_from_table
+    from src.dependencies import get_chat_history, get_db_conn, get_embedd, get_llm
+    from src.embedding import EmbeddingModel
+    from src.historys import ChatHistoryManager
+    from src.llm import HuggingFaceLLMs
 
-except ImportError as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+    # Import internal modules
+    from src.logs import log_debug, log_error, log_info
+    from src.prompt import PromptBuilder
+    from src.rag import search
+    from src.schemes import Generate
+    from src.utils import extract_llm_answer_from_full
 
+except ImportError as ie:
+    logging.error("Import Error setup error: %s", ie, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
+# Initialize router and memory profiler
 generate_routes = APIRouter()
 prompt_builder = PromptBuilder()
 tracemalloc.start()
 
-def get_llm(request: Request):
-    """Retrieve the LLM instance from the app state."""
-    llm = request.app.state.llm
-    if not llm:
-        log_debug("LLM instance not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="LLM service is not initialized. Please configure the LLM via the /llmsSettings endpoint."
-        )
-    return llm
+
+def _generate_new_response(user_id: str, query: str, dependencies: dict) -> str:
+    """
+    Generates a response from the LLM based on a user's query and conversation history.
+
+    This function performs the following steps:
+      - Retrieves relevant context from the knowledge base using semantic search.
+      - Builds a prompt using the context, query, and chat history.
+      - Generates a response using the specified LLM.
+      - Stores the full response in the database.
+      - Updates the chat history for the user.
+
+    Args:
+        user_id (str): Unique identifier for the user.
+        query (str): The user's input question or message.
+        dependencies (dict): A dictionary containing the following keys:
+            - "conn" (Connection): SQLite database connection.
+            - "chat_history" (ChatHistoryManager): Manages chat memory.
+            - "embedd" (EmbeddingModel): Embedding model for vector search.
+            - "llm" (HuggingFaceLLMs): The LLM used to generate the response.
+
+    Returns:
+        str: The final extracted response generated by the LLM.
+    """
+    conn = dependencies["conn"]
+    chat_history = dependencies["chat_history"]
+    embedd = dependencies["embedd"]
+    llm = dependencies["llm"]
+
+    context = search(query=query, conn=conn, embedder=embedd, top_k=5) or "Empty"
+    log_debug(f"[LLM GENERATION] Context retrieved: {context}")
+
+    formatted_prompt = prompt_builder.build_prompt(
+        prompt_name="rami_issa",
+        history=chat_history.get_chat_history(user_id),
+        context=context,
+        user_message=query,
+    )
+
+    raw_response = llm.generate_response(prompt=formatted_prompt)
+    response = extract_llm_answer_from_full(raw_response)
+
+    insert_query_response(
+        conn=conn, query=query, response=raw_response, user_id=user_id
+    )
+    chat_history.add_user_message(user_id, query)
+    chat_history.add_ai_message(user_id, response)
+
+    return response
 
 
-def get_db_conn(request: Request):
-    """Retrieve the relational database connection from the app state."""
-    conn = request.app.state.conn
-    if not conn:
-        log_debug("Relational database connection not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Relational database service is not available."
-        )
-    return conn
+def get_all_dependencies(
+    request: Request,
+) -> Tuple[Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLMs]:
+    """
+    Dependency injector for FastAPI routes to provide required LLM tools and services.
 
-def get_embedd(request: Request):
-    """Retrieve the embedding model instance from the app state."""
-    embedding = request.app.state.embedding_model
-    if not embedding:
-        log_debug("Embedding model instance not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Embedding model service is not available."
-        )
-    return embedding
+    This function fetches and returns the necessary components for LLM-based response
+    generation, including the database connection, chat history manager, embedding model,
+    and language model.
 
-def get_chat_history(request: Request):
-    """Retrieve the get_chat_history model instance from the app state."""
-    chat_history = request.app.state.chat_manager
-    if not chat_history:
-        log_debug("get_chat_history model instance not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="get_chat_history model service is not available."
-        )
-    return chat_history
+    Args:
+        request (Request): The current FastAPI request, used to extract context
+                           for dependency resolution.
+
+    Returns:
+        Tuple[Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLMs]: 
+            A tuple containing the database connection, chat memory, embedder, and LLM.
+    """
+    return (
+        get_db_conn(request),
+        get_chat_history(request),
+        get_embedd(request),
+        get_llm(request),
+    )
+
 
 @generate_routes.post("/chat", response_class=JSONResponse)
 async def generate_response(
-    request: Request, 
-    body: Generate, 
-    user_id: str, 
-    conn: sql3.Connection = Depends(get_db_conn),
-    llm: HuggingFaceLLMs = Depends(get_llm),
-    embedd: EmbeddingModel = Depends(get_embedd),
-    chat_history: ChatHistoryManager = Depends(get_chat_history)
-    ):
+    body: Generate,
+    user_id: str,
+    deps: Tuple[
+        Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLMs
+    ] = Depends(get_all_dependencies),
+):
     """
-    Generate response from LLM based on user query and retrieved context.
+    Generate a response from the LLM based on the user query with context retrieval.
     """
     try:
-        query = body.query.strip()
+        conn, chat_history, embedd, llm = deps
+        query = body.query
+
         if not query:
-            raise HTTPException(status_code=HTTP_400_BAD_REQUEST, detail="Query cannot be empty.")
-        
-        # Extract application dependencies
+            raise HTTPException(
+                status_code=HTTP_400_BAD_REQUEST, detail="Query cannot be empty."
+            )
 
-        if not all([chat_history, llm, conn, embedd]):
-            raise HTTPException(status_code=HTTP_500_INTERNAL_SERVER_ERROR, detail="Application is not properly initialized.")
-
-        cached_response = pull_from_table(conn=conn,
-                                                   table_name="query_responses",
-                                                   columns=[],  # Not used in cache mode
-                                                   cach=(user_id, query)
+        cached_response = pull_from_table(
+            conn=conn, table_name="query_responses", columns=[], cach=(user_id, query)
         )
+
         if cached_response:
-            # Use cached_response directly (it's a string)
-                single_response = extract_llm_answer_from_full(cached_response)
+            response = extract_llm_answer_from_full(cached_response)
+            if response:
+                log_info(f"[CACHED HIT] Returning cached response for query: {query}")
+                return JSONResponse(
+                    content={"status": "success", "response": response},
+                    status_code=HTTP_200_OK,
+                )
 
-                if single_response:
-                    log_info(f"[CACHED HIT] Returning cached response for query: {query}")
-                    return JSONResponse(
-                        content={
-                            "status": "success",
-                            "response": single_response
-                        },
-                        status_code=HTTP_200_OK
-                    )
-        else:
-            log_info(f"[CACHED MISS] No cached response found for query: {query}")
-            # Retrieve context
-            context = search(query=query, conn=conn, embedder=embedd, top_k=5)
-            log_debug(f"Retrieveal: {context}")
-            if not context:
-                log_debug(f"[LLM GENERATION] No context found for query: {query}")
-                context = "Empty"
+        log_info(f"[CACHED MISS] No cached response found for query: {query}")
+        response = _generate_new_response(
+            user_id=user_id,
+            query=query,
+            dependencies={
+                "conn": conn,
+                "chat_history": chat_history,
+                "embedd": embedd,
+                "llm": llm,
+            },
+        )
 
-            log_debug(f"[LLM GENERATION] Context retrieved: {context}")
-
-            # Build the prompt
-            formatted_prompt = prompt_builder.build_prompt(
-                prompt_name="rami_issa",
-                history=chat_history.get_chat_history(user_id),
-                context=context,
-                user_message=query)
-            
-            log_debug(f"[MEASSAGE HISTORY] {chat_history.get_chat_history(user_id)}")
-            log_info(f"[LLM GENERATION] Generating response for query: {query}")
-
-            # Generate model response
-            raw_response = llm.generate_response(prompt=formatted_prompt)
-            single_response = extract_llm_answer_from_full(raw_response)
-
-            # Store the query and response in the database
-            insert_query_response(
-                conn=conn,
-                query=query,
-                response=raw_response,
-                user_id=user_id
-            )        
-
-            # Update memory (chat history)
-            chat_history.add_user_message(user_id, query)
-            chat_history.add_ai_message(user_id, single_response)
-
-            # Log memory usage
-            current, peak = tracemalloc.get_traced_memory()
-            log_debug(f"[MEMORY USAGE] Current: {current / 1024:.2f} KB; Peak: {peak / 1024:.2f} KB")
+        current, peak = tracemalloc.get_traced_memory()
+        log_debug(
+            f"[MEMORY USAGE] Current: {current / 1024:.2f} KB; Peak: {peak / 1024:.2f} KB"
+        )
 
         return JSONResponse(
             status_code=HTTP_200_OK,
-            content={
-                "status": "success",
-                "response": single_response
-            }
+            content={"status": "success", "response": response},
         )
 
     except HTTPException as http_exc:
         log_error(f"[LLM GENERATION HTTP ERROR] {http_exc.detail}")
         raise http_exc
 
-    except Exception as e:
-        log_error(f"[LLM GENERATION ERROR] {traceback.format_exc()}")
+    except MemoryError as mem_err:
+        log_error(f"[LLM GENERATION MEMORY ERROR] {mem_err}")
+        return JSONResponse(
+            status_code=HTTP_507_INSUFFICIENT_STORAGE,
+            content={"status": "error", "message": "Memory allocation failed."},
+        )
+
+    except Exception as exc:  # pylint: disable=broad-exception-caught
+        log_error(f"[LLM GENERATION UNKNOWN ERROR] {exc} {traceback.format_exc()}")
         return JSONResponse(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
             content={
                 "status": "error",
-                "message": "Failed to generate response. Please try again later."
-            }
+                "message": "An unexpected error occurred while generating the response.",
+            },
         )
-    finally:
-        log_info(f"[LLM GENERATION] Finished processing request.")
