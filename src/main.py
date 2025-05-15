@@ -2,31 +2,41 @@
 Main FastAPI application entry point with authentication, routing, and startup configuration.
 """
 
+import logging
 import os
 import sys
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 
-from logs import log_error, log_info
-from routes import (
-    chat_manage_routes, chunks_to_embedding_routes, crawler_route,
-    generate_routes, hello_routes, live_rag_route, llm_settings_route,
-    logers_router, monitor_router, to_chunks_route, upload_route
-)
-from historys import ChatHistoryManager
-from embedding import EmbeddingModel
-from dbs import (
-    create_chunks_table, create_embeddings_table,
-    create_query_responses_table, create_sqlite_engine
-)
+from src.utils import setup_main_path
 
-# Path Setup
-MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-sys.path.append(MAIN_DIR)
+try:
+
+    # Path Setup
+    MAIN_DIR = setup_main_path(levels_up=2)
+    sys.path.append(MAIN_DIR)
+
+    from src.logs import log_error, log_info
+    from src.routes import (
+        chat_manage_routes, chunks_to_embedding_routes, crawler_route,
+        generate_routes, hello_routes, live_rag_route, llm_settings_route,
+        logers_router, monitor_router, to_chunks_route, upload_route
+    )
+    from src.historys import ChatHistoryManager
+    from src.embedding import EmbeddingModel
+    from src.dbs import (
+        create_chunks_table, create_embeddings_table,
+        create_query_responses_table, create_sqlite_engine
+    )
+
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
+
 
 # FastAPI Initialization
 app = FastAPI()
@@ -43,9 +53,9 @@ app.add_middleware(
 # Templates
 templates = Jinja2Templates(directory=os.path.join(MAIN_DIR, "src/web"))
 
-# Startup Event
 @app.on_event("startup")
 async def startup_event():
+    """Initialize application state and resources on startup."""
     log_info("[startup_event] Initializing FastAPI app.")
     try:
         app.state.conn = create_sqlite_engine()
@@ -59,20 +69,20 @@ async def startup_event():
         app.state.RETRIEVAL_CONTEXT = "No relevant context found."
 
         log_info("[startup_event] Initialization completed successfully.")
-    except Exception as exc:
+    except Exception as exc:  # pylint: disable=broad-except
         log_error(f"[startup_event] Initialization failed: {exc}")
         raise
 
-# Shutdown Event
 @app.on_event("shutdown")
 async def shutdown_event():
+    """Clean up resources on application shutdown."""
     log_info("[shutdown_event] Shutting down FastAPI app.")
     try:
         conn = getattr(app.state, "conn", None)
         if conn:
             conn.close()
             log_info("[shutdown_event] SQLite connection closed.")
-    except Exception as exc:
+    except Exception as exc:  # pylint: disable=broad-except
         log_error(f"[shutdown_event] Error while closing resources: {exc}")
 
 # Include All Routes Publicly
@@ -84,25 +94,26 @@ all_routes = [
 for route in all_routes:
     app.include_router(route, prefix="/api")
 
-# Public Pages
 @app.get("/", response_class=HTMLResponse)
 async def dashboard(request: Request):
+    """Serve the main dashboard page."""
     return templates.TemplateResponse("html/login.html", {"request": request})
 
 @app.get("/pages/{page_name}", response_class=HTMLResponse)
 async def get_page(request: Request, page_name: str):
+    """Serve different pages based on the page_name parameter."""
     allowed_pages = {
         "index": "index.html",
-        "hello": "hello.html", 
+        "hello": "hello.html",
         "upload": "upload.html",
         "to_chunks": "to_chunks.html",
         "chunks_to_embedding": "chunks_to_embedding.html",
         "llms_config": "llms_config.html",
         "monitoring": "monitoring.html",
-        "chat": "chat.html", 
+        "chat": "chat.html",
         "crawl": "crawl.html",
-        "rag": "rag.html", 
-        "chat_manager":"chat_manager.html"
+        "rag": "rag.html",
+        "chat_manager": "chat_manager.html"
     }
 
     template_name = allowed_pages.get(page_name)
@@ -112,9 +123,9 @@ async def get_page(request: Request, page_name: str):
     template_path = f"html/{template_name}" if template_name != "index.html" else template_name
     return templates.TemplateResponse(template_path, {"request": request})
 
-# Validation Error Handler
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(request: Request, exc: RequestValidationError):
+async def validation_exception_handler(exc: RequestValidationError):
+    """Handle request validation errors."""
     log_error(f"[validation_exception_handler] Validation failed: {exc.errors()}")
     return JSONResponse(
         status_code=HTTP_422_UNPROCESSABLE_ENTITY,
