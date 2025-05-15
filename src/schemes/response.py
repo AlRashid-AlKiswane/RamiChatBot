@@ -5,7 +5,7 @@ This module defines Pydantic models for handling and validating
 query inputs for response generation.
 """
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field
 
 class Generate(BaseModel):
     """Model for validating and processing generation queries.
