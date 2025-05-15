@@ -8,9 +8,7 @@ This module provides helper functions for:
 import os
 import sys
 import logging
-from typing import Optional
-
-from fsspec import Callback
+from typing import Any, Optional
 
 def setup_main_path(levels_up: int = 1) -> str:
     """Add the specified number of parent directories to Python path.
@@ -25,7 +23,22 @@ def setup_main_path(levels_up: int = 1) -> str:
     sys.path.append(main_dir)
     return main_dir
 
-def safe_import(module_path: str, alias: Optional[str] = None):
+def safe_import(module_path: str, alias: Optional[str] = None) -> Any:
+    """
+    Safely imports a local module by path, optionally assigning it to a global alias.
+
+    Args:
+        module_path (str): The dotted path of the module to import (e.g., 'my_package.my_module').
+        alias (Optional[str]): Optional alias to assign the imported module in the global scope.
+
+    Returns:
+        module: The imported module, or None if the import fails.
+
+    Logs:
+        - ModuleNotFoundError: If the specified module is not found.
+        - ImportError: If the module fails to import.
+        - Exception: For any unexpected errors during import.
+    """
     try:
         module = __import__(module_path, fromlist=["*"])
         if alias:
@@ -38,4 +51,5 @@ def safe_import(module_path: str, alias: Optional[str] = None):
     except Exception as e:
         logging.critical("Unexpected setup error: %s", e, exc_info=True)
         raise
-    return Callback
+
+    return None
