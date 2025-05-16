@@ -10,7 +10,7 @@ try:
 
     from src.helpers import get_settings, Settings
     from src.logs import log_debug, log_error, log_info
-    from src.llm.abstract_llms import AstracrtLLMs
+    from src.llm.base_llm import AstracrtLLMs
 
 except ImportError as ie:
     raise ImportError(f"ImportError in {__file__}: {ie}")

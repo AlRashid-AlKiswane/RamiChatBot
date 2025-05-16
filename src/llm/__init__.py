@@ -1,2 +1,2 @@
-from .hg_llms import HuggingFaceLLMs
-from .llamaCPP import CPPLlaMa
+from .hf_llm import HuggingFaceLLMs
+from .llama_cpp import CPPLlaMa
