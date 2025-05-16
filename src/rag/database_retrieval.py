@@ -1,93 +1,85 @@
-# -*- coding: utf-8 -*-
+"""
+database_retrieval module: load embeddings and metadata from SQLite.
+"""
 
-import os
-import sys
 import sqlite3
 import json
-import numpy as np
 from typing import Tuple, List, Dict, Any
 
-# Setup import path and logging
-try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
-    from dbs import pull_from_table
-    from logs import log_debug, log_error, log_info
-except Exception as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+import numpy as np
+
+from src.dbs import pull_from_table
+from src.logs import log_debug, log_error, log_info
+
 
 def load_embeddings_and_metadata(
     conn: sqlite3.Connection
 ) -> Tuple[List[int], np.ndarray, Dict[int, Dict[str, Any]]]:
     """
-    Loads embeddings and their associated metadata from the database.
+    Load embeddings and their associated metadata from the database.
 
     Args:
-        conn (sqlite3.Connection): SQLite connection object.
+        conn: SQLite connection object.
 
     Returns:
-        Tuple[
-            List[int]: IDs list,
-            np.ndarray: Embedding vectors,
-            Dict[int, Dict[str, Any]]: Metadata dictionary
-        ]
+        ids: List of chunk IDs.
+        embeddings_array: 2D numpy array of embeddings.
+        metadata: Mapping from chunk ID to its metadata dict.
     """
     try:
-        cursor = conn.cursor()
-
-        # Load embeddings
+        # Load embeddings records
         embeddings_data = pull_from_table(
-            conn, 
-            table_name="embeddings", 
-            columns=["embedding", "chunk_id"], 
-            rely_data="embedding"
+            conn,
+            table_name="embeddings",
+            columns=["id", "embedding"],
+            rely_data="embedding",
         )
 
-        # Load metadata
+        # Load metadata records
         metadata_rows = pull_from_table(
-            conn, 
-            table_name="chunks", 
-            columns=["pages", "sources", "authors"], 
-            rely_data="metadata"
+            conn,
+            table_name="chunks",
+            columns=["id", "page", "source", "author"],
+            rely_data="metadata",
         )
 
-        ids = []
-        embeddings = []
+        ids: List[int] = []
+        embeddings_list: List[np.ndarray] = []
+
         for record in embeddings_data:
             id_ = record["id"]
             embedding_blob = record["embedding"]
-
             embedding_list = json.loads(embedding_blob)
-
-            # Convert the list to a NumPy array
             embedding_array = np.array(embedding_list, dtype=np.float32)
 
             ids.append(id_)
-            embeddings.append(embedding_array)
+            embeddings_list.append(embedding_array)
 
-        if not embeddings:
-            raise ValueError("No embeddings found.")
+        if not embeddings_list:
+            raise ValueError("No embeddings found in the database.")
 
-        embeddings_array = np.vstack(embeddings).astype(np.float32)
+        embeddings_array = np.vstack(embeddings_list)
 
-        # Create metadata dict {id: {...}}
-        metadata = {
+        # Build metadata dict
+        metadata: Dict[int, Dict[str, Any]] = {
             row["id"]: {
-                "page": row["metadata"],
-                "source": row["metadata"],
-                "author": row["metadata"],
-            } for row in metadata_rows
+                "page": row["page"],
+                "source": row["source"],
+                "author": row["author"],
+            }
+            for row in metadata_rows
         }
 
-        log_info(f"Loaded {len(ids)} embeddings and {len(metadata)} metadata entries.")
-
+        log_info(f"database_retrieval.load_embeddings_and_metadata: "
+                 f"Loaded {len(ids)} embeddings and {len(metadata)} metadata entries.")
         return ids, embeddings_array, metadata
 
-    except sqlite3.Error as e:
-        log_error(f"SQLite error during loading: {e}")
-        return [], np.array([]), {}
-    except Exception as e:
-        log_error(f"Error during loading embeddings and metadata: {e}")
-        return [], np.array([]), {}
+    except sqlite3.Error as sql_err:
+        log_error(f"database_retrieval.load_embeddings_and_metadata - SQLite error: {sql_err}")
+    except (ValueError, json.JSONDecodeError) as data_err:
+        log_error(f"database_retrieval.load_embeddings_and_metadata - Data error: {data_err}")
     finally:
-        log_debug("Executed load_embeddings_and_metadata function.")
+        log_debug("database_retrieval.load_embeddings_and_metadata: Function execution completed.")
+
+    # Return empty defaults on error
+    return [], np.array([], dtype=np.float32), []

@@ -1,89 +1,83 @@
-import os
-import sys
-from typing import List, Dict, Any
-import numpy as np
+"""
+retrieval module for RAG: perform similarity search over stored embeddings.
+"""
+
 import sqlite3
+from typing import Any, Dict, List
 
-# Setup import path and logging
-try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+import numpy as np
 
-    from .faiss_search import build_faiss_index
-    from .embedding_query import embed_query
-    from .database_retrieval import load_embeddings_and_metadata
-    from embedding import EmbeddingModel
-    from logs import log_debug, log_error, log_info
+from src.embedding import EmbeddingModel
+from src.logs import log_debug, log_error, log_info
+from .database_retrieval import load_embeddings_and_metadata
+from .embedding_query import embed_query
+from .faiss_search import build_faiss_index
 
-except Exception as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
-
-
+# pylint: disable=too-many-locals
 def search(
     query: str,
     embedder: EmbeddingModel,
     conn: sqlite3.Connection,
-    top_k: int = 5
+    top_k: int = 5,
 ) -> List[Dict[str, Any]]:
     """
-    Search for the most relevant page_contents and their ids based on the query.
+    Search for the most relevant page contents based on the query.
 
     Args:
-        query (str): The input query string.
-        embedder (EmbeddingModel): The embedding model instance.
-        conn (sqlite3.Connection): The database connection instance.
-        top_k (int): Number of top similar entries to return.
+        query: The input query string.
+        embedder: The embedding model instance.
+        conn: The SQLite database connection.
+        top_k: Number of top similar entries to return.
 
     Returns:
-        List[Dict[str, Any]]: List of dictionaries with 'id' and 'page_content'.
+        A list of dicts with 'id' and 'page_content'.
     """
     try:
-        log_info(f"[SEARCH] Starting search for query: {query[:30]}...")
+        preview = query[:30] + "..." if len(query) > 30 else query
+        log_info(f"search: Starting search for query: {preview}")
 
-
-        # Step 2: Load embeddings and metadata
-        ids, embeddings_array, metadata = load_embeddings_and_metadata(conn)
-        if len(ids) == 0:
-            log_error("[SEARCH] No embeddings found in the database.")
+        ids, embeddings_array, _ = load_embeddings_and_metadata(conn)
+        if not ids:
+            log_error("search: No embeddings in database.")
             return []
 
-        # Step 3: Build the FAISS index
         index = build_faiss_index(embeddings_array)
 
-        # Step 4: Embed the query
-        query_vector = embed_query(query, embedder, convert_to_tensor=False, normalize_embeddings=False)
-        if isinstance(query_vector, list):
-            query_vector = np.array(query_vector).astype(np.float32)
+        vector = embed_query(
+            query,
+            embedder,
+            convert_to_tensor=False,
+            normalize_embeddings=False,
+        )
+        if isinstance(vector, list):
+            vector = np.array(vector, dtype=np.float32)
 
-        # Step 5: Perform the FAISS search
-        distances, indices = index.search(np.expand_dims(query_vector, axis=0), top_k)
+        indices = index.search(np.expand_dims(vector, axis=0), top_k)[1][0]
+        log_info(f"search: Retrieved top {len(indices)} indices.")
 
-        log_info(f"[SEARCH] Found {len(indices[0])} results for the query.")
-
-        # Step 6: Fetch page_content and id for matching ids
         cursor = conn.cursor()
+        results: List[Dict[str, Any]] = []
 
-        result_entries = []
-        for idx in indices[0]:
-            if idx == -1:
-                continue  # No match
-
-            chunk_id = ids[idx]  # id from embeddings table (linked to chunks.id)
-
-            # Fetch page_content and id from chunks table
-            cursor.execute("SELECT id, page_contest FROM chunks WHERE id = ?", (chunk_id,))
+        for idx in indices:
+            if idx < 0:
+                continue
+            cursor.execute(
+                "SELECT id, page_contest FROM chunks WHERE id = ?", (ids[idx],)
+            )
             row = cursor.fetchone()
             if row:
-                result_entries.append({
-                    "id": row[0],
-                    "page_content": row[1]
-                })
+                results.append({"id": row[0], "page_content": row[1]})
 
-        return result_entries
+        return results
 
-    except Exception as e:
-        log_error(f"[SEARCH ERROR] {e}")
-        raise RuntimeError(f"Search failed: {e}")
-
+    except ImportError as imp_err:
+        log_error(f"search: Import error: {imp_err}")
+        raise ImportError(f"search failed due to import issue: {imp_err}") from imp_err
+    except sqlite3.Error as db_err:
+        log_error(f"search: Database error: {db_err}")
+        return []
+    except Exception as err:
+        log_error(f"search: Unexpected error: {err}")
+        raise RuntimeError(f"search failed: {err}") from err
     finally:
-        log_debug("[SEARCH] Search function executed.")
+        log_debug("search: Execution completed.")
