@@ -7,7 +7,7 @@ chunking, and database operations.
 """
 
 import sys
-
+import sqlite3
 from fastapi import APIRouter, Depends
 from fastapi.responses import JSONResponse
 
@@ -34,6 +34,7 @@ to_chunks_route = APIRouter()
 @to_chunks_route.post("/to_chunks")
 async def to_chunks(
     body: ChunkRequest,
+    conn: sqlite3.Connection = Depends(get_db_conn)
 ):
     """
     Converts documents into text chunks and stores them in the SQLite database.
@@ -53,8 +54,6 @@ async def to_chunks(
     log_info(f"Starting chunking for: {file_path if file_path else '[ALL DOCUMENTS]'}")
 
     try:
-        conn = Depends(get_db_conn)
-
         # Reset DB if requested (expected as int: 0 or 1)
         if do_reset == 1:
             clear_table(conn=conn, table_name="chunks")
