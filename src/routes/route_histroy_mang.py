@@ -1,140 +1,184 @@
-import os
+"""
+Chat History Management API Endpoint.
+
+This module provides FastAPI routes for managing user chat history and
+clearing database tables like chunks, embeddings, and query responses.
+"""
+
 import sys
 import sqlite3
-
-from fastapi import APIRouter, Depends, HTTPException, Request
+from typing import Optional
+from dataclasses import dataclass
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from starlette.status import HTTP_200_OK, HTTP_500_INTERNAL_SERVER_ERROR
 
-from typing import Optional
-
 # Setup import path and logging
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    from src.utils import setup_main_path
+    # Setup import path
+    MAIN_DIR = setup_main_path(levels_up=2)
     sys.path.append(MAIN_DIR)
 
-    from logs import log_debug, log_error, log_info
-    from schemes import ChatManager
-    from historys import ChatHistoryManager
-    from controllers import clear_table
-
-except Exception as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
-
-
-def get_db_conn(request: Request):
-    """Retrieve the relational database connection from the app state."""
-    conn = getattr(request.app.state, "conn", None)
-    if not conn:
-        log_debug("Relational database connection not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Relational database service is not available."
-        )
-    return conn
-
-def get_chat_history(request: Request):
-    """Retrieve the get_chat_history model instance from the app state."""
-    chat_history = request.app.state.chat_manager
-    if not chat_history:
-        log_debug("get_chat_history model instance not found in application state.")
-        raise HTTPException(
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="get_chat_history model service is not available."
-        )
-    return chat_history
+    from src.logs import log_error, log_info
+    from src.schemes import ChatManager
+    from src.historys import ChatHistoryManager
+    from src.controllers import clear_table
+    from src.dependencies import get_chat_history, get_db_conn
+except ImportError as e:
+    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}") from e
 
 chat_manage_routes = APIRouter()
 
 
-@chat_manage_routes.post("/chat/manage")
-async def manage_chat_history(
-    request: Request,
-    body: ChatManager,
-    conn: sqlite3.Connection = Depends(get_db_conn),
-    chat_manager: ChatHistoryManager = Depends(get_chat_history),
-    user_id: Optional[str] = None,
-    remove_chunks: Optional[bool] = False,
-    remove_embeddings: Optional[bool] = False,
-    remove_query_response: Optional[bool] = False,
-    reseting: Optional[bool] = False,
-):
-    """
-    Manage the user's chat memory or clear database tables.
+@dataclass
+class ResetOperations:
+    """Class to hold reset operation parameters."""
+    remove_chunks: bool = False
+    remove_embeddings: bool = False
+    remove_query_response: bool = False
+    reset_memory: bool = False
+    clear_chat: bool = False
+    reset_all: bool = False
 
-    Accepts:
-    - reset_memory: bool (from ChatManager)
-    - clear_chat: bool (from ChatManager)
-    - user_id: str
-    - remove_chunks: bool
-    - remove_embeddings: bool
-    - remove_query_response: bool
-    - reseting: bool (shortcut for all clear/reset options)
+
+def _clear_database_tables(conn: sqlite3.Connection, ops: ResetOperations) -> None:
+    """Clear specified database tables."""
+    if ops.reset_all or ops.remove_chunks:
+        clear_table(conn=conn, table_name="chunks")
+        log_info("Chunks table cleared.")
+
+    if ops.reset_all or ops.remove_embeddings:
+        clear_table(conn=conn, table_name="embeddings")
+        log_info("Embedding table cleared.")
+
+    if ops.reset_all or ops.remove_query_response:
+        clear_table(conn=conn, table_name="query_responses")
+        log_info("Query responses table cleared.")
+
+
+def _clear_chat_data(chat_manager: ChatHistoryManager, user_id: str, ops: ResetOperations) -> None:
+    """Clear chat-related data."""
+    if ops.reset_all or ops.reset_memory:
+        chat_manager.reset_memory(user_id)
+        log_info("Memory reset.")
+
+    if ops.reset_all or ops.clear_chat:
+        chat_manager.clear_chat_history(user_id)
+        log_info("Chat history cleared.")
+
+
+def perform_resets(
+    chat_manager: ChatHistoryManager,
+    conn: sqlite3.Connection,
+    user_id: Optional[str],
+    ops: ResetOperations
+) -> JSONResponse:
+    """Perform various reset operations based on the provided parameters.
+    
+    Args:
+        chat_manager: Chat history manager instance
+        conn: Database connection
+        user_id: ID of the user to perform operations for
+        ops: Reset operations configuration
+    
+    Returns:
+        JSONResponse with operation status
+    
+    Raises:
+        sqlite3.Error: For database operations failures
     """
     try:
-        # Shortcut to reset all
-        if reseting:
+        message = "No action taken."
+        actions = []
+
+        if ops.reset_all:
             if user_id:
-                chat_manager.reset_memory(user_id)
-                chat_manager.clear_chat_history(user_id)
-            clear_table(conn=conn, table_name="chunks")
-            clear_table(conn=conn, table_name="embeddings")
-            clear_table(conn=conn, table_name="query_responses")
+                _clear_chat_data(chat_manager, user_id, ops)
+            _clear_database_tables(conn, ops)
+            message = "Full reset completed successfully."
+            actions.append("full_reset")
+        else:
+            if user_id:
+                if ops.reset_memory:
+                    _clear_chat_data(chat_manager, user_id, ops)
+                    message = "Memory reset successfully."
+                    actions.append("memory_reset")
+                if ops.clear_chat:
+                    _clear_chat_data(chat_manager, user_id, ops)
+                    message = "Chat history cleared successfully."
+                    actions.append("chat_clear")
 
-            return JSONResponse(
-                content={"message": "Full reset completed successfully."},
-                status_code=HTTP_200_OK
-            )
+            _clear_database_tables(conn, ops)
+            if ops.remove_chunks:
+                actions.append("chunks_clear")
+            if ops.remove_embeddings:
+                actions.append("embeddings_clear")
+            if ops.remove_query_response:
+                actions.append("query_responses_clear")
 
-        # Individual controls
-        if body.reset_memory and user_id:
-            chat_manager.reset_memory(user_id)
-            log_info("Memory reset.")
-            return JSONResponse(
-                content={"message": "Memory reset successfully."},
-                status_code=HTTP_200_OK
-            )
-
-        if body.clear_chat and user_id:
-            chat_manager.clear_chat_history(user_id)
-            log_info("Chat history cleared.")
-            return JSONResponse(
-                content={"message": "Chat history cleared successfully."},
-                status_code=HTTP_200_OK
-            )
-
-        if remove_chunks:
-            clear_table(conn=conn, table_name="chunks")
-            log_info("Chunks table cleared.")
-            return JSONResponse(
-                content={"message": "Chunks cleared successfully."},
-                status_code=HTTP_200_OK
-            )
-
-        if remove_embeddings:
-            clear_table(conn=conn, table_name="embeddings")
-            log_info("Embedding table cleared.")
-            return JSONResponse(
-                content={"message": "Embeddings cleared successfully."},
-                status_code=HTTP_200_OK
-            )
-
-        if remove_query_response:
-            clear_table(conn=conn, table_name="query_responses")
-            log_info("Query responses table cleared.")
-            return JSONResponse(
-                content={"message": "Query responses cleared successfully."},
-                status_code=HTTP_200_OK
-            )
+            if actions:
+                message = "Operations completed: " + ", ".join(actions)
 
         return JSONResponse(
-            content={"message": "No action taken."},
+            content={"message": message},
             status_code=HTTP_200_OK
         )
 
-    except Exception as e:
-        log_error(f"[CHAT HISTORY MANAGE ERROR] {e}")
-        return JSONResponse(
-            content={"message": "Failed to manage chat history."},
-            status_code=HTTP_500_INTERNAL_SERVER_ERROR
+    except sqlite3.Error as db_err:
+        log_error(f"[SQLITE ERROR] {db_err}")
+        raise
+    except Exception as exc:
+        log_error(f"[PERFORM RESETS ERROR] {exc}")
+        raise
+
+
+@chat_manage_routes.post("/chat/manage")
+async def manage_chat_history(
+    request_data: ChatManager,
+    conn: sqlite3.Connection = Depends(get_db_conn),
+    chat_manager: ChatHistoryManager = Depends(get_chat_history),
+    user_id: Optional[str] = None
+) -> JSONResponse:
+    """Manage the user's chat memory or clear database tables.
+    
+    Args:
+        request_data: ChatManager model with all reset options
+        conn: Database connection
+        chat_manager: Chat history manager
+        user_id: Optional user ID
+    
+    Returns:
+        JSONResponse with operation result
+    
+    Raises:
+        HTTPException: If an error occurs during operations
+    """
+    try:
+        ops = ResetOperations(
+            remove_chunks=request_data.remove_chunks,
+            remove_embeddings=request_data.remove_embeddings,
+            remove_query_response=request_data.remove_query_response,
+            reset_memory=request_data.reset_memory,
+            clear_chat=request_data.clear_chat,
+            reset_all=request_data.reset_all
         )
+
+        return perform_resets(
+            chat_manager=chat_manager,
+            conn=conn,
+            user_id=user_id,
+            ops=ops
+        )
+    except sqlite3.Error as e:
+        log_error(f"[DATABASE ERROR] {e}")
+        raise HTTPException(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Database operation failed."
+        ) from e
+    except Exception as e:
+        log_error(f"[MANAGE CHAT HISTORY ERROR] {e}")
+        raise HTTPException(
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="An unexpected error occurred while managing chat history."
+        ) from e

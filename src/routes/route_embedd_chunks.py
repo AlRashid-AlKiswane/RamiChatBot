@@ -5,57 +5,82 @@ This module provides FastAPI routes for converting text chunks to embeddings
 and storing them in the database.
 """
 
-import os
 import sys
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import JSONResponse
-from starlette.status import HTTP_200_OK, HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_ERROR
+from starlette.status import (
+    HTTP_200_OK,
+    HTTP_404_NOT_FOUND,
+    HTTP_500_INTERNAL_SERVER_ERROR,
+)
 
-# Setup import path and logging
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    if MAIN_DIR not in sys.path:
-        sys.path.append(MAIN_DIR)
+    from src.utils import setup_main_path
+
+    # Setup import path
+    MAIN_DIR = setup_main_path(levels_up=2)
+    sys.path.append(MAIN_DIR)
 
     from dbs import pull_from_table, insert_embedding
     from logs import log_error, log_info
     from embedding import EmbeddingModel
-except Exception as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}")
+
+except ImportError as import_err:
+    raise ImportError(f"[IMPORT ERROR] {__file__}: {import_err}") from import_err
 
 chunks_to_embedding_routes = APIRouter()
+
 
 @chunks_to_embedding_routes.post("/chunks_to_embedding", response_class=JSONResponse)
 async def chunks_to_embedding(request: Request):
     """
-    Convert text chunks to embedding and store them in the database.
+    Convert text chunks to embeddings and store them in the database.
+
+    Args:
+        request (Request): FastAPI request object with app state.
+
+    Returns:
+        JSONResponse: Success or error status message.
     """
     try:
-        # Retrieve connection and model from app
-        conn = getattr(request.app.state, 'conn', None)
-        embedding_model: EmbeddingModel = getattr(request.app.state, 'embedding_model', None)
+        conn = getattr(request.app.state, "conn", None)
+        embedding_model: EmbeddingModel = getattr(request.app.state, "embedding_model", None)
 
-        # Pull chunks from the database
+        if conn is None or embedding_model is None:
+            raise HTTPException(
+                status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Database connection or embedding model not initialized.",
+            )
+
         chunks = pull_from_table(conn=conn, table_name="chunks", columns=["page_contest", "id"])
         if not chunks:
-            raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail="No chunks found in the database.")
-        
-        log_info(f"Pulled {len(chunks)} chunk(s) from the database.")
-        for chunk in chunks:
-            # Convert chunks to embedding
-            embedding = embedding_model.embed(text=chunk["text"])
+            raise HTTPException(
+                status_code=HTTP_404_NOT_FOUND,
+                detail="No chunks found in the database.",
+            )
 
-            # Store the embedding in the database
+        log_info(f"Pulled {len(chunks)} chunk(s) from the database.")
+
+        for chunk in chunks:
+            embedding = embedding_model.embed(text=chunk["text"])
             insert_embedding(conn=conn, embedding=embedding.tolist(), chunk_id=chunk["id"])
 
         return JSONResponse(content={"status": "success"}, status_code=HTTP_200_OK)
 
     except HTTPException as http_exc:
-        # Re-raise FastAPI errors
         log_error(f"HTTPException in chunks_to_embedding: {http_exc.detail}")
         raise http_exc
 
-    except Exception as e:
-        # Handle unexpected errors
-        log_error(f"Unexpected error in chunks_to_embedding: {e}")
-        return JSONResponse(content={"status": "error", "detail": str(e)}, status_code=HTTP_500_INTERNAL_SERVER_ERROR)
+    except AttributeError as ae:
+        log_error(f"Specific error in chunks_to_embedding: {ae}")
+        return JSONResponse(
+            content={"status": "error", "detail": str(ae)},
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+        )
+
+    except (ValueError, TypeError) as specific_err:
+        log_error(f"Expected error in chunks_to_embedding: {specific_err}")
+        return JSONResponse(
+            content={"status": "error", "detail": str(specific_err)},
+            status_code=HTTP_500_INTERNAL_SERVER_ERROR,
+        )
