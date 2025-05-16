@@ -1,4 +1,5 @@
-"""Configuration settings for the application using environment variables.
+"""
+Configuration settings for the application using environment variables.
 
 This module defines all application settings using Pydantic's BaseSettings,
 which automatically reads from environment variables or a .env file.
@@ -8,9 +9,10 @@ from functools import lru_cache
 import os
 from pydantic_settings import BaseSettings
 
+from src.utils import setup_main_path
 
 # Define root_dir relative to this file
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+root_dir = setup_main_path(levels_up=2)
 
 
 class Settings(BaseSettings):
@@ -44,8 +46,8 @@ class Settings(BaseSettings):
     # Application Settings
     APP_NAME: str
     APP_VERSION: str
-    SECRET_KEY: str 
-    
+    SECRET_KEY: str
+
     DOC_LOCATION_SAVE: str
     CONFIG_DIR: str
     DATABASE_URL: str
@@ -54,7 +56,7 @@ class Settings(BaseSettings):
     HUGGINGFACE_TOKIENS: str
     DEFAULT_SYSTEM_PROMPT: str
     ENABLE_MEMORY: bool
-    
+
     # File Processing Settings
     FILE_ALLOWED_TYPES: list
     FILE_MAX_SIZE: int
@@ -77,19 +79,20 @@ class Settings(BaseSettings):
     TELEGRAM_BOT_TOKEN: str
     TELEGRAM_CHAT_ID: str
 
+    # pylint: disable=too-few-public-methods
     class Config:
         """Pydantic configuration for settings."""
         env_file = os.path.join(root_dir, ".env")
         env_file_encoding = "utf-8"
 
-        def __str__(self):
+        def __str__(self) -> str:
             return "Pydantic configuration settings"
 
 
 @lru_cache()
 def get_settings() -> Settings:
     """Get cached application settings.
-    
+
     Returns:
         Settings: The application settings instance
     """
