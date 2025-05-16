@@ -9,9 +9,9 @@ try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
     sys.path.append(MAIN_DIR)
 
-    from .__faissSarch import build_faiss_index
-    from .embed_query import embed_query
-    from .__pull_from_databse import load_embeddings_and_metadata
+    from .faiss_search import build_faiss_index
+    from .embedding_query import embed_query
+    from .database_retrieval import load_embeddings_and_metadata
     from embedding import EmbeddingModel
     from logs import log_debug, log_error, log_info
 
