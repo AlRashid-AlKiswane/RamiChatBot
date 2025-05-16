@@ -6,7 +6,7 @@ import torch
 from sentence_transformers import SentenceTransformer
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
-from src.embedding.sentence_model import EmbeddingModel
+from src.embedding.embedding_models import EmbeddingModel
 
 class TestEmbeddingModel(unittest.TestCase):
     """Unit tests for the EmbeddingModel class."""

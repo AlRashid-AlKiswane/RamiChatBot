@@ -1,1 +1,1 @@
-from .sentence_model import EmbeddingModel
+from .embedding_models import EmbeddingModel
