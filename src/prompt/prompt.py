@@ -11,12 +11,16 @@ import sys
 import yaml
 from jinja2 import Template, TemplateError
 
-from src.logs import log_debug, log_error, log_info
-from src.utils import setup_main_path
+try:
+    from src.utils import setup_main_path
 
-MAIN_DIR = setup_main_path(levels_up=2)
-sys.path.append(MAIN_DIR)
-
+    MAIN_DIR = setup_main_path(levels_up=2)
+    sys.path.append(MAIN_DIR)
+    from src.logs import log_debug, log_error, log_info
+except ImportError as e:
+    raise ImportError(
+        f"[IMPORT ERROR] {__file__}: {e}"
+    ) from e
 
 class PromptBuilder:
     """
