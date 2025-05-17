@@ -9,12 +9,14 @@ from typing import Optional, Dict, Any
 import yaml
 
 try:
-    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    from .bootstrap import setup_main_path
+    MAIN_DIR = setup_main_path(levels_up=2)
+    print(MAIN_DIR)
     sys.path.append(MAIN_DIR)
 
-    from logs import log_error, log_info, log_debug
-    from helpers import get_settings
-    from enums import YMLFileEnums
+    from src.logs import log_error, log_info, log_debug
+    from src.helpers import get_settings
+    from src.enums import YMLFileEnums
 except ImportError as e:
     raise ImportError(f"[IMPORT ERROR] {__file__}: {e}") from e
 

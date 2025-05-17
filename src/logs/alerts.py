@@ -1,14 +1,14 @@
 """AlertManager for sending alerts via Telegram bot."""
 
 import logging
-import os
 import sys
 import requests
 
 try:
+    from src.utils import setup_main_path
 
     # Setup project root path
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+    root_dir = setup_main_path(levels_up=1)
     sys.path.append(root_dir)
     from helpers import (get_settings,
                          Settings)
