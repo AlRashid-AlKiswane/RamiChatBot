@@ -3,22 +3,30 @@ This module provides functions for loading and parsing the most recent YAML file
 from the configuration directory.
 """
 
+import logging
 import os
 import sys
 from typing import Optional, Dict, Any
 import yaml
 
 try:
-    from .bootstrap import setup_main_path
-    MAIN_DIR = setup_main_path(levels_up=2)
-    print(MAIN_DIR)
-    sys.path.append(MAIN_DIR)
+    # Setup import path
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from src.logs import log_error, log_info, log_debug
     from src.helpers import get_settings
     from src.enums import YMLFileEnums
-except ImportError as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}") from e
+except ImportError as ie:
+    logging.error("Import Error setup error: %s", ie, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 DIRECTORY = get_settings().CONFIG_DIR
 

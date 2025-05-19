@@ -2,6 +2,8 @@
 Hugging Face LLM loader and generator using transformers and optional quantization.
 """
 
+import logging
+import os
 import sys
 from typing import Dict, Any, Optional
 
@@ -14,17 +16,27 @@ from huggingface_hub import login
 
 # Append root project directory to sys.path
 try:
-    from utils import setup_main_path
-    MAIN_DIR = setup_main_path(levels_up=2)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+    sys.path.append(MAIN_DIR)
     sys.path.append(MAIN_DIR)
 
     from src.logs import log_error, log_info, log_debug
     from src.helpers import get_settings, Settings
 
     from .base_llm import BaseLLM
-except ImportError as ie:
-    raise ImportError(f"ImportError in {__file__}: {ie}") from ie
-
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 class HuggingFaceLLM(BaseLLM):
     """

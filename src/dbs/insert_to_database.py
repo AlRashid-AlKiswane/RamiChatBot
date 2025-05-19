@@ -1,3 +1,4 @@
+import logging
 import os
 import sys
 import sqlite3
@@ -11,14 +12,23 @@ FILE_LOCATION = f"{os.path.dirname(__file__)}/inset_to_database.py"
 # Add root dir and handle potential import errors
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
-    from logs import log_debug, log_error, log_info
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from logs import log_error, log_info
     from helpers import get_settings, Settings
-    from schemes import Chunk, Embedding, QueryResponse
+
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
 except Exception as e:
-    msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"
-    raise ImportError(msg)
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 app_setting: Settings = get_settings()
 
@@ -26,15 +36,17 @@ def insert_chunk(conn: sqlite3.Connection, data: pd.DataFrame):
     """
     Inserts a DataFrame of chunks (with page_counten, pages, sources, authors) into the 'chunks' table.
     """
-    cursor = conn.cursor()
 
     try:
         data.to_sql("chunks", conn, if_exists='append', index=False)
 
         conn.commit()
         log_info(f"Inserted {len(data)} chunk(s) into 'chunks' table.")
+    except sqlite3.DatabaseError as db_err:
+        log_error(f"Database error while inserting chunk(s): {db_err}")
+        conn.rollback()
     except Exception as e:
-        log_error(f"Error inserting chunk(s): {e}")
+        log_error(f"Unexpected error while inserting chunk(s): {e}")
         conn.rollback()
 
 

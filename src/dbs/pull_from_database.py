@@ -1,19 +1,27 @@
+import logging
 import os
 import sys
 import sqlite3
 from typing import List, Optional, Dict, Any, Union, Tuple
 
-# Setup path and logging
-FILE_LOCATION = f"{os.path.dirname(__file__)}/pull_from_table.py"
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from logs import log_debug, log_error, log_info
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
 except Exception as e:
-    raise ImportError(f"Import Error in {FILE_LOCATION}: {e}")
-
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 def pull_from_table(
     conn: sqlite3.Connection,

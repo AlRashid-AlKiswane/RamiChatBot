@@ -1,3 +1,4 @@
+import logging
 import os
 import sys
 import re
@@ -7,13 +8,21 @@ from pathlib import Path
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
-    from logs import log_debug, log_error, log_info
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from logs import log_debug, log_error
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
 except Exception as e:
-    msg = f"Import Error in: {os.path.dirname(__file__)}, Error: {e}"
-    raise ImportError(msg)
-
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 def get_clean_file_name(orig_file_name: str) -> str:
     """

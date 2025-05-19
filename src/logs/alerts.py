@@ -1,16 +1,15 @@
 """AlertManager for sending alerts via Telegram bot."""
 
+import os
 import logging
 import sys
 import requests
 
 try:
-    from src.utils import setup_main_path
-
-    # Setup project root path
-    root_dir = setup_main_path(levels_up=1)
-    sys.path.append(root_dir)
-    from helpers import (get_settings,
+    # Setup project root
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    sys.path.append(MAIN_DIR)
+    from src.helpers import (get_settings,
                          Settings)
 
 except ModuleNotFoundError as e:

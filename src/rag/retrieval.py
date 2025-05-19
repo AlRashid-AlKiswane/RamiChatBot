@@ -2,16 +2,34 @@
 retrieval module for RAG: perform similarity search over stored embeddings.
 """
 
+import logging
+import os
 import sqlite3
+import sys
+import traceback
 from typing import Any, Dict, List
 
 import numpy as np
 
-from src.embedding import EmbeddingModel
-from src.logs import log_debug, log_error, log_info
-from .database_retrieval import load_embeddings_and_metadata
-from .embedding_query import embed_query
-from .faiss_search import build_faiss_index
+try:
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from src.embedding import EmbeddingModel
+    from src.logs import log_debug, log_error, log_info
+    from .database_retrieval import load_embeddings_and_metadata
+    from .embedding_query import embed_query
+    from .faiss_search import build_faiss_index
+
+except (FileNotFoundError, OSError) as e:
+    logging.error("Fatal error setting up project directory: %s", str(e))
+    logging.error(traceback.format_exc())
+    sys.exit(1)
 
 # pylint: disable=too-many-locals
 def search(

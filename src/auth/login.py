@@ -1,4 +1,6 @@
+import logging
 import os
+import sys
 import jwt
 from datetime import datetime, timedelta
 from sqlite3 import connect, Error as SQLError
@@ -8,8 +10,25 @@ from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 from jwt import PyJWTError
 
-from src.helpers import get_settings, Settings
-from src.logs import log_info, log_warning, log_error
+try:
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from src.helpers import get_settings, Settings
+    from src.logs import log_info, log_warning, log_error
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
+
 
 # === Configuration === #
 MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))

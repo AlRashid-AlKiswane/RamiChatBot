@@ -1,12 +1,11 @@
 """Dependency management for chat application.
 
 This module handles:
-- System path setup for the application
-- Safe importing of required modules
 - Dependency injection container for chat components
 """
 
 import logging
+import os
 import sys
 import sqlite3
 from typing import Any
@@ -15,20 +14,14 @@ from starlette.status import HTTP_500_INTERNAL_SERVER_ERROR
 
 # Setup system path
 try:
-    from utils import setup_main_path, safe_import
+    # Setup import path
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
-    MAIN_PATH = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_PATH)
-
-    # Safe imports
-    embedding_module = safe_import("src.embedding.sentence_model")
-    history_module = safe_import("src.historys.chathistroy")
-    llm_module = safe_import("src.llm.hg_llms")
-
-    EmbeddingModel = embedding_module.EmbeddingModel
-    ChatHistoryManager = history_module.ChatHistoryManager
-    HuggingFaceLLMs = llm_module.HuggingFaceLLMs
-
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
     from src.logs import log_debug
 
 except ModuleNotFoundError as e:

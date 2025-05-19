@@ -5,6 +5,8 @@ This module provides FastAPI routes for converting text chunks to embeddings
 and storing them in the database.
 """
 
+import logging
+import os
 import sys
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import JSONResponse
@@ -15,18 +17,24 @@ from starlette.status import (
 )
 
 try:
-    from src.utils import setup_main_path
-
     # Setup import path
-    MAIN_DIR = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_DIR)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from dbs import pull_from_table, insert_embedding
     from logs import log_error, log_info
     from embedding import EmbeddingModel
 
-except ImportError as import_err:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {import_err}") from import_err
+except ImportError as ie:
+    logging.error("Import Error setup error: %s", ie, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 chunks_to_embedding_routes = APIRouter()
 

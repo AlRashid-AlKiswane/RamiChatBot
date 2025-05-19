@@ -1,24 +1,33 @@
+
+import logging
 import os
 import sys
-import requests
-
 from collections import deque
-from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
+
+import requests
+from bs4 import BeautifulSoup
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.document_transformers import Html2TextTransformer
-from langchain_community.document_loaders import PyPDFLoader
-import tempfile
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from helpers import Settings, get_settings
     from logs import log_debug, log_error, log_info
-    from helpers import get_settings, Settings
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
 except Exception as e:
-    msg = f"Import Error in: {os.path.dirname(__file__)}, Error: {e}"
-    raise ImportError(msg)
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 
 class WebsiteCrawler:
@@ -81,8 +90,9 @@ class WebsiteCrawler:
         return list(self.visited)
 
     def save_to_text_files(self, all_pages: list[str]):
-        from langchain_community.document_loaders import PyPDFLoader
         import tempfile
+
+        from langchain_community.document_loaders import PyPDFLoader
 
         text_chunks = []
 

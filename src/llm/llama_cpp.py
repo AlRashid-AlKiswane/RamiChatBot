@@ -2,25 +2,37 @@
 Module for loading and using LLaMA models with llama-cpp-python.
 """
 
+import logging
+import os
 import sys
 from typing import Dict, Any
 from huggingface_hub import login, hf_hub_download
 from llama_cpp import Llama
 
 try:
-    from utils import setup_main_path
-    MAIN_DIR = setup_main_path(levels_up=2)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    sys.path.append(MAIN_DIR)
     sys.path.append(MAIN_DIR)
 
     from src.helpers import get_settings
     from src.logs import log_debug, log_error, log_info
-    from src.llm.base_llm import AstracrtLLMs
+    from .base_llm import BaseLLM
 
-except ImportError as ie:
-    raise ImportError(f"ImportError in {__file__}: {ie}") from ie
-
-
-class CPPLlaMa(AstracrtLLMs):
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
+class CPPLlaMa(BaseLLM):
     """
     Implementation of LLMsInterface for LLaMA models using llama-cpp-python.
     """

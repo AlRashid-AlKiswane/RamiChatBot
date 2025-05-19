@@ -1,3 +1,6 @@
+
+
+import logging
 import os
 import sys
 from sentence_transformers import SentenceTransformer
@@ -7,14 +10,26 @@ FILE_LOCATION = f"{os.path.dirname(__file__)}/sentence_model.py"
 
 # Add root dir and handle potential import errors
 try:
+    # Setup import path
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+    from src.logs import log_debug
 
     from logs import log_error, log_info
     from helpers import get_settings, Settings
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
 except Exception as e:
-    msg = f"Import Error in: {FILE_LOCATION}, Error: {e}"
-    raise ImportError(msg)
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
+
 
 app_setting: Settings = get_settings()
 

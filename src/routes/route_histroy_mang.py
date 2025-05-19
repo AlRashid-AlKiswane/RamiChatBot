@@ -5,6 +5,8 @@ This module provides FastAPI routes for managing user chat history and
 clearing database tables like chunks, embeddings, and query responses.
 """
 
+import logging
+import os
 import sys
 import sqlite3
 from typing import Optional
@@ -15,18 +17,26 @@ from starlette.status import HTTP_200_OK, HTTP_500_INTERNAL_SERVER_ERROR
 
 # Setup import path and logging
 try:
-    from src.utils import setup_main_path
     # Setup import path
-    MAIN_DIR = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_DIR)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from src.logs import log_error, log_info
     from src.schemes import ChatManager
     from src.historys import ChatHistoryManager
     from src.controllers import clear_table
     from src.dependencies import get_chat_history, get_db_conn
-except ImportError as e:
-    raise ImportError(f"[IMPORT ERROR] {__file__}: {e}") from e
+
+except ImportError as ie:
+    logging.error("Import Error setup error: %s", ie, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 chat_manage_routes = APIRouter()
 

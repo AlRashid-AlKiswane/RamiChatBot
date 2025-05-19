@@ -1,6 +1,7 @@
+import logging
 import os
 import sys
-from typing import Dict, Any, Optional, List
+from typing import Optional
 from pathlib import Path
 import pandas as pd
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
@@ -8,12 +9,21 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-    sys.path.append(MAIN_DIR)
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from logs import log_error, log_info, log_debug
     from helpers import get_settings, Settings
-except ImportError as ie:
-    print(f"ImportError in {__file__}: {ie}")
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
     raise
 
 

@@ -3,24 +3,35 @@
 This module provides functionality to monitor CPU, memory, disk, and GPU usage,
 sending alerts when thresholds are exceeded.
 """
-
+import logging
 import os
 import sys
 import time
 from typing import Dict, Union
 import psutil
 
-# Add project root to Python path
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-sys.path.append(root_dir)
 
 try:
-    from src.helpers.settings import get_settings, Settings
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+    from src.logs import log_error
+    from src.helpers.settings import Settings, get_settings
     from src.logs.alerts import AlertManager
-    from src.logs.logger import log_error, log_debug
+    from src.logs.logger import log_debug
+
+
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
 except ImportError as e:
-    print(f"Import error: {e}")
-    sys.exit(1)
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 
 class SystemMonitor:

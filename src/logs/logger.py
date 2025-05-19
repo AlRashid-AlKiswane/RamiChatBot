@@ -7,10 +7,10 @@ import traceback
 
 try:
     # Setup project root
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-    sys.path.append(root_dir)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    sys.path.append(MAIN_DIR)
 
-    from .alerts import AlertManager
+    from src.logs.alerts import AlertManager
 
 except ModuleNotFoundError as e:
     logging.error("Module not found: %s", e, exc_info=True)
@@ -21,7 +21,7 @@ except Exception as e:
     raise
 
 # Setup log directory and file
-LOG_DIR = os.path.join(root_dir, "log")
+LOG_DIR = os.path.join(MAIN_DIR, "log")
 os.makedirs(LOG_DIR, exist_ok=True)
 
 LOG_FILE = os.path.join(LOG_DIR, "app.log")

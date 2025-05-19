@@ -95,6 +95,7 @@ Date: 2025-05-15
 """
 
 import logging
+import os
 import sys
 import traceback
 import tracemalloc
@@ -112,16 +113,20 @@ from starlette.status import (
 
 
 try:
-    from src.utils import setup_main_path
     # Setup import path
-    MAIN_DIR = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_DIR)
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from src.dbs import insert_query_response, pull_from_table
     from src.dependencies import get_chat_history, get_db_conn, get_embedd, get_llm
     from src.embedding import EmbeddingModel
     from src.historys import ChatHistoryManager
-    from src.llm import HuggingFaceLLMs
+    from src.llm import HuggingFaceLLM
 
     # Import internal modules
     from src.logs import log_debug, log_error, log_info
@@ -135,6 +140,7 @@ except ImportError as ie:
 except Exception as e:
     logging.critical("Unexpected setup error: %s", e, exc_info=True)
     raise
+
 # Initialize router and memory profiler
 generate_routes = APIRouter()
 prompt_builder = PromptBuilder()
@@ -193,7 +199,7 @@ def _generate_new_response(user_id: str, query: str, dependencies: dict) -> str:
 
 def get_all_dependencies(
     request: Request,
-) -> Tuple[Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLMs]:
+) -> Tuple[Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLM]:
     """
     Dependency injector for FastAPI routes to provide required LLM tools and services.
 
@@ -222,7 +228,7 @@ async def generate_response(
     body: Generate,
     user_id: str,
     deps: Tuple[
-        Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLMs
+        Connection, ChatHistoryManager, EmbeddingModel, HuggingFaceLLM
     ] = Depends(get_all_dependencies),
 ):
     """

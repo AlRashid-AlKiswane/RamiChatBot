@@ -6,14 +6,24 @@ which automatically reads from environment variables or a .env file.
 """
 
 from functools import lru_cache
+import logging
 import os
+import sys
 from pydantic_settings import BaseSettings
 
-from src.utils import setup_main_path
 
-# Define root_dir relative to this file
-root_dir = setup_main_path(levels_up=2)
 
+try:
+    # Setup project root
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    sys.path.append(MAIN_DIR)
+except ModuleNotFoundError as e:
+    logging.error("Module not found: %s", e, exc_info=True)
+except ImportError as e:
+    logging.error("Import error: %s", e, exc_info=True)
+except Exception as e:
+    logging.critical("Unexpected setup error: %s", e, exc_info=True)
+    raise
 
 class Settings(BaseSettings):
     """Application settings configuration using environment variables.
@@ -82,7 +92,7 @@ class Settings(BaseSettings):
     # pylint: disable=too-few-public-methods
     class Config:
         """Pydantic configuration for settings."""
-        env_file = os.path.join(root_dir, ".env")
+        env_file = os.path.join(MAIN_DIR, ".env")
         env_file_encoding = "utf-8"
 
         def __str__(self) -> str:

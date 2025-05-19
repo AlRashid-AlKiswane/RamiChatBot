@@ -15,12 +15,19 @@ import aiofiles
 
 # Setup import path and logging
 try:
-    from src.utils import setup_main_path
-    MAIN_DIR = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_DIR)
+    # Setup import path
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
 
     from src.logs import log_debug, log_error
 
+except ImportError as ie:
+    logging.error("Import Error setup error: %s", ie, exc_info=True)
 except Exception as e:
     logging.critical("Unexpected setup error: %s", e, exc_info=True)
     raise

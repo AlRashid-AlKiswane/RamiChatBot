@@ -12,13 +12,18 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
 
-from utils import setup_main_path # pylint: disable=import-error
 
 try:
-    # Path Setup
-    MAIN_DIR = setup_main_path(levels_up=2)
-    sys.path.append(MAIN_DIR)
+    # Setup import path
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        print(MAIN_DIR)
+        sys.path.append(MAIN_DIR)
+        
     from src.logs import log_error, log_info
     from src.routes import (
         chat_manage_routes, chunks_to_embedding_routes, crawler_route,

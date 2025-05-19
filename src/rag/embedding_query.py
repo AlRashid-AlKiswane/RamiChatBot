@@ -2,10 +2,28 @@
 embedding_query module for RAG: embed user queries into vector representations.
 """
 
+import logging
+import os
+import sys
+import traceback
 from typing import List
 
-from src.embedding import EmbeddingModel
-from src.logs import log_error, log_info
+try:
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
+
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from src.logs import log_error, log_info
+    from src.embedding import EmbeddingModel
+
+except (FileNotFoundError, OSError) as e:
+    logging.error("Fatal error setting up project directory: %s", str(e))
+    logging.error(traceback.format_exc())
+    sys.exit(1)
 
 
 def embed_query(

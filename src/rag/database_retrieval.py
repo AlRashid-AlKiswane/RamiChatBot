@@ -2,15 +2,33 @@
 database_retrieval module: load embeddings and metadata from SQLite.
 """
 
+import os
 import sqlite3
+import logging
 import json
+import sys
+import traceback
 from typing import Tuple, List, Dict, Any
 
 import numpy as np
 
-from src.dbs import pull_from_table
-from src.logs import log_debug, log_error, log_info
+try:
+    MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    if not os.path.exists(MAIN_DIR):
+        raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
+    # Add to Python path only if it's not already there
+    if MAIN_DIR not in sys.path:
+        sys.path.append(MAIN_DIR)
+
+    from src.logs import log_debug, log_error, log_info
+
+    from src.dbs import pull_from_table
+    
+except (FileNotFoundError, OSError) as e:
+    logging.error("Fatal error setting up project directory: %s", str(e))
+    logging.error(traceback.format_exc())
+    sys.exit(1)
 
 def load_embeddings_and_metadata(
     conn: sqlite3.Connection
