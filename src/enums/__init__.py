@@ -15,3 +15,4 @@ from .enums_chat_history import ChatHistoryMessages
 from .enums_database_retrever import DBRetrievalMessages
 from .enums_embedding_query import EmbeddingQueryLogMessages
 from .enums_faiss_sarch import FaissSearchLogMessages
+from .enums_retrieval import RetrievalLogMessages
