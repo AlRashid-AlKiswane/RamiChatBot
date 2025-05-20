@@ -20,8 +20,10 @@ except Exception as e:
     logging.critical("Unexpected setup error: %s", e, exc_info=True)
     raise
 
+
+FILE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 # Setup log directory and file
-LOG_DIR = os.path.join(MAIN_DIR, "log")
+LOG_DIR = os.path.join(FILE_DIR, "log")
 os.makedirs(LOG_DIR, exist_ok=True)
 
 LOG_FILE = os.path.join(LOG_DIR, "app.log")
