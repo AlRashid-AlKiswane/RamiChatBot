@@ -10,3 +10,5 @@ from .enums_opneai import OpenAILogEnums
 from .enums_gglai import GoogleLLMLog
 from .enums_deepseek import  DeepSeekLogMessages
 from .enums_cohere import CohereLogMessages
+
+from .enums_chat_history import ChatHistoryMessages
