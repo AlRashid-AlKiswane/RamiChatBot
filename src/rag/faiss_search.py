@@ -1,11 +1,13 @@
 """
-faiss_search module for RAG: building FAISS indices from embeddings.
+faiss_search module for RAG: provides functionality to build a FAISS index
+from a set of vector embeddings for efficient similarity search.
 """
 
 import logging
 import os
 import sys
 import traceback
+
 import faiss
 import numpy as np
 
@@ -14,33 +16,49 @@ try:
     if not os.path.exists(MAIN_DIR):
         raise FileNotFoundError(f"Project directory not found at: {MAIN_DIR}")
 
-    # Add to Python path only if it's not already there
     if MAIN_DIR not in sys.path:
         sys.path.append(MAIN_DIR)
 
     from src.logs import log_error, log_info
+    from src.enums import FaissSearchLogMessages
 
 except (FileNotFoundError, OSError) as e:
     logging.error("Fatal error setting up project directory: %s", str(e))
     logging.error(traceback.format_exc())
     sys.exit(1)
 
+
 def build_faiss_index(embeddings: np.ndarray) -> faiss.IndexFlatL2:
     """
-    Build and return a FAISS IndexFlatL2 from the provided embeddings.
+    Build a FAISS IndexFlatL2 index from the provided vector embeddings.
 
     Args:
-        embeddings: 2D numpy array of shape (n_vectors, dim).
+        embeddings (np.ndarray): A 2D numpy array of shape (n_vectors, dim),
+                                 where n_vectors is the number of vectors
+                                 and dim is the dimensionality.
 
     Returns:
-        A FAISS IndexFlatL2 instance containing the embeddings.
+        faiss.IndexFlatL2: A FAISS index with the input vectors.
+
+    Raises:
+        ValueError: If the embeddings array is not valid or indexing fails.
     """
     try:
-        log_info("[BUILD FAISS INDEX] Starting to build FAISS index.")
-        n_vectors, dim = embeddings.shape
+        log_info(FaissSearchLogMessages.INFO_START_BUILD.value)
+
+        if not isinstance(embeddings, np.ndarray) or len(embeddings.shape) != 2:
+            raise ValueError(FaissSearchLogMessages.RAISE_INVALID_EMBEDDINGS.value)
+
+        dim = embeddings.shape[1]  # Correctly extract the dimensionality
         index = faiss.IndexFlatL2(dim)
-        index.add(n=n_vectors, x=embeddings)
+        n_vectors = embeddings.shape[0]  # Extract the number of vectors
+        index.add(embeddings, n_vectors)  # Pass both x and n arguments
+
+        log_info(FaissSearchLogMessages.INFO_INDEX_SUCCESS.value)
         return index
+
     except Exception as err:
-        log_error(f"[BUILD FAISS INDEX ERROR] {err}")
-        raise
+        log_error(FaissSearchLogMessages.ERR_BUILD_FAILED.value.format(str(err)))
+        raise ValueError(FaissSearchLogMessages.RAISE_INDEX_BUILD_FAILED.value.format(
+            str(err)
+            )) from err
