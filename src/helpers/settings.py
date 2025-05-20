@@ -63,6 +63,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     EMBEDDING_MODEL: str
 
+    COHERE_API: str
     HUGGINGFACE_TOKIENS: str
     DEFAULT_SYSTEM_PROMPT: str
     ENABLE_MEMORY: bool
