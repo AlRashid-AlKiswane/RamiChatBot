@@ -83,7 +83,7 @@ class GoogleLLM(BaseLLM):
     def initialize_llm(
         self,
         model_name: str = "gemini-1.0-pro",
-        max_output_tokens: int = 1024,
+        max_new_tokens: int = 1024,
         temperature: Optional[float] = 0.7,
         top_p: Optional[float] = None,
         top_k: Optional[int] = None
@@ -93,7 +93,7 @@ class GoogleLLM(BaseLLM):
 
         Args:
             model_name (str): The model identifier. Default is "gemini-1.0-pro".
-            max_output_tokens (int): Max tokens to generate. Default is 1024.
+            max_new_tokens (int): Max tokens to generate. Default is 1024.
             temperature (float, optional): Sampling temperature. Default is 0.7.
             top_p (float, optional): Nucleus sampling parameter.
             top_k (int, optional): Top-k sampling parameter.
@@ -112,7 +112,7 @@ class GoogleLLM(BaseLLM):
             self.model_name = model_name
 
             config_params = {
-                "max_output_tokens": max_output_tokens
+                "max_output_tokens": max_new_tokens
             }
             if temperature is not None:
                 config_params["temperature"] = temperature
@@ -126,7 +126,7 @@ class GoogleLLM(BaseLLM):
             log_info(GoogleLLMLog.INITIALIZED_SUCCESSFULLY.value)
             log_info(
                 f"Config: model={model_name}, temp={temperature}, "
-                f"top_p={top_p}, top_k={top_k}, tokens={max_output_tokens}"
+                f"top_p={top_p}, top_k={top_k}, tokens={max_new_tokens}"
             )
         except ValueError as ve:
             log_error(GoogleLLMLog.VALUE_ERROR_INIT.value + f": {ve}")

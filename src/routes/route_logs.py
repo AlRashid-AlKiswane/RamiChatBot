@@ -35,7 +35,8 @@ except Exception as e:
 logers_router = APIRouter()
 
 # Define the log file path
-LOG_FILE_PATH = f"{MAIN_DIR}/log/app.log"
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+LOG_FILE_PATH = f"{BASE_DIR}/log/app.log"
 
 @logers_router.get("/logs", response_class=PlainTextResponse, status_code=HTTP_200_OK)
 async def get_logs():

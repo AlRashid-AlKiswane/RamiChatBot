@@ -7,3 +7,4 @@ from .cohere import CohereLLM
 from .deep_seek import BaseLLM
 from .google_ai import GoogleLLM
 from .open_ai import OpenAILLM
+from .deep_seek import DeepSeekLLM

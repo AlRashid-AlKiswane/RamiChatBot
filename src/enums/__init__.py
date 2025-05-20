@@ -16,3 +16,7 @@ from .enums_database_retrever import DBRetrievalMessages
 from .enums_embedding_query import EmbeddingQueryLogMessages
 from .enums_faiss_sarch import FaissSearchLogMessages
 from .enums_retrieval import RetrievalLogMessages
+
+
+from .enums_main import MainAppLogMessages
+from .enums_llms_support import LLMType

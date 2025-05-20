@@ -41,7 +41,7 @@ try:
 
     from src.helpers import get_settings, Settings
     from src.logs import log_error, log_info
-    from src.enums import OpenAILogEnums  # Ensure this import is present and correct
+    from src.enums import OpenAILogEnums
 
     from .base_llm import BaseLLM
 
@@ -95,7 +95,7 @@ class OpenAILLM(BaseLLM):
     def initialize_llm(
         self,
         model_name: str = "gpt-3.5-turbo",
-        max_tokens: int = 1024,
+        max_new_tokens: int = 1024,
         temperature: Optional[float] = 0.7,
         top_p: Optional[float] = 1.0,
     ):
@@ -119,13 +119,13 @@ class OpenAILLM(BaseLLM):
 
             self.client = OpenAI(api_key=api_key)
             self.model_name = model_name
-            self.max_tokens = max_tokens
+            self.max_tokens = max_new_tokens
             self.temperature = temperature
             self.top_p = top_p
 
             log_info(OpenAILogEnums.INIT_LLM_SUCCESS.value.format(model_name=model_name))
             log_info(OpenAILogEnums.INIT_LLM_PARAMS.value.format(
-                max_tokens=max_tokens,
+                max_tokens=self.max_tokens,
                 temperature=temperature,
                 top_p=top_p
             ))

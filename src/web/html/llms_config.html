@@ -93,43 +93,60 @@
     flex: 1;
   }
 
+  .model-fields {
+    display: none;
+  }
+
+  .active-fields {
+    display: block;
+  }
+
   @media (max-width: 700px) {
     .two-column {
       flex-direction: column;
     }
   }
+  
   .spinner {
-  border: 4px solid #e0e7ff;
-  border-top: 4px solid #1d4ed8;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
-}
+    border: 4px solid #e0e7ff;
+    border-top: 4px solid #1d4ed8;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
+  .error-message {
+    color: #dc2626;
+    margin-top: 5px;
+    font-size: 14px;
+  }
   </style>
 </head>
 <body>
   <div class="container">
     <h2>Apply Model Configuration</h2>
 
-    <label for="load_type">Load Type:</label>
+    <label for="load_type">Model Provider:</label>
     <select id="load_type">
-      <option value="HF">HF</option>
-      <option value="lCPP">lCPP</option>
+      <option value="HF">HuggingFace</option>
+      <option value="Cohere">Cohere</option>
+      <option value="OpenAI">OpenAI</option>
+      <option value="Google">Google</option>
+      <option value="DeepSeek">DeepSeek</option>
     </select>
 
     <form id="modelForm">
-      <!-- HF Model Fields -->
-      <div id="hf-fields">
-        <label for="model_name">Model Name:</label>
-        <select name="model_name" id="model_name">
+      <!-- HuggingFace Model Fields -->
+      <div id="hf-fields" class="model-fields active-fields">
+        <label for="hf_model_name">Model Name:</label>
+        <select id="hf_model_name">
           <option value="meta-llama/Llama-3.2-1B">meta-llama/Llama-3.2-1B</option>
           <option value="meta-llama/Llama-3.2-3B">meta-llama/Llama-3.2-3B</option>
           <option value="meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</option>
@@ -139,18 +156,18 @@
 
         <div class="two-column">
           <div class="column">
-            <label for="max_new_tokens">Max New Tokens: <span id="max_tokens_val">128</span></label>
-            <input type="range" id="max_new_tokens" name="max_new_tokens" min="1" max="4096" value="128" oninput="max_tokens_val.innerText = this.value" />
+            <label for="hf_max_new_tokens">Max New Tokens: <span id="hf_max_tokens_val">128</span></label>
+            <input type="range" id="hf_max_new_tokens" min="1" max="4096" value="128" oninput="hf_max_tokens_val.innerText = this.value" />
 
-            <label for="temperature">Temperature: <span id="temperature_val">0.7</span></label>
-            <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.01" value="0.7" oninput="temperature_val.innerText = this.value" />
+            <label for="hf_temperature">Temperature: <span id="hf_temperature_val">0.7</span></label>
+            <input type="range" id="hf_temperature" min="0" max="1" step="0.01" value="0.7" oninput="hf_temperature_val.innerText = this.value" />
           </div>
           <div class="column">
-            <label for="top_p">Top P: <span id="top_p_val">0.95</span></label>
-            <input type="range" id="top_p" name="top_p" min="0" max="1" step="0.01" value="0.95" oninput="top_p_val.innerText = this.value" />
+            <label for="hf_top_p">Top P: <span id="hf_top_p_val">0.95</span></label>
+            <input type="range" id="hf_top_p" min="0" max="1" step="0.01" value="0.95" oninput="hf_top_p_val.innerText = this.value" />
 
-            <label for="top_k">Top K: <span id="top_k_val">50</span></label>
-            <input type="range" id="top_k" name="top_k" min="0" max="1000" value="50" oninput="top_k_val.innerText = this.value" />
+            <label for="hf_top_k">Top K: <span id="hf_top_k_val">50</span></label>
+            <input type="range" id="hf_top_k" min="0" max="1000" value="50" oninput="hf_top_k_val.innerText = this.value" />
           </div>
         </div>
 
@@ -165,62 +182,126 @@
         </select>
       </div>
 
-      <!-- lCPP Model Fields -->
-      <div id="cpp-fields" style="display: none;">
-        <label for="repo_id">Repo ID:</label>
-        <input type="text" id="repo_id" value="TheBloke/Llama-2-7B-Chat-GGUF" />
+      <!-- Cohere Model Fields -->
+      <div id="cohere-fields" class="model-fields">
+        <label for="cohere_model_name">Model Name:</label>
+        <select id="cohere_model_name">
+          <option value="command">Command</option>
+          <option value="command-light">Command Light</option>
+          <option value="command-nightly">Command Nightly</option>
+          <option value="command-light-nightly">Command Light Nightly</option>
+        </select>
 
-        <label for="filename">Filename:</label>
-        <input type="text" id="filename" value="llama-2-7b-chat.Q2_K.gguf" />
+        <div class="two-column">
+          <div class="column">
+            <label for="cohere_max_new_tokens">Max New Tokens: <span id="cohere_max_tokens_val">128</span></label>
+            <input type="range" id="cohere_max_new_tokens" min="1" max="4096" value="128" oninput="cohere_max_tokens_val.innerText = this.value" />
 
-        <label for="n_ctx">Context Size:</label>
-        <input type="number" id="n_ctx" value="128" />
+            <label for="cohere_temperature">Temperature: <span id="cohere_temperature_val">0.7</span></label>
+            <input type="range" id="cohere_temperature" min="0" max="1" step="0.01" value="0.7" oninput="cohere_temperature_val.innerText = this.value" />
+          </div>
+          <div class="column">
+            <label for="cohere_top_p">Top P: <span id="cohere_top_p_val">0.95</span></label>
+            <input type="range" id="cohere_top_p" min="0" max="1" step="0.01" value="0.95" oninput="cohere_top_p_val.innerText = this.value" />
 
-        <label for="n_threads">Threads:</label>
-        <input type="number" id="n_threads" value="4" />
-
-        <label for="seed">Seed:</label>
-        <input type="number" id="seed" value="42" />
-
-        <label for="n_gpus">GPUs:</label>
-        <input type="number" id="n_gpus" value="-1" />
-
-        <label><input type="checkbox" id="verbose" checked /> Verbose</label>
-
-        <label for="max_tokens">Max Tokens:</label>
-        <input type="number" id="max_tokens" value="128" />
-
-        <label for="cpp_temperature">Temperature:</label>
-        <input type="number" id="cpp_temperature" step="0.1" value="0.7" />
-
-        <label for="cpp_top_p">Top P:</label>
-        <input type="number" id="cpp_top_p" step="0.01" value="0.95" />
-
-        <label><input type="checkbox" id="echo" /> Echo</label>
-
-        <label for="stop">Stop Sequences (comma-separated):</label>
-        <input type="text" id="stop" placeholder="e.g. </s>,<pad>" />
+            <label for="cohere_top_k">Top K: <span id="cohere_top_k_val">50</span></label>
+            <input type="range" id="cohere_top_k" min="0" max="1000" value="50" oninput="cohere_top_k_val.innerText = this.value" />
+          </div>
+        </div>
       </div>
 
-      <button type="submit">Apply</button>
+      <!-- OpenAI Model Fields -->
+      <div id="openai-fields" class="model-fields">
+        <label for="openai_model_name">Model Name:</label>
+        <select id="openai_model_name">
+          <option value="gpt-4">GPT-4</option>
+          <option value="gpt-4-turbo">GPT-4 Turbo</option>
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+          <option value="gpt-3.5-turbo-instruct">GPT-3.5 Turbo Instruct</option>
+        </select>
+
+        <div class="two-column">
+          <div class="column">
+            <label for="openai_max_new_tokens">Max New Tokens: <span id="openai_max_tokens_val">128</span></label>
+            <input type="range" id="openai_max_new_tokens" min="1" max="4096" value="128" oninput="openai_max_tokens_val.innerText = this.value" />
+
+            <label for="openai_temperature">Temperature: <span id="openai_temperature_val">0.7</span></label>
+            <input type="range" id="openai_temperature" min="0" max="1" step="0.01" value="0.7" oninput="openai_temperature_val.innerText = this.value" />
+          </div>
+          <div class="column">
+            <label for="openai_top_p">Top P: <span id="openai_top_p_val">0.95</span></label>
+            <input type="range" id="openai_top_p" min="0" max="1" step="0.01" value="0.95" oninput="openai_top_p_val.innerText = this.value" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Model Fields -->
+      <div id="google-fields" class="model-fields">
+        <label for="google_model_name">Model Name:</label>
+        <select id="google_model_name">
+          <option value="gemini-pro">Gemini Pro</option>
+          <option value="gemini-ultra">Gemini Ultra</option>
+          <option value="text-bison-001">Text Bison</option>
+        </select>
+
+        <div class="two-column">
+          <div class="column">
+            <label for="google_max_new_tokens">Max New Tokens: <span id="google_max_tokens_val">128</span></label>
+            <input type="range" id="google_max_new_tokens" min="1" max="4096" value="128" oninput="google_max_tokens_val.innerText = this.value" />
+
+            <label for="google_temperature">Temperature: <span id="google_temperature_val">0.7</span></label>
+            <input type="range" id="google_temperature" min="0" max="1" step="0.01" value="0.7" oninput="google_temperature_val.innerText = this.value" />
+          </div>
+          <div class="column">
+            <label for="google_top_p">Top P: <span id="google_top_p_val">0.95</span></label>
+            <input type="range" id="google_top_p" min="0" max="1" step="0.01" value="0.95" oninput="google_top_p_val.innerText = this.value" />
+          </div>
+        </div>
+      </div>
+
+      <!-- DeepSeek Model Fields -->
+      <div id="deepseek-fields" class="model-fields">
+        <label for="deepseek_model_name">Model Name:</label>
+        <select id="deepseek_model_name">
+          <option value="deepseek-chat">DeepSeek Chat</option>
+          <option value="deepseek-coder">DeepSeek Coder</option>
+        </select>
+
+        <div class="two-column">
+          <div class="column">
+            <label for="deepseek_max_new_tokens">Max New Tokens: <span id="deepseek_max_tokens_val">128</span></label>
+            <input type="range" id="deepseek_max_new_tokens" min="1" max="4096" value="128" oninput="deepseek_max_tokens_val.innerText = this.value" />
+
+            <label for="deepseek_temperature">Temperature: <span id="deepseek_temperature_val">0.7</span></label>
+            <input type="range" id="deepseek_temperature" min="0" max="1" step="0.01" value="0.7" oninput="deepseek_temperature_val.innerText = this.value" />
+          </div>
+          <div class="column">
+            <label for="deepseek_top_p">Top P: <span id="deepseek_top_p_val">0.95</span></label>
+            <input type="range" id="deepseek_top_p" min="0" max="1" step="0.01" value="0.95" oninput="deepseek_top_p_val.innerText = this.value" />
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Apply Configuration</button>
     </form>
 
     <div id="successMessage" class="success-message"></div>
     <div id="loadingRing" style="display: none; text-align: center; margin-bottom: 20px;">
       <div class="spinner"></div>
     </div>
-    
   </div>
+
   <script>
 document.addEventListener("DOMContentLoaded", () => {
   const loadTypeSelector = document.getElementById("load_type");
-  const hfFields = document.getElementById("hf-fields");
-  const cppFields = document.getElementById("cpp-fields");
   const form = document.getElementById("modelForm");
   const successMessage = document.getElementById("successMessage");
   const loadingRing = document.getElementById("loadingRing");
   const submitButton = form.querySelector("button[type='submit']");
-
+  
+  // Get all model fields sections
+  const modelFields = document.querySelectorAll(".model-fields");
+  
   // Hide loading ring and success message by default
   loadingRing.style.display = "none";
   successMessage.style.display = "none";
@@ -228,8 +309,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show/Hide fields based on load type
   loadTypeSelector.addEventListener("change", () => {
     const selected = loadTypeSelector.value;
-    hfFields.style.display = selected === "HF" ? "block" : "none";
-    cppFields.style.display = selected === "lCPP" ? "block" : "none";
+    
+    // Hide all fields first
+    modelFields.forEach(field => {
+      field.classList.remove("active-fields");
+    });
+    
+    // Show the selected one
+    const selectedFields = document.getElementById(`${selected.toLowerCase()}-fields`);
+    if (selectedFields) {
+      selectedFields.classList.add("active-fields");
+    }
   });
 
   form.addEventListener("submit", async (e) => {
@@ -244,58 +334,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const endpoint = "/api/application";
 
     let payload = {
-      body: null,
-      cpp_body: null
+      load_type: loadType,
+      body: {
+        model_name: "",
+        max_new_tokens: null,
+        temperature: null,
+        top_p: null,
+        top_k: null,
+        trust_remote_code: false,
+        do_sample: false,
+        quantization: false,
+        quantization_type: ""
+      }
     };
 
-    let quantization = false;
-    let quantization_type = "";
-
-    // Quantization check
-    const selectedQuantization = document.querySelector('input[name="quantization"]:checked');
-    if (selectedQuantization && selectedQuantization.value !== "None") {
-      quantization = true;
-      quantization_type = selectedQuantization.value;
-    }
-
-    // Hugging Face payload
+    // Set common parameters based on selected model type
+    const modelType = loadType.toLowerCase();
+    
+    // Get model name
+    payload.body.model_name = document.getElementById(`${modelType}_model_name`).value;
+    
+    // Get common parameters
+    payload.body.max_new_tokens = parseInt(document.getElementById(`${modelType}_max_new_tokens`).value);
+    payload.body.temperature = parseFloat(document.getElementById(`${modelType}_temperature`).value);
+    payload.body.top_p = parseFloat(document.getElementById(`${modelType}_top_p`).value);
+    
+    // Get model-specific parameters
     if (loadType === "HF") {
-      payload.body = {
-        model_name: document.getElementById("model_name").value,
-        max_new_tokens: parseInt(document.querySelector("[name='max_new_tokens']").value),
-        temperature: parseFloat(document.querySelector("[name='temperature']").value),
-        top_p: parseFloat(document.querySelector("[name='top_p']").value),
-        top_k: parseInt(document.querySelector("[name='top_k']").value),
-        trust_remote_code: document.getElementById("trust_remote_code").checked,
-        do_sample: document.getElementById("do_sample").checked,
-        quantization,
-        quantization_type
-      };
-    }
-
-    // C++ payload
-    if (loadType === "lCPP") {
-      payload.cpp_body = {
-        repo_id: document.getElementById("repo_id").value,
-        filename: document.getElementById("filename").value,
-        n_ctx: parseInt(document.getElementById("n_ctx").value),
-        n_threads: parseInt(document.getElementById("n_threads").value),
-        seed: parseInt(document.getElementById("seed").value),
-        n_gpus: parseInt(document.getElementById("n_gpus").value),
-        verbose: document.getElementById("verbose").checked,
-        max_tokens: parseInt(document.getElementById("max_tokens").value),
-        temperature: parseFloat(document.getElementById("cpp_temperature").value),
-        top_p: parseFloat(document.getElementById("cpp_top_p").value),
-        echo: document.getElementById("echo").checked,
-        stop: document.getElementById("stop").value
-          .split(",")
-          .map(s => s.trim())
-          .filter(s => s !== "")
-      };
+      payload.body.top_k = parseInt(document.getElementById("hf_top_k").value);
+      payload.body.trust_remote_code = document.getElementById("trust_remote_code").checked;
+      payload.body.do_sample = document.getElementById("do_sample").checked;
+      
+      // Quantization check
+      const quantizationSelect = document.getElementById("quantization");
+      if (quantizationSelect.value !== "none") {
+        payload.body.quantization = true;
+        payload.body.quantization_type = quantizationSelect.value;
+      }
+    } else if (loadType === "Cohere") {
+      payload.body.top_k = parseInt(document.getElementById("cohere_top_k").value);
     }
 
     try {
-      const response = await fetch(`${endpoint}?load_type=${loadType}`, {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -307,23 +388,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       successMessage.style.display = "block";
       if (response.ok) {
-        successMessage.textContent = data.message || "Model initialized successfully.";
-        successMessage.style.color = "green";
+        successMessage.textContent = data.message || "Model initialized successfully!";
+        successMessage.style.backgroundColor = "#d1fae5";
+        successMessage.style.borderLeft = "4px solid #10b981";
       } else {
-        successMessage.textContent = data.detail || "Error applying model settings.";
-        successMessage.style.color = "red";
+        successMessage.textContent = data.error || "Error applying model settings.";
+        successMessage.style.backgroundColor = "#fee2e2";
+        successMessage.style.borderLeft = "4px solid #ef4444";
       }
     } catch (err) {
       successMessage.style.display = "block";
       successMessage.textContent = "Network or parsing error: " + err.message;
-      successMessage.style.color = "red";
+      successMessage.style.backgroundColor = "#fee2e2";
+      successMessage.style.borderLeft = "4px solid #ef4444";
     } finally {
       loadingRing.style.display = "none";
       submitButton.disabled = false;
     }
   });
 });
-
   </script>
 </body>
 </html>
