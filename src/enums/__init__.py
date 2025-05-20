@@ -12,3 +12,4 @@ from .enums_deepseek import  DeepSeekLogMessages
 from .enums_cohere import CohereLogMessages
 
 from .enums_chat_history import ChatHistoryMessages
+from .enums_database_retrever import DBRetrievalMessages
