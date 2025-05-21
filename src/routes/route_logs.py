@@ -24,7 +24,7 @@ try:
     if MAIN_DIR not in sys.path:
         sys.path.append(MAIN_DIR)
 
-    from src.logs import log_debug, log_error
+    from logs import log_debug, log_error
 
 except ImportError as ie:
     logging.error("Import Error setup error: %s", ie, exc_info=True)

@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from starlette.status import HTTP_422_UNPROCESSABLE_ENTITY
+from prometheus_fastapi_instrumentator import Instrumentator
 
 try:
     MAIN_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
@@ -61,6 +62,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Initialize Prometheuse Instrumentation
+Instrumentator().instrument(app).expose(app)
 
 # Jinja2 Templates
 templates = Jinja2Templates(directory=os.path.join(MAIN_DIR, "src/web"))

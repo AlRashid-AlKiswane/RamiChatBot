@@ -49,10 +49,10 @@ def build_faiss_index(embeddings: np.ndarray) -> faiss.IndexFlatL2:
         if not isinstance(embeddings, np.ndarray) or len(embeddings.shape) != 2:
             raise ValueError(FaissSearchLogMessages.RAISE_INVALID_EMBEDDINGS.value)
 
-        dim = embeddings.shape[1]  # Correctly extract the dimensionality
+        dim = embeddings.shape[1]
         index = faiss.IndexFlatL2(dim)
-        n_vectors = embeddings.shape[0]  # Extract the number of vectors
-        index.add(embeddings, n_vectors)  # Pass both x and n arguments
+        n_vectors = embeddings.shape[0]
+        index.add(embeddings, n_vectors)
 
         log_info(FaissSearchLogMessages.INFO_INDEX_SUCCESS.value)
         return index
